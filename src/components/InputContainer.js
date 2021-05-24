@@ -93,7 +93,7 @@ class InputContainer extends Component {
     }
 
     changeHandler = (e, data) => {
-        // console.log(e.target.value, data.id);
+        console.log(e.target.value, data.id);
 
         //copy the input object from the state
         const updatedInput = { ...this.state.input }
