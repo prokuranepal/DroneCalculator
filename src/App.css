@@ -1,0 +1,18 @@
+.paper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-gap: 20px;
+}
+
+.input {
+  /* min-height: 400px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 20px 0;
+}
+.input > * {
+  flex: 1;
+  text-align: center;
+}
