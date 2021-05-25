@@ -124,12 +124,12 @@ export const Specs = {
                 name:"cp2"
             },
             diameter1:{
-                value:null,
+                value:11.340091785602759,
                 field:'Diameter 1',
                 name:'diameter1'
             },
             diameter2:{
-                value:null,
+                value:5.855220684752028,
                 field:'Diameter 2',
                 name:'diameter2'
             }
