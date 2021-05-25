@@ -2,9 +2,9 @@
 import React, { useState,useEffect } from 'react'
 import { Paper, Typography, TextField, Container, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core'
-import Input from './Input';
+import InputUnit from './InputUnit';
 import '../App.css'
-import { Specs,Environment,Diameter } from '../data/specs';
+import { Specs,Environment,Diameter } from '../data/data';
 
 
 const InputContainer=()=> {
@@ -132,7 +132,7 @@ const InputContainer=()=> {
                                 {specsInputData.map(eachInputData => {
                                     return (
                                         <Grid item xs={6}>
-                                            <Input key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => specsChangeHandler(e, eachInputData)} />
+                                            <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => specsChangeHandler(e, eachInputData)} />
                                         </Grid>
                                     )
                                 })}
@@ -149,7 +149,7 @@ const InputContainer=()=> {
                             {environmentInputData.map(eachInputData => {
                                 return (
                                     <Grid item xs={6} md={6} lg={6}>
-                                        <Input key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => environmentChangeHandler(e, eachInputData)} />
+                                        <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => environmentChangeHandler(e, eachInputData)} />
                                     </Grid>
                                 )
                             })}
@@ -165,7 +165,7 @@ const InputContainer=()=> {
                             {diameterInputData.map(eachInputData => {
                                 return (
                                     <Grid item xs={6} md={6} lg={6}>
-                                        <Input key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => diameterChangeHandler(e, eachInputData)} />
+                                        <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => diameterChangeHandler(e, eachInputData)} />
                                     </Grid>
                                 )
                             })}
