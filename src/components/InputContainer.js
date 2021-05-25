@@ -1,145 +1,179 @@
-import React, { Component } from 'react'
-import { Paper, Typography, TextField, Container } from '@material-ui/core'
+
+import React, { useState,useEffect } from 'react'
+import { Paper, Typography, TextField, Container, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core'
 import Input from './Input';
 import '../App.css'
-
-// const styles=makeStyles((theme)=>({
-//     input:{
-//         display:'flex',
-//         justifyContent:'space-around',
-//         alignItems:'center',
-//         paddingTop:theme.spacing(2),
-//         paddingBottom:theme.spacing(2)
-//     },
-//     paper:{
-//         margin:theme.spacing(2),
-//         display:'grid',
-//         gridTemplateColumns:'repeat(auto-fit,minmax(600px,1fr))'
-//     }
-
-// }))
+import { Specs,Environment,Diameter } from '../data/specs';
 
 
+const InputContainer=()=> {
 
-class InputContainer extends Component {
+    const[specs,setSpecs]=useState(Specs)
+    const[environment,setEnvironment]=useState(Environment)
+    const[diameter,setDiameter]=useState(Diameter)
+
+    // useEffect(()=>{
+
+    //     specsChangeHandler(specs,data)
+    //     environmentChangeHandler()
+    //     diameterChangeHandler()
+    // },[])
 
 
-    state = {
-        input: {
-            kvrating: {
-                value: '830',
-                field: 'KV Rating',
-                unit: 'kv',
-                defaultValue: 830,
-                name: 'kvrating'
-            },
-            cellsInSeries: {
-                value: '',
-                field: 'Cells in series',
-                unit: 'V',
-                defaultValue: 5,
-                name: 'cellsInSeries'
-            },
-            nominalVoltage: {
-                value: '',
-                field: 'Nominal Voltage',
-                defaultValue: 18.5,
-                name: 'nominalVoltage'
-            },
-            maxRPM: {
-                value: '',
-                field: 'No. load MAX RPM',
-                defaultValue: 15340,
-                name: 'maxRPM'
-            },
-            estimatedMaxPercent: {
-                value: '',
-                field: 'Estimated max percent',
-                unit: '%',
-                defaultValue: 85,
-                name: 'estimatedMaxPercent'
-            },
-            maxWorkingRPM: {
-                value: '',
-                field: 'Max working RPM',
-                unit: '%',
-                defaultValue: null,
-                name: 'maxWorkingRPM'
-            },
-            maxPower: {
-                value: '',
-                field: 'Max power',
-                unit: 'Watt',
-                defaultValue: 1000,
-                name: 'maxPower'
-            },
-            altitude: {
-                value: '',
-                field: 'Altitude',
-                unit: 'm',
-                defaultValue: 0,
-                name: 'altitude'
-            },
-            density: {
-                value: '',
-                field: 'Density',
-                unit: 'kg/m^3',
-                defaultValue: 1.225,
-                name: 'density'
-            }
-
-        }
-    }
-
-    changeHandler = (e, data) => {
-        console.log(e.target.value, data.id);
+   const specsChangeHandler = (e, data) => {
+        // console.log(e.target.value, data.id);
 
         //copy the input object from the state
-        const updatedInput = { ...this.state.input }
+        const updatedInput = { ...specs.input }
 
         //copy the specific field like density, maxPower using data.id from updatedInput
         let item = updatedInput[data.id];
 
         //update the value using the value from onChange to the related field
-        item = {...item, value: e.target.value};
+        item = { ...item, value: e.target.value };
+
+        //update the field item with updated value to updatedInput
+        updatedInput[data.id] = item;
+
+         //The data is calculated for certain required fields 
+
+         updatedInput.nominalVoltage.value=updatedInput.cellsInSeries.value*3.7
+
+         updatedInput.maxRPM.value=(updatedInput.kvRating.value*updatedInput.nominalVoltage.value)
+         updatedInput.maxWorkingRPM.value=(updatedInput.estimatedMaxPercent.value)/100*updatedInput.maxRPM.value
+ 
+      
+
+        //set the new state
+        setSpecs({ input: updatedInput });
+
+    }
+  
+    const environmentChangeHandler = (e, data) => {
+        // console.log(e.target.value, data.id);
+
+        //copy the input object from the state
+        const updatedInput = { ...environment.input }
+
+        //copy the specific field like density, maxPower using data.id from updatedInput
+        let item = updatedInput[data.id];
+
+        //update the value using the value from onChange to the related field
+        item = { ...item, value: e.target.value };
 
         //update the field item with updated value to updatedInput
         updatedInput[data.id] = item;
 
         //set the new state
-        this.setState({input: updatedInput});
-
+        setEnvironment({ input: updatedInput });
     }
-    render() {
-        // const classes=styles()
-        // console.log(this.state.input, "updatedinput")
 
-        let inputData = []
-        for (let key in this.state.input) {
-            inputData.push({ id: key, data: this.state.input[key] })
+    const diameterChangeHandler = (e, data) => {
+        // console.log(e.target.value, data.id);
+
+        //copy the input object from the state
+        const updatedInput = { ...diameter.input }
+
+        //copy the specific field like density, maxPower using data.id from updatedInput
+        let item = updatedInput[data.id];
+
+        //update the value using the value from onChange to the related field
+        item = { ...item, value: e.target.value };
+
+           //Diameter1 value calculation start
+         // let powerData=(updatedInput.cp1.value*updatedInput.density.value*Math.pow(updatedInput.maxWorkingRPM.value/60,3))
+         let diameter1Result=Math.pow((specs.input.maxPower.value/(updatedInput.cp1.value*environment.input.density.value* Math.pow((specs.input.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
+         let diameter2Result=Math.pow((specs.input.maxPower.value/(updatedInput.cp2.value*environment.input.density.value* Math.pow((specs.input.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
+ console.log(specs.input.maxPower.value,"specsvalue")
+ console.log(environment.input.density.value,"envirovalue")
+ console.log(updatedInput.cp2.value,"diametervalue")
+ console.log(updatedInput.cp1.value,"diameter1value")
+ 
+         updatedInput.diameter1.value=diameter1Result
+         updatedInput.diameter2.value=diameter2Result
+ 
+
+        //update the field item with updated value to updatedInput
+        updatedInput[data.id] = item;
+
+        //set the new state
+        setDiameter({ input: updatedInput });
+    }
+
+
+    
+        let specsInputData = []
+        for (let key in specs.input) {
+            specsInputData.push({ id: key, data: specs.input[key] })
         }
-        // console.log(inputData, "inputdata")
+        let environmentInputData = []
+        for (let key in environment.input) {
+            environmentInputData.push({ id: key, data: environment.input[key] })
+        }
+        let diameterInputData = []
+        for (let key in diameter.input) {
+            diameterInputData.push({ id: key, data: diameter.input[key] })
+        }
 
-        // console.log(this.state.input, 'input')
+        console.log(specsInputData,'inputData')
+        // const classes = useStyles();
+        console.log(specs,"state")
         return (
-            <>
+            <div style={{ margin: '0px 20px' }}>
 
-                <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >{this.props.header}</Typography>
-
-                <Paper className="paper">
-
-                    {inputData.map(eachInputData => {
-                        return (
-                            <Input key={eachInputData.id} data={eachInputData.data} onChange={(e) => this.changeHandler(e, eachInputData)} />
-                        )
-                    })}
+                <div style={{marginTop: '20px'}}>
+                    <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >Specs</Typography>
+                    <div style={{ flexGrow: 1 }}>
+                        <Paper className="paper" style={{ padding: '20px 30px' }}>
+                            <Grid container spacing={0}>
 
 
-                </Paper>
+                                {specsInputData.map(eachInputData => {
+                                    return (
+                                        <Grid item xs={6}>
+                                            <Input key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => specsChangeHandler(e, eachInputData)} />
+                                        </Grid>
+                                    )
+                                })}
 
-            </>
+                            </Grid>
+                        </Paper>
+                    </div>
+                </div>
+                <div style={{margin: '20px 0px'}}>
+                    <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >Environment</Typography>
+
+                    <Paper className="paper" style={{ padding: '0px 20px' }}>
+                        <Grid container>
+                            {environmentInputData.map(eachInputData => {
+                                return (
+                                    <Grid item xs={6} md={6} lg={6}>
+                                        <Input key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => environmentChangeHandler(e, eachInputData)} />
+                                    </Grid>
+                                )
+                            })}
+                        </Grid>
+                    </Paper>
+                </div>
+
+                <div style={{margin: '20px 0px'}}>
+                    <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >Propeller and Diameter Selection</Typography>
+
+                    <Paper className="paper" style={{ padding: '0px 20px' }}>
+                        <Grid container>
+                            {diameterInputData.map(eachInputData => {
+                                return (
+                                    <Grid item xs={6} md={6} lg={6}>
+                                        <Input key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => diameterChangeHandler(e, eachInputData)} />
+                                    </Grid>
+                                )
+                            })}
+                        </Grid>
+                    </Paper>
+                </div>
+            </div>
         )
     }
-}
+
 export default InputContainer;

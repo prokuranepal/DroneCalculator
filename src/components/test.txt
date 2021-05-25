@@ -1,0 +1,189 @@
+import React, { Component } from 'react'
+import { Paper, Typography, TextField, Container } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core'
+import Input from './Input';
+import '../App.css'
+
+// const styles=makeStyles((theme)=>({
+//     input:{
+//         display:'flex',
+//         justifyContent:'space-around',
+//         alignItems:'center',
+//         paddingTop:theme.spacing(2),
+//         paddingBottom:theme.spacing(2)
+//     },
+//     paper:{
+//         margin:theme.spacing(2),
+//         display:'grid',
+//         gridTemplateColumns:'repeat(auto-fit,minmax(600px,1fr))'
+//     }
+
+// }))
+
+
+
+class InputContainer extends Component {
+
+
+    state = {
+        input: {
+            kvRating: {
+                value: 830,
+                field: 'KV Rating',
+                unit: 'kv',
+                defaultValue: 830,
+                name: 'kvRating'
+            },
+            cellsInSeries: {
+                value: 5,
+                field: 'Cells in series',
+                unit: 'V',
+                defaultValue: 5,
+                name: 'cellsInSeries'
+            },
+            nominalVoltage: {
+                value: null,
+                field: 'Nominal Voltage',
+                defaultValue: 18.5,
+                name: 'nominalVoltage'
+            },
+            maxRPM: {
+                value: null,
+                field: 'No. load MAX RPM',
+                defaultValue: 15340,
+                name: 'maxRPM'
+            },
+            estimatedMaxPercent: {
+                value: 85,
+                field: 'Estimated max percent',
+                unit: '%',
+                defaultValue: 85,
+                name: 'estimatedMaxPercent'
+            },
+            maxWorkingRPM: {
+                value: null,
+                field: 'Max working RPM',
+                unit: '%',
+                defaultValue: null,
+                name: 'maxWorkingRPM'
+            },
+            maxPower: {
+                value: 1000,
+                field: 'Max power',
+                unit: 'Watt',
+                defaultValue: 1000,
+                name: 'maxPower',
+
+            },
+            altitude: {
+                value: 0,
+                field: 'Altitude',
+                unit: 'm',
+                defaultValue: 0,
+                name: 'altitude'
+            },
+            density: {
+                value: 1.225,
+                field: 'Density',
+                unit: 'kg/m^3',
+                defaultValue: 1.225,
+                name: 'density'
+            },
+            cp1:{
+                value:0.04,
+                field:'CP',
+                name:'cp1',
+                
+            },
+            cp2:{
+                value:0.09,
+                field:'CP',
+                name:"cp2"
+            },
+            diameter1:{
+                value:null,
+                field:'Diameter 1',
+                name:'diameter1'
+            },
+            diameter2:{
+                value:null,
+                field:'Diameter 2',
+                name:'diameter2'
+            }
+
+        }
+    }
+
+    changeHandler = (e, data) => {
+        console.log(e.target.value, data.id);
+
+        //copy the input object from the state
+        const updatedInput = { ...this.state.input }
+
+        //copy the specific field like density, maxPower using data.id from updatedInput
+        let item = updatedInput[data.id];
+
+        //update the value using the value from onChange to the related field
+        item = {...item, value: e.target.value};
+
+        //update the field item with updated value to updatedInput
+        updatedInput[data.id] = item;
+
+        //The data is calculated for certain required fields 
+
+        updatedInput.nominalVoltage.value=updatedInput.cellsInSeries.value*3.7
+
+        updatedInput.maxRPM.value=+(updatedInput.kvRating.value*updatedInput.nominalVoltage.value)
+        updatedInput.maxWorkingRPM.value=+(updatedInput.estimatedMaxPercent.value)/100*updatedInput.maxRPM.value
+
+        //Diameter1 value calculation start
+        // let powerData=(updatedInput.cp1.value*updatedInput.density.value*Math.pow(updatedInput.maxWorkingRPM.value/60,3))
+        let diameter1Result=Math.pow((updatedInput.maxPower.value/(updatedInput.cp1.value*updatedInput.density.value* Math.pow((updatedInput.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
+        let diameter2Result=Math.pow((updatedInput.maxPower.value/(updatedInput.cp2.value*updatedInput.density.value* Math.pow((updatedInput.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
+
+
+        updatedInput.diameter1.value=diameter1Result
+        updatedInput.diameter2.value=diameter2Result
+
+
+      
+     
+
+        //set the new state
+        this.setState({input: updatedInput});
+
+    }
+    render() {
+        // const classes=styles()
+        // console.log(this.state.input, "updatedinput")
+        const header=['Specs','Environment',"propeller"]
+
+        let inputData = []
+        for (let key in this.state.input) {
+            inputData.push({ id: key, data: this.state.input[key] })
+        }
+        // console.log(inputData, "inputdata")
+
+        // console.log(this.state.input, 'input')
+        return (
+            <>
+
+
+                <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >{this.props.header}</Typography>
+
+                <Paper className="paper">
+
+                    {inputData.map(eachInputData => {
+                        return (
+                            <Input key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => this.changeHandler(e, eachInputData)} />
+                        )
+                    })}
+
+
+                </Paper>
+
+            </>
+        )
+    }
+}
+export default InputContainer;
