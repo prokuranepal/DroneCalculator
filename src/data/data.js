@@ -42,47 +42,40 @@ export const Specs = {
                 value: 830,
                 field: 'KV Rating',
                 unit: 'kv',
-                defaultValue: 830,
                 name: 'kvRating'
             },
             cellsInSeries: {
                 value: 5,
                 field: 'Cells in series',
                 unit: 'V',
-                defaultValue: 5,
                 name: 'cellsInSeries'
             },
             nominalVoltage: {
                 value: 18.5,
                 field: 'Nominal Voltage',
-                defaultValue: 18.5,
                 name: 'nominalVoltage'
             },
             maxRPM: {
                 value: 15340,
                 field: 'No. load MAX RPM',
-                defaultValue: 15340,
                 name: 'maxRPM'
             },
             estimatedMaxPercent: {
                 value: 85,
                 field: 'Estimated max percent',
                 unit: '%',
-                defaultValue: 85,
                 name: 'estimatedMaxPercent'
             },
             maxWorkingRPM: {
                 value: 13051.75,
                 field: 'Max working RPM',
                 unit: '%',
-                defaultValue: null,
                 name: 'maxWorkingRPM'
             },
             maxPower: {
                 value: 1000,
                 field: 'Max power',
                 unit: 'Watt',
-                defaultValue: 1000,
                 name: 'maxPower',
 
             },
@@ -103,7 +96,6 @@ export const Specs = {
                 value: 1.225,
                 field: 'Density',
                 unit: 'kg/m^3',
-                defaultValue: 1.225,
                 name: 'density'
             },
         }
@@ -114,13 +106,13 @@ export const Specs = {
             
             cp1:{
                 value:0.04,
-                field:'CP',
+                field:'CP1',
                 name:'cp1',
                 
             },
             cp2:{
                 value:0.09,
-                field:'CP',
+                field:'CP2',
                 name:"cp2"
             },
             diameter1:{
@@ -136,4 +128,27 @@ export const Specs = {
 
         }
     }
-
+export const Pitch={
+    input:{
+        airspeed1:{
+            value:15,            
+            field:'airspeed1',
+            name:'airspeed1'
+        },
+        airspeed2:{
+            value:24,
+            field:'airspeed2',
+            name:'airspeed2'
+        },
+        pitch1:{
+            value:4.88666482,
+            field:'pitch1',
+            name:'pitch1'
+        },
+        pitch2:{
+            value:7.818663711,
+            field:'pitch2',
+            name:'pitch2'
+        }
+    }
+}
