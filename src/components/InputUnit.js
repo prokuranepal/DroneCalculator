@@ -1,3 +1,8 @@
+
+
+
+
+
 import React from 'react'
 import { Paper, Typography, TextField, Container} from '@material-ui/core'
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -60,7 +65,7 @@ const InputUnit = (props) => {
           onChange={props.onChange}
           variant='outlined'
           color='primary'
-          value={value}
+          value={value>0?value:0}
           autoFocus
         />
         <Typography style={{textAlign: 'left'}} variant="body1">{unit?unit:null}</Typography>
@@ -69,4 +74,5 @@ const InputUnit = (props) => {
     // </Container>
   )
 }
+
 export default InputUnit
