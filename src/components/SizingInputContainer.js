@@ -16,19 +16,26 @@ console.log(e)
 
 let sizingArray=[]
 for(let key in sizing){
-    sizingArray.push({data:sizing[key]})
+    let innerArray=[]
+    for (let key2 in sizing[key])
+    {
+        innerArray.push({[key2]:sizing[key][key2]})
+    }
+    sizingArray.push({[key]:innerArray})
 }
-console.log(sizingArray,"ssizingA")
-let data=sizingArray.map(each=>{
-    const {data}=each
-    return (
-    Object.keys(data).map(key=>{
-        console.log(data[key],"ssizingO")
-        return(<InputUnit key={data[key].name} id={data[key].name} data={data[key]} onChange={(e) => sizingChangeHandler(e, data[key])} />
-        )
-    })
-    )
-})
+
+console.log("sizingArray", sizingArray)
+// let data=sizingArray.map(each=>{
+//     const {data}=each
+//     return (
+//     Object.keys(data).map(key=>{
+//         console.log(data[key],"ssizingO")
+//         return(<InputUnit key={data[key].name} id={data[key].name} data={data[key]} onChange={(e) => sizingChangeHandler(e, data[key])} />
+//         )
+//     })
+//     )
+// })
+const data=null
 console.log(data,"datta")
 
     return(
