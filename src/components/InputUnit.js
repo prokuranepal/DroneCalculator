@@ -4,7 +4,7 @@
 
 
 import React from 'react'
-import { Paper, Typography, TextField, Container} from '@material-ui/core'
+import { Paper, Typography, TextField, Container,Box} from '@material-ui/core'
 import InputAdornment from '@material-ui/core/InputAdornment';
 import '../App.css'
 import Input from '@material-ui/core/Input';
@@ -47,15 +47,15 @@ const CssTextField = withStyles({
 const InputUnit = (props) => {
   const classes = useStyles()
   // console.log(props, 'props')
-  const { field, unit, name, value, defaultValue } = props.data;
+  const { field, unit, name, value, defaultValue,input } = props.data;
   // console.log(name, 'nameee')
   return (
     // <Container>
-      <div className="input">
+      <div className="input"  >
         <Typography style={{textAlign: 'left'}} variant="body1">{field}</Typography>
-        <CssTextField
+        {input?  <CssTextField
           id="standard-number"
-          label="Enter number only"
+          // label="Enter number only"
           type="number"
           size='small'
           defaultValue={value}
@@ -67,7 +67,8 @@ const InputUnit = (props) => {
           color='primary'
           value={value>0?value:0}
           autoFocus
-        />
+        />:<Box component="span" style={{background:"#3F51B5",width:"70px",textAlign:'center', color:'white',padding:"13px 0px",borderRadius:"4px",fontWeight:'500',overflow:'auto'}} display="block">{value?value:0}</Box>}
+      
         <Typography style={{textAlign: 'left'}} variant="body1">{unit?unit:null}</Typography>
 
       </div>

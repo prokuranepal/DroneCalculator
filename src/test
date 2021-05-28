@@ -85,7 +85,7 @@ const InputContainer=()=> {
          // let powerData=(updatedInput.cp1.value*updatedInput.density.value*Math.pow(updatedInput.maxWorkingRPM.value/60,3))
          let diameter1Result=Math.pow((specs.input.maxPower.value/(updatedInput.cp1.value*environment.input.density.value* Math.pow((specs.input.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
          let diameter2Result=Math.pow((specs.input.maxPower.value/(updatedInput.cp2.value*environment.input.density.value* Math.pow((specs.input.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
-        console.log(specs.input.maxPower.value,"specsvalue")
+        console.log(specs.input.kvRating.value,"specsvalue")
         console.log(environment.input.density.value,"envirovalue")
         console.log(updatedInput.cp2.value,"diametervalue")
         console.log(updatedInput.cp1.value,"diameter1value")
@@ -118,13 +118,18 @@ const InputContainer=()=> {
 
         useEffect(
             ()=>{
-                const updatedInput = { ...diameter.input }
+                
+                const updatedDiameterInput = { ...diameter.input }
+                const updatedEnvironmentInput={...environment.input}
+                const updatedSpecsInput={...specs.input}
 
-                    let diameter2Result=Math.pow((specs.input.maxPower.value/(updatedInput.cp2.value*environment.input.density.value* Math.pow((specs.input.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
-                    // updatedInput.diameter1.value=diameter1Result
-                    updatedInput.diameter2.value=diameter2Result
-                    //copy the specific field like density, maxPower using data.id from updatedInput
-                    setDiameter({ input: updatedInput });
+                let diameter1Result=Math.pow((updatedSpecsInput.maxPower.value/(updatedDiameterInput.cp1.value*updatedEnvironmentInput.density.value* Math.pow((updatedSpecsInput.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
+
+                let diameter2Result=Math.pow((updatedSpecsInput.maxPower.value/(updatedDiameterInput.cp2.value*updatedEnvironmentInput.density.value* Math.pow((updatedSpecsInput.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
+                    updatedDiameterInput.diameter1.value=diameter1Result
+                    updatedDiameterInput.diameter2.value=diameter2Result
+                    // copy the specific field like density, maxPower using data.id from updatedInput
+                    setDiameter({ input: updatedDiameterInput });
                     console.log("updated diameter")
             
                     },[specs])
