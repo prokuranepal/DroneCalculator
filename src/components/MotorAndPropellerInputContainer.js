@@ -5,9 +5,10 @@ import { makeStyles } from '@material-ui/core'
 import InputUnit from './InputUnit';
 import '../App.css'
 import { Specs,Environment,Diameter,Pitch } from '../data/data';
+import Header from './Header'
 
 
-const InputContainer=()=> {
+const SpecsInputContainer=()=> {
 
     const[specs,setSpecs]=useState(Specs)
     const[environment,setEnvironment]=useState(Environment)
@@ -151,7 +152,7 @@ console.log(updatedInput.airspeed1.value,"pitch")
         for(let key in pitch.input){
             pitchInputData.push({id:key,data:pitch.input[key]})
         }
-        console.log(pitchInputData,"pitchInputData")
+        console.log(pitchInputData,"arr1")
         useEffect(
             ()=>{
                 
@@ -166,7 +167,7 @@ console.log(updatedDiameterInput.cp1.value,"diametercheckeffect")
                 let diameter2Result=Math.pow((updatedSpecsInput.maxPower.value/(updatedDiameterInput.cp2.value*updatedEnvironmentInput.density.value* Math.pow((updatedSpecsInput.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
                     updatedDiameterInput.diameter1.value=diameter1Result
                     updatedDiameterInput.diameter2.value=diameter2Result
-                    // copy the specific field like density, maxPower using data.id from updatedInput
+
                     setDiameter({ input: updatedDiameterInput });
                     console.log("updated diameter")
             
@@ -186,80 +187,86 @@ useEffect(()=>{
         // const classes = useStyles();
         console.log(specs,"state")
         return (
-            <div style={{ margin: '0px 20px' }}>
- <Paper elevation={6} className="paper" style={{ padding: '20px 30px',margin:'20px 0px' }}>
-                <div style={{marginTop: '20px'}}>
-                    <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >Specs</Typography>
-                    <div style={{ flexGrow: 1 }}>
-                       
-                            <Grid container spacing={0}>
+            <>
+<Header header='Motor and Propeller Study'/>
+      <Grid container>
+         <div >
+             <Grid container>
 
-
+                <Grid  items xs={6} style={{margin:'20px 0'}} >
+                     <Paper elevation={4} className="paper" style={{ padding: '20px 30px',marginLeft:' 20px',marginRight:'10px' }}>
+                         <div style={{marginTop: '20px'}}>
+                            <Typography variant='h5' style={{ marginBottom: '12px', textAlign: 'center' }} >Motor Specs</Typography>
+                                 <div style={{ flexGrow: 1 }}>
                                 {specsInputData.map(eachInputData => {
                                     return (
-                                        <Grid item xs={6}>
+                                        <Grid item xs={12}>
                                             <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => specsChangeHandler(e, eachInputData)} />
                                         </Grid>
                                     )
                                 })}
-
+                                    </div>         
+                                   </div>
+                              </Paper>
                             </Grid>
-                        
-                    </div>         
-                </div>
-                </Paper>
-                <Paper elevation={6} className="paper" style={{ padding: '20px 30px',margin:'20px 0px' }}>
-                <div style={{margin: '20px 0px'}}>
+                                            
+                     <Grid items xs={6} spacing={0} style={{margin:'20px 0'}}>
+                         <Paper elevation={6} className="paper" style={{ padding: '20px 30px',marginLeft:' 10px',marginRight:'20px' }}>
+                            <div style={{marginTop: '20px'}}>
+                                <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >Propeller diameter selection</Typography>
+                                  <div style={{ flexGrow: 1 }}>
+                                    {diameterInputData.map(eachInputData => {
+                                    return (
+                                        <Grid item xs={12}>
+                                            <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => diameterChangeHandler(e, eachInputData)} />
+                                        </Grid>
+                                    )
+                                })}
+                                 </div>
+                              </div>
+                          </Paper>
+                     </Grid>
 
-                    
-                    <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >Environment</Typography>
+                     <Grid items xs={6}  >
+                          <Paper elevation={4} className="paper" style={{ padding: '20px 30px',marginLeft:'20px',marginRight:'10px' }}>
+                             <div style={{marginTop: '20px'}}>
+                               <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >Environment</Typography>
+                                  <div style={{ flexGrow: 1 }}>                                     
+                                      {environmentInputData.map(eachInputData => {
+                                    return (
+                                        <Grid item xs={12}>
+                                            <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => environmentChangeHandler(e, eachInputData)} />
+                                        </Grid>
+                                    )
+                                })}
+                                </div>           
+                            </div>
+                       </Paper>
+                   </Grid>
 
-                        <Grid container>
-                            {environmentInputData.map(eachInputData => {
-                                return (
-                                    <Grid item xs={6} md={6} lg={6}>
-                                        <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => environmentChangeHandler(e, eachInputData)} />
-                                    </Grid>
-                                )
-                            })}
-                        </Grid>
-                </div>
-                    </Paper>
-
-                    <Paper elevation={6} className="paper" style={{ padding: '20px 30px',margin:'20px 0px' }}>
-                <div style={{margin: '20px 0px'}}>
-                    <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >Propeller and Diameter Selection</Typography>
-
-                        <Grid container>
-                            {diameterInputData.map(eachInputData => {
-                                return (
-                                    <Grid item xs={6} md={6} lg={6}>
-                                        <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => diameterChangeHandler(e, eachInputData)} />
-                                    </Grid>
-                                )
-                            })}
-                        </Grid>
-                </div>
-                    </Paper>
-
-
-                    <Paper elevation={6} className="paper" style={{ padding: '20px 30px',margin:'20px 0px' }}>
-                <div style={{margin: '20px 0px'}}>
-                    <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >Propeller and Diameter Selection</Typography>
-
-                        <Grid container>
-                            {pitchInputData.map(eachInputData => {
-                                return (
-                                    <Grid item xs={6} md={6} lg={6}>
-                                        <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => pitchChangeHandler(e, eachInputData)} />
-                                    </Grid>
-                                )
-                            })}
-                        </Grid>
-                </div>
-                    </Paper>
+                            
+                     <Grid items xs={6} style={{marginTop:'-170px'}}>
+                       <Paper elevation={6} className="paper" style={{ padding: '20px 30px',marginLeft:'10px',marginRight:'20px' }} >
+                          <div style={{marginTop: '20px'}}>
+                             <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >Propeller Pitch selection</Typography>
+                                <div style={{ flexGrow: 1 }}>
+                                   {pitchInputData.map(eachInputData => {
+                                    return (
+                                        <Grid item xs={12}>
+                                            <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => pitchChangeHandler(e, eachInputData)} />
+                                        </Grid>
+                                    )
+                                })}
+                                </div>              
+                              </div>
+                          </Paper>
+                     </Grid>
+                 </Grid>
+                 
             </div>
+        </Grid>
+        </>
         )
     }
 
-export default InputContainer;
+export default SpecsInputContainer;

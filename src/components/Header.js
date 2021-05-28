@@ -12,11 +12,11 @@ const useStyles=makeStyles({
         fontWeight:'bold'
     }
 })
-const Header=()=>{
+const Header=(props)=>{
     const classes=useStyles();
     return(
         <AppBar position='static' className={classes.appContainer}>
-<Typography className={classes.header} variant='h5'>Motor and Propeller Study</Typography>
+<Typography className={classes.header} variant='h5'>{props.header}</Typography>
         </AppBar>
     )
 }
