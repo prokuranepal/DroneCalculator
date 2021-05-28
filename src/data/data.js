@@ -1,39 +1,3 @@
-// export const data=[
-//     {
-//         header:"Specs",
-//         fields:[
-//             {field:'KV Rating'},
-//             {field:'Cells in series'},
-//             {field:'Nominal Voltage'},
-//             {field:'No.load MAX RPM'},                        
-//             {field:'Estimated max percent'},                        
-//             {field:'Max working RPM'},                      
-//             {field:'Max power'},                        
-//             {field:'Altitude'},                        
-//             {field:'Density'},                        
-
-//         ]
-//     },
-//     // {
-//     //     header:"Specs",
-//     //     fields:[
-//     //         {field:'KV Rating',unit:'KV'},
-//     //         {field:'KV Rating',unit:'KV'},
-//     //         {field:'KV Rating',unit:'KV'},
-//     //         {field:'KV Rating',unit:'KV'},                        
-//     //     ]
-//     // },  
-//     // {
-//     //     header:"Specs",
-//     //     fields:[
-//     //         {field:'KV Rating',unit:'KV'},
-//     //         {field:'KV Rating',unit:'KV'},
-//     //         {field:'KV Rating',unit:'KV'},
-//     //         {field:'KV Rating',unit:'KV'},                        
-//     //     ]
-//     // }
-// ]
-
 
 
 export const Specs = {
@@ -216,14 +180,6 @@ export const Sizing={
             input:true,
             parent:'specs'
         },
-        nominalVoltage: {
-            value: 18.5,
-            field: 'Nominal Voltage',
-            name: 'nominalVoltage',
-            input:false,
-            unit:'V',
-            parent:'specs'
-        },
     },
     environment:{
         altitude: {
@@ -244,55 +200,81 @@ export const Sizing={
             parent:'specs'
         },
     },
-    diameter:{
-    airspeed1:{
-        value:15,            
-        field:'airspeed1',
-        name:'airspeed1',
-        input:true,
-        unit:'m/s',
-        parent:'diameter'
-    },
-    airspeed2:{
-        value:24,
-        field:'airspeed2',
-        name:'airspeed2',
-        input:true,
-        unit:'m/s',
-        parent:'diameter'
-    },
-    pitch1:{
-        value:4.88666482,
-        field:'pitch1',
-        name:'pitch1',
-        input:false,
-        unit:'inch',
-        parent:'diameter'
-    },
-    pitch2:{
-        value:7.818663711,
-        field:'pitch2',
-        name:'pitch2',
-        input:false,
-        unit:'inch',
-        parent:'diameter'
-    }
-
-   }
+   
 }
 
+export const arr=[
+    {
+     input:[
+    {
+     kvRating: {
+    value: 830,
+    field: 'KV Rating',
+    unit: 'kv',
+    name: 'kvRating',
+    input:true,
+    parent:'specs'
+},
+cellsInSeries: {
+    value: 5,
+    field: 'Cells in series',
+    name: 'cellsInSeries',
+    input:true,
+    parent:'specs'
+      }
+    },
+ ],
+},
+
+  {
+
+input:[
+    {
+    altitude: {
+        value: 0,
+        field: 'Altitude',
+        unit: 'm',
+        defaultValue: 0,
+        name: 'altitude',
+        input:true,
+        parent:'specs'
+    },
+    density: {
+        value: 1.225,
+        field: 'Density',
+        unit: 'kg/m^3',
+        name: 'density',
+        input:true,
+        parent:'specs'
+    }
+       },
+     ]
+   }
+
+]
+
+
+
 // let arr=[]
-// for (let key in state){
-//     arr.push({data:state[key]})
+// let nest=[]
+// for (let key in Sizing){
+//     arr.push({data:Sizing[key]})
 // }
 // console.log(arr,"arr")
 
 
-
+// for (let key of arr.data)
 // arr.map(each=>{
-//     const {data}=each
-//     console.log(data,"itemsdata")
-//     Object.keys(data).map(item=>{
-//         console.log(data[item],"items")
-//         })
+//     for (let key in each.data){
+// nest.push({id:key,data:each.data[key]})
+//     }
 // })
+
+// for (let i=0;i<arr.length;i++){
+// Object.keys(arr[i]).map(each=>{
+//     return nest.push({id:each,data:arr[i][each]})
+// })
+// }
+
+// console.log(nest,'arrnest')
+
