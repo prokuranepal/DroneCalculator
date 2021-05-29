@@ -7,23 +7,38 @@ import {Sizing} from '../data/data'
 const SizingInputContainer=()=>{
 const[sizing,setSizing]=useState(Sizing)
 
-const sizingChangeHandler=(e)=>{
-console.log(e)
+const sizingChangeHandler=(e,data)=>{
+
+    // const updatedSizing={...sizing,[data.parent]:{...sizing[data.parent],[data.name]:{...sizing[data.name],value:e.target.value}}}
+    // setSizing({sizing:updatedSizing})
+
+    const updatedSizing={...sizing}
+    const parentObj={...updatedSizing[data.parent]}
+    console.log(parentObj,"parentObj")
+    const childObj={...parentObj[data.name],value:e.target.value}
+    console.log(childObj,"childObj")
+    // childObj={...childObj,value:e.target.value}
+    parentObj[data.name]=childObj
+    updatedSizing[data.parent]=parentObj
+    console.log(updatedSizing,"updatedSizing")
+    console.log(sizing,"originalSizing")
+    setSizing({sizing:updatedSizing})
+
 }
 
-
+// console.log(sizing,"updatedSizingOrgi")
 
 let sizingArray=[]
 for(let key in sizing){
     let innerArray=[]
     for (let key2 in sizing[key])
     {
-        innerArray.push({data:sizing[key][key2  ]})
+        innerArray.push({data:sizing[key][key2]})
     }
-    sizingArray.push({[key]:innerArray})
+    sizingArray.push({data:innerArray})
 }
 
-console.log("parentArray", sizingArray)
+console.log("UpdatedSizingArr", sizingArray)
 // let data=sizingArray.map(each=>{
 //     const {data}=each
 //     return (
@@ -34,30 +49,44 @@ console.log("parentArray", sizingArray)
 //     })
 //     )
 // })
-let data=sizingArray.map((parent,index)=>{
-    
-    console.log(parent.input,"parent")
-// return <h1>Header</h1>
-let arr=
-parent.input.map((child,index)=>{
-    
-console.log(child.data,'parentchild')
-return(
-    // <InputUnit key={child.data.name} id={child.data.name} data={child.data} onchange={(e)=>sizingChangeHandler(e,child.data)} />
-    <h1>{child.data.unit}</h1>
-    )
-
-})
-// return {arr} 
-})
 
 
-console.log(data,"datta")
 
     return(
         <>
-        <Header header='Sizing Study'/>
-      {data}
+        <Header header='Motor and Propeller Study'/>
+      <Grid container>
+         <div >
+             <Grid container>
+                 {sizingArray?(
+      sizingArray.map((parent,key)=>{
+    return(
+        
+        <Grid ley={key} items xs={6} style={{margin:'20px 0'}} >
+        <Paper elevation={4} className="paper" style={{ padding: '20px 30px',marginLeft:' 20px',marginRight:'10px' }}>
+            <div style={{marginTop: '20px'}}>
+               <Typography variant='h5' style={{ marginBottom: '12px', textAlign: 'center' }} >Motor Specs</Typography>
+                    <div style={{ flexGrow: 1 }}>        
+                           <Grid item xs={12}>
+
+                 {parent.data.map((child,index)=>{
+                     return(
+                        <InputUnit key={child.data.name} id={child.data.name} data={child.data} onChange={(e)=>sizingChangeHandler(e,child.data)} />
+                     )
+                 })}  
+                  </Grid>
+                   </div>         
+                  </div>
+             </Paper>
+           </Grid>   
+           
+           
+    )
+})
+                 ):''}
+       </Grid>           
+    </div>
+</Grid>
         </>
     )
 }

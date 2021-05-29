@@ -164,110 +164,134 @@ export const Pitch={
 
 
 export const Sizing={
-    input:{
+    missionRequirement:{
         range:{
             value:108,
             unit:'km',
             input:true,
             field:'Range',
-            name:'range'
+            name:'range',
+            parent:'missionRequirement'
         },
         flightTime:{
             value:1.24,
             unit:'hr',
             input:true,
             field:'Flight Time',
-            name:'flightTime'
+            name:'flightTime',
+            parent:'missionRequirement'
+
         },
         payload:{
             value:1.5,
             unit:'kg',
             input:true,
             field:'Payload',
-            name:'payload'
+            name:'payload',
+            parent:'missionRequirement'
+
         }
     },
-    input:{
+    operatingEnvironment:{
         altitude:{
             value:2500,
             unit:'m',
             input:true,
             field:'Altitude',
-            name:'altitude'
+            name:'altitude',
+            parent:'operatingEnvironment'
         },
         airDensity:{
             value:0.9,
             unit:'kg/m^3',
             input:true,
             field:'Air Density',
-            name:'airDensity'
+            name:'airDensity',
+            parent:'operatingEnvironment'
+
         },
         acceleration:{
             value:9.81,
             unit:'m/s^2',
             input:false,
             field:'Acceleration',
-            name:'acceleration'
+            name:'acceleration',
+            parent:'operatingEnvironment'
+
         },
         cruiseSpeed:{
             value:20,
             unit:'m/s',
             input:true,
             field:'Cruise Speed',
-            name:'cruiseSpeed'
+            name:'cruiseSpeed',
+            parent:'operatingEnvironment'
+
         },
         stallSpeed:{
             value:15,
             unit:'m/s',
             input:true,
             field:'Stall Speed',
-            name:'stallSpeed'
+            name:'stallSpeed',
+            parent:'operatingEnvironment'
+
         }
     },
-    input:{
+    mass:{
         totalMass:{
             value:12,
             unit:'kg',
             input:true,
             field:'Total Mass',
-            name:'totalMass'
+            name:'totalMass',
+            parent:'mass'
         },
         batteryMass:{
             value:3.85,
             unit:'kg',
             input:true,
             field:'Battery Mass',
-            name:'batteryMass'
+            name:'batteryMass',
+            parent:'mass'
+
         }
     },
-    input:{
+    wing:{
         span:{
             value:2.6,
             unit:'m',
             input:true,
             field:'Span',
-            name:'span'
+            name:'span',
+            parent:'wing'
         },
         aspectRatio:{
             value:8,
             unit:'',
             input:true,
             field:'Aspect ratio',
-            name:'aspectRatio'
+            name:'aspectRatio',
+            parent:'wing'
+
         },
         inducedDragFactor:{
             value:0.04,
             input:true,
             unit:"",
             field:'Induced Drag Factor',
-            name:"inducedDragFactor"
+            name:"inducedDragFactor",
+            parent:'wing'
+
         },
         tapperRatio:{
             value:0.04,
             unit:'',
             input:true,
             field:'Tapper Ratio',
-            name:'tapperRatio'
+            name:'tapperRatio',
+            parent:'wing'
+
         }
     }
 }

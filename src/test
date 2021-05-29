@@ -304,3 +304,42 @@ const sizing={
         }
     }
 }
+
+
+
+
+
+
+
+
+
+let data=sizingArray.map((parent,index)=>{
+    
+    console.log(parent,"parent")
+// return <h1>Header</h1>
+let arr=
+parent.data.map((child,index)=>{
+    
+console.log(child.data,'parentchild')
+return(
+    <Grid  items xs={6} style={{margin:'20px 0'}} >
+    <Paper elevation={4} className="paper" style={{ padding: '20px 30px',marginLeft:' 20px',marginRight:'10px' }}>
+        <div style={{marginTop: '20px'}}>
+           <Typography variant='h5' style={{ marginBottom: '12px', textAlign: 'center' }} >Motor Specs</Typography>
+                <div style={{ flexGrow: 1 }}>        
+                       <Grid item xs={12}>
+         <InputUnit key={child.data.name} id={child.data.name} data={child.data} onchange={(e)=>sizingChangeHandler(e,child.data)} />
+                           {/* <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => sizingChangeHandler(e, eachInputData.data)} /> */}
+                       </Grid>
+                   </div>         
+                  </div>
+             </Paper>
+           </Grid>
+    )
+
+})
+return arr
+})
+
+
+console.log(data,"datta")
