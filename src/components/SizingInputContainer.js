@@ -2,10 +2,10 @@ import React,{useState} from 'react';
 import Header from './Header'
 import { Paper, Typography, TextField, Container, Grid } from '@material-ui/core'
 import InputUnit from './InputUnit';
-import {arr} from '../data/data'
+import {Sizing} from '../data/data'
 
 const SizingInputContainer=()=>{
-const[array,setArr]=useState(arr)
+const[sizing,setSizing]=useState(Sizing)
 
 const sizingChangeHandler=(e)=>{
 console.log(e)
@@ -13,11 +13,17 @@ console.log(e)
 
 
 
-// let sizingArray=[]
-// for(let key in sizing){
-//     sizingArray.push({data:sizing[key]})
-// }
-// console.log(sizingArray,"ssizingA")
+let sizingArray=[]
+for(let key in sizing){
+    let innerArray=[]
+    for (let key2 in sizing[key])
+    {
+        innerArray.push({data:sizing[key][key2  ]})
+    }
+    sizingArray.push({[key]:innerArray})
+}
+
+console.log("parentArray", sizingArray)
 // let data=sizingArray.map(each=>{
 //     const {data}=each
 //     return (
@@ -28,28 +34,30 @@ console.log(e)
 //     })
 //     )
 // })
-
-console.log(array,"array")
-let data=array.map(each=>{
-    console.log(each,"each")
+let data=sizingArray.map((parent,index)=>{
     
-    each.map(sub=>{
-        return <InputUnit key={sub.field} id={sub.field} data={sub} onChange={(e)=>sizingChangeHandler(e,sub.name)}/>
-    })
+    console.log(parent.input,"parent")
+// return <h1>Header</h1>
+let arr=
+parent.input.map((child,index)=>{
+    
+console.log(child.data,'parentchild')
+return(
+    // <InputUnit key={child.data.name} id={child.data.name} data={child.data} onchange={(e)=>sizingChangeHandler(e,child.data)} />
+    <h1>{child.data.unit}</h1>
+    )
+
 })
+// return {arr} 
+})
+
+
+console.log(data,"datta")
 
     return(
         <>
         <Header header='Sizing Study'/>
-     {   array.map((each,index)=>{
-    console.log(typeof (each.input),"each")
-    
-   { each.input.map(sub=>{
-        return <InputUnit key={sub.field} id={sub.field} data={sub} onChange={(e)=>sizingChangeHandler(e,sub.name)}/>
-    })
-}
-})
-}
+      {data}
         </>
     )
 }

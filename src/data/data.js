@@ -164,94 +164,115 @@ export const Pitch={
 
 
 export const Sizing={
-    specs:{
-        kvRating: {
-            value: 830,
-            field: 'KV Rating',
-            unit: 'kv',
-            name: 'kvRating',
+    input:{
+        range:{
+            value:108,
+            unit:'km',
             input:true,
-            parent:'specs'
+            field:'Range',
+            name:'range'
         },
-        cellsInSeries: {
-            value: 5,
-            field: 'Cells in series',
-            name: 'cellsInSeries',
+        flightTime:{
+            value:1.24,
+            unit:'hr',
             input:true,
-            parent:'specs'
+            field:'Flight Time',
+            name:'flightTime'
         },
+        payload:{
+            value:1.5,
+            unit:'kg',
+            input:true,
+            field:'Payload',
+            name:'payload'
+        }
     },
-    environment:{
-        altitude: {
-            value: 0,
-            field: 'Altitude',
-            unit: 'm',
-            defaultValue: 0,
-            name: 'altitude',
+    input:{
+        altitude:{
+            value:2500,
+            unit:'m',
             input:true,
-            parent:'specs'
+            field:'Altitude',
+            name:'altitude'
         },
-        density: {
-            value: 1.225,
-            field: 'Density',
-            unit: 'kg/m^3',
-            name: 'density',
+        airDensity:{
+            value:0.9,
+            unit:'kg/m^3',
             input:true,
-            parent:'specs'
+            field:'Air Density',
+            name:'airDensity'
         },
+        acceleration:{
+            value:9.81,
+            unit:'m/s^2',
+            input:false,
+            field:'Acceleration',
+            name:'acceleration'
+        },
+        cruiseSpeed:{
+            value:20,
+            unit:'m/s',
+            input:true,
+            field:'Cruise Speed',
+            name:'cruiseSpeed'
+        },
+        stallSpeed:{
+            value:15,
+            unit:'m/s',
+            input:true,
+            field:'Stall Speed',
+            name:'stallSpeed'
+        }
     },
-   
+    input:{
+        totalMass:{
+            value:12,
+            unit:'kg',
+            input:true,
+            field:'Total Mass',
+            name:'totalMass'
+        },
+        batteryMass:{
+            value:3.85,
+            unit:'kg',
+            input:true,
+            field:'Battery Mass',
+            name:'batteryMass'
+        }
+    },
+    input:{
+        span:{
+            value:2.6,
+            unit:'m',
+            input:true,
+            field:'Span',
+            name:'span'
+        },
+        aspectRatio:{
+            value:8,
+            unit:'',
+            input:true,
+            field:'Aspect ratio',
+            name:'aspectRatio'
+        },
+        inducedDragFactor:{
+            value:0.04,
+            input:true,
+            unit:"",
+            field:'Induced Drag Factor',
+            name:"inducedDragFactor"
+        },
+        tapperRatio:{
+            value:0.04,
+            unit:'',
+            input:true,
+            field:'Tapper Ratio',
+            name:'tapperRatio'
+        }
+    }
 }
 
-export const arr=[
-    {
-     input:[
-    {
-     kvRating: {
-    value: 830,
-    field: 'KV Rating',
-    unit: 'kv',
-    name: 'kvRating',
-    input:true,
-    parent:'specs'
-},
-cellsInSeries: {
-    value: 5,
-    field: 'Cells in series',
-    name: 'cellsInSeries',
-    input:true,
-    parent:'specs'
-      }
-    },
- ],
-},
 
-  {
-
-input:[
-    {
-    altitude: {
-        value: 0,
-        field: 'Altitude',
-        unit: 'm',
-        defaultValue: 0,
-        name: 'altitude',
-        input:true,
-        parent:'specs'
-    },
-    density: {
-        value: 1.225,
-        field: 'Density',
-        unit: 'kg/m^3',
-        name: 'density',
-        input:true,
-        parent:'specs'
-    }
-       },
-     ]
-   }
-
-]
 
 
 
