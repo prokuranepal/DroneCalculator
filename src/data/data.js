@@ -1,39 +1,3 @@
-// export const data=[
-//     {
-//         header:"Specs",
-//         fields:[
-//             {field:'KV Rating'},
-//             {field:'Cells in series'},
-//             {field:'Nominal Voltage'},
-//             {field:'No.load MAX RPM'},                        
-//             {field:'Estimated max percent'},                        
-//             {field:'Max working RPM'},                      
-//             {field:'Max power'},                        
-//             {field:'Altitude'},                        
-//             {field:'Density'},                        
-
-//         ]
-//     },
-//     // {
-//     //     header:"Specs",
-//     //     fields:[
-//     //         {field:'KV Rating',unit:'KV'},
-//     //         {field:'KV Rating',unit:'KV'},
-//     //         {field:'KV Rating',unit:'KV'},
-//     //         {field:'KV Rating',unit:'KV'},                        
-//     //     ]
-//     // },  
-//     // {
-//     //     header:"Specs",
-//     //     fields:[
-//     //         {field:'KV Rating',unit:'KV'},
-//     //         {field:'KV Rating',unit:'KV'},
-//     //         {field:'KV Rating',unit:'KV'},
-//     //         {field:'KV Rating',unit:'KV'},                        
-//     //     ]
-//     // }
-// ]
-
 
 
 export const Specs = {
@@ -200,99 +164,138 @@ export const Pitch={
 
 
 export const Sizing={
-    specs:{
-        kvRating: {
-            value: 830,
-            field: 'KV Rating',
-            unit: 'kv',
-            name: 'kvRating',
+    input:{
+        range:{
+            value:108,
+            unit:'km',
             input:true,
-            parent:'specs'
+            field:'Range',
+            name:'range'
         },
-        cellsInSeries: {
-            value: 5,
-            field: 'Cells in series',
-            name: 'cellsInSeries',
+        flightTime:{
+            value:1.24,
+            unit:'hr',
             input:true,
-            parent:'specs'
+            field:'Flight Time',
+            name:'flightTime'
         },
-        nominalVoltage: {
-            value: 18.5,
-            field: 'Nominal Voltage',
-            name: 'nominalVoltage',
+        payload:{
+            value:1.5,
+            unit:'kg',
+            input:true,
+            field:'Payload',
+            name:'payload'
+        }
+    },
+    input:{
+        altitude:{
+            value:2500,
+            unit:'m',
+            input:true,
+            field:'Altitude',
+            name:'altitude'
+        },
+        airDensity:{
+            value:0.9,
+            unit:'kg/m^3',
+            input:true,
+            field:'Air Density',
+            name:'airDensity'
+        },
+        acceleration:{
+            value:9.81,
+            unit:'m/s^2',
             input:false,
-            unit:'V',
-            parent:'specs'
+            field:'Acceleration',
+            name:'acceleration'
         },
-    },
-    environment:{
-        altitude: {
-            value: 0,
-            field: 'Altitude',
-            unit: 'm',
-            defaultValue: 0,
-            name: 'altitude',
+        cruiseSpeed:{
+            value:20,
+            unit:'m/s',
             input:true,
-            parent:'specs'
+            field:'Cruise Speed',
+            name:'cruiseSpeed'
         },
-        density: {
-            value: 1.225,
-            field: 'Density',
-            unit: 'kg/m^3',
-            name: 'density',
+        stallSpeed:{
+            value:15,
+            unit:'m/s',
             input:true,
-            parent:'specs'
+            field:'Stall Speed',
+            name:'stallSpeed'
+        }
+    },
+    input:{
+        totalMass:{
+            value:12,
+            unit:'kg',
+            input:true,
+            field:'Total Mass',
+            name:'totalMass'
         },
+        batteryMass:{
+            value:3.85,
+            unit:'kg',
+            input:true,
+            field:'Battery Mass',
+            name:'batteryMass'
+        }
     },
-    diameter:{
-    airspeed1:{
-        value:15,            
-        field:'airspeed1',
-        name:'airspeed1',
-        input:true,
-        unit:'m/s',
-        parent:'diameter'
-    },
-    airspeed2:{
-        value:24,
-        field:'airspeed2',
-        name:'airspeed2',
-        input:true,
-        unit:'m/s',
-        parent:'diameter'
-    },
-    pitch1:{
-        value:4.88666482,
-        field:'pitch1',
-        name:'pitch1',
-        input:false,
-        unit:'inch',
-        parent:'diameter'
-    },
-    pitch2:{
-        value:7.818663711,
-        field:'pitch2',
-        name:'pitch2',
-        input:false,
-        unit:'inch',
-        parent:'diameter'
+    input:{
+        span:{
+            value:2.6,
+            unit:'m',
+            input:true,
+            field:'Span',
+            name:'span'
+        },
+        aspectRatio:{
+            value:8,
+            unit:'',
+            input:true,
+            field:'Aspect ratio',
+            name:'aspectRatio'
+        },
+        inducedDragFactor:{
+            value:0.04,
+            input:true,
+            unit:"",
+            field:'Induced Drag Factor',
+            name:"inducedDragFactor"
+        },
+        tapperRatio:{
+            value:0.04,
+            unit:'',
+            input:true,
+            field:'Tapper Ratio',
+            name:'tapperRatio'
+        }
     }
-
-   }
 }
 
+
+
+
+
 // let arr=[]
-// for (let key in state){
-//     arr.push({data:state[key]})
+// let nest=[]
+// for (let key in Sizing){
+//     arr.push({data:Sizing[key]})
 // }
 // console.log(arr,"arr")
 
 
-
+// for (let key of arr.data)
 // arr.map(each=>{
-//     const {data}=each
-//     console.log(data,"itemsdata")
-//     Object.keys(data).map(item=>{
-//         console.log(data[item],"items")
-//         })
+//     for (let key in each.data){
+// nest.push({id:key,data:each.data[key]})
+//     }
 // })
+
+// for (let i=0;i<arr.length;i++){
+// Object.keys(arr[i]).map(each=>{
+//     return nest.push({id:each,data:arr[i][each]})
+// })
+// }
+
+// console.log(nest,'arrnest')
+

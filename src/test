@@ -194,3 +194,113 @@ const InputContainer=()=> {
     }
 
 export default InputContainer;
+
+
+const sizing={
+    missionRequirement:{
+        range:{
+            value:108,
+            unit:'km',
+            input:true,
+            field:'Range',
+            name:'range'
+        },
+        flightTime:{
+            value:1.24,
+            unit:'hr',
+            input:true,
+            field:'Flight Time',
+            name:'flightTime'
+        },
+        payload:{
+            value:1.5,
+            unit:'kg',
+            input:true,
+            field:'Payload',
+            name:'payload'
+        }
+    },
+    operatingEnvironment:{
+        altitude:{
+            value:2500,
+            unit:'m',
+            input:true,
+            field:'Altitude',
+            name:'altitude'
+        },
+        airDensity:{
+            value:0.9,
+            unit:'kg/m^3',
+            input:true,
+            field:'Air Density',
+            name:'airDensity'
+        },
+        acceleration:{
+            value:9.81,
+            unit:'m/s^2',
+            input:false,
+            field:'Acceleration',
+            name:'acceleration'
+        },
+        cruiseSpeed:{
+            value:20,
+            unit:'m/s',
+            input:true,
+            field:'Cruise Speed',
+            name:'cruiseSpeed'
+        },
+        stallSpeed:{
+            value:15,
+            unit:'m/s',
+            input:true,
+            field:'Stall Speed',
+            name:'stallSpeed'
+        }
+    },
+    mass:{
+        totalMass:{
+            value:12,
+            unit:'kg',
+            input:true,
+            field:'Total Mass',
+            name:'totalMass'
+        },
+        batteryMass:{
+            value:3.85,
+            unit:'kg',
+            input:true,
+            field:'Battery Mass',
+            name:'batteryMass'
+        }
+    },
+    Wing:{
+        span:{
+            value:2.6,
+            unit:'m',
+            input:true,
+            field:'Wing',
+            name:'wing'
+        },
+        aspectRatio:{
+            value:8,
+            unit:'',
+            input:true,
+            field:'Aspect ratio',
+            name:'aspectRatio'
+        },
+        inducedDragFactor:{
+            value:0.04,
+            input:true,
+            unit:"",
+            field:'Induced Drag Factor',
+            name:"inducedDragFactor"
+        },
+        tapperRatio:{
+            value:0.04,
+            unit:'',
+            input:true,
+            field:'Tapper Ratio',
+            name:'tapperRatio'
+        }
+    }
+}
