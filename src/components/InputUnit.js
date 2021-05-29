@@ -47,6 +47,7 @@ const CssTextField = withStyles({
 const InputUnit = (props) => {
   const classes = useStyles()
   // console.log(props, 'props')
+  // console.log(props.onChange,"change")
   const { field, unit, name, value, defaultValue,input } = props.data;
   // console.log(name, 'nameee')
   return (
