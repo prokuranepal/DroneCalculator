@@ -161,7 +161,12 @@ export const Pitch={
 // console.log(arr1,'arr1')
 // console.log(arr2,'arr2')
 
-
+export const title ={
+    missionRequirement:"Mission Requirement",
+    operatingEnvironment: "Operating Requirement",
+    mass: "Mass",
+    wing:"Wing"
+}
 
 export const Sizing={
     missionRequirement:{
@@ -171,7 +176,7 @@ export const Sizing={
             input:true,
             field:'Range',
             name:'range',
-            parent:'missionRequirement'
+            parent:'missionRequirement',
         },
         flightTime:{
             value:1.24,
@@ -191,6 +196,7 @@ export const Sizing={
             parent:'missionRequirement'
 
         }
+
     },
     operatingEnvironment:{
         altitude:{

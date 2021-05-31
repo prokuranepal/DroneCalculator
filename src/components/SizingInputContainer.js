@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Header from './Header'
 import { Paper, Typography, TextField, Container, Grid } from '@material-ui/core'
 import InputUnit from './InputUnit';
-import {Sizing} from '../data/data'
+import {Sizing, title} from '../data/data'
 
 const SizingInputContainer=()=>{
 const[sizing,setSizing]=useState(Sizing)
@@ -14,7 +14,7 @@ const sizingChangeHandler=(e,data)=>{
 
     const updatedSizing={...sizing}
     const parentObj={...updatedSizing[data.parent]}
-    console.log(parentObj,"parentObj")
+    console.log(parentObj,"parentObj",data)
     const childObj={...parentObj[data.name],value:e.target.value}
     console.log(childObj,"childObj")
     // childObj={...childObj,value:e.target.value}
@@ -22,11 +22,11 @@ const sizingChangeHandler=(e,data)=>{
     updatedSizing[data.parent]=parentObj
     console.log(updatedSizing,"updatedSizing")
     console.log(sizing,"originalSizing")
-    setSizing({sizing:updatedSizing})
+    setSizing(updatedSizing)
 
 }
 
-// console.log(sizing,"updatedSizingOrgi")
+console.log(sizing,"updatedSizingOrgi")
 
 let sizingArray=[]
 for(let key in sizing){
@@ -35,7 +35,7 @@ for(let key in sizing){
     {
         innerArray.push({data:sizing[key][key2]})
     }
-    sizingArray.push({data:innerArray})
+    sizingArray.push({data:innerArray, title:title[key]})
 }
 
 console.log("UpdatedSizingArr", sizingArray)
@@ -65,7 +65,7 @@ console.log("UpdatedSizingArr", sizingArray)
         <Grid ley={key} items xs={6} style={{margin:'20px 0'}} >
         <Paper elevation={4} className="paper" style={{ padding: '20px 30px',marginLeft:' 20px',marginRight:'10px' }}>
             <div style={{marginTop: '20px'}}>
-               <Typography variant='h5' style={{ marginBottom: '12px', textAlign: 'center' }} >Motor Specs</Typography>
+               <Typography variant='h5' style={{ marginBottom: '12px', textAlign: 'center' }}>{parent.title}</Typography>
                     <div style={{ flexGrow: 1 }}>        
                            <Grid item xs={12}>
 
