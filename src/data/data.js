@@ -165,7 +165,14 @@ export const title ={
     missionRequirement:"Mission Requirement",
     operatingEnvironment: "Operating Requirement",
     mass: "Mass",
-    wing:"Wing"
+    wing: "Wing",
+    calculatedWing:"Calculated Wing",
+    horizontalTail: "Horizontal Tail",
+    calculatedHorizontalTail: "Calculated Horizontal Tail",
+    verticalTail: "Vertical Tail",
+    calculatedVerticalTail: "Calculated Vertical Tail",
+    drag: "Drag",
+    general: "General"
 }
 
 export const Sizing={
@@ -244,25 +251,6 @@ export const Sizing={
 
         }
     },
-    mass:{
-        totalMass:{
-            value:12,
-            unit:'kg',
-            input:true,
-            field:'Total Mass',
-            name:'totalMass',
-            parent:'mass'
-        },
-        batteryMass:{
-            value:3.85,
-            unit:'kg',
-            input:true,
-            field:'Battery Mass',
-            name:'batteryMass',
-            parent:'mass'
-
-        }
-    },
     wing:{
         span:{
             value:2.6,
@@ -291,7 +279,7 @@ export const Sizing={
 
         },
         tapperRatio:{
-            value:0.04,
+            value:0.6,
             unit:'',
             input:true,
             field:'Tapper Ratio',
@@ -299,7 +287,290 @@ export const Sizing={
             parent:'wing'
 
         }
-    }
+    },
+    calculatedWing:{
+        wingArea:{
+            value:0.8450000000000001,
+            unit:'m^2',
+            input:false,
+            name:'wingArea',
+            field:'Wing Area',
+            parent:'calculatedWing'
+        },
+        rootChord:{
+            value:0.40625,
+            unit:'m',
+            input:false,
+            name:'rootChord',
+            field:'Root Chord',
+            parent:'calculatedWing'
+        },
+        tipChord:{
+            value:0.24375,
+            unit:'m',
+            input:false,
+            name:'tipChord',
+            field:'Tip Chord',
+            parent:'calculatedWing'
+        },
+        meanAerodynamicChord:{
+            value:0.3317708333,
+            unit:'m',
+            input:false,
+            name:'meanAerodynamicChord',
+            field:'Mean Aerodynamic Chord',
+            parent:'calculatedWing'
+        }
+    },
+  
+    horizontalTail:{
+        cht:{
+            value:0.9,
+            unit:'',
+            input:true,
+            field:'CHT',
+            name:'cht',
+            parent:'horizontalTail'
+        },
+        lht:{
+            value:1.451,
+            unit:'m',
+            input:true,
+            name:'lht',
+            field:'LHT',
+            parent:'horizontalTail'
+        },
+        span:{
+            value:0.9,
+            unit:'m',
+            input:true,
+            name:'span',
+            field:'Span',
+            parent:'horizontalTail'
+        },
+        tapperRatio:{
+            value:0.7,
+            unit:'',
+            input:true,
+            name:'tapperRatio',
+            field:'Taper Ratio',
+            parent:'horizontalTail'
+        }
+    },
+    calculatedHorizontalTail:{
+        sht:{
+            value:0.173888159,
+            unit:'m^2',
+            input:false,
+            name:'sht',
+            field:'SHT',
+            
+        },
+        rootChord:{
+            value:0.227304783,
+            unit:'m',
+            input:false,
+            name:'rootChord',
+            field:'Root Chord',
+        },
+        tipChord:{
+            value:0.1591133481,
+            unit:'m',
+            input:false,
+            name:'tipChord',
+            field:'Tip Chord'
+
+        }
+    },
+    verticalTail:{
+        cvt:{
+            value:0.07,
+            unit:'',
+            input:true,
+            field:'CVT',
+            name:'cvt',
+            parent:'verticalTail'
+        },
+        lvt:{
+            value:1.451,
+            unit:'m',
+            input:true,
+            name:'lvt',
+            field:'LVT',
+            parent:'verticalTail'
+        },
+        span:{
+            value:0.5,
+            unit:'m',
+            input:true,
+            name:'span',
+            field:'Span',
+            parent:'verticalTail'
+        },
+        tapperRatio:{
+            value:0.7,
+            unit:'',
+            input:true,
+            name:'tapperRatio',
+            field:'Tapper Ratio',
+            parent:'verticalTail'
+        }
+    },
+    calculatedVerticalTail:{
+        svt:{
+            value:0.1059889731,
+            unit:'m^2',
+            input:false,
+            name:'svt',
+            field:'SVT'
+        },
+        rootChord:{
+            value:0.24835858191,
+            unit:'m',
+            input:false,
+            name:'rootChord',
+            field:'Root Chord'
+        },
+        tipChord:{
+            value:0.1745700734,
+            unit:'m',
+            input:false,
+            name:'tipChord',
+            field:'Tip Chord'
+        }
+    },
+    mass:{
+        totalMass:{
+            value:12,
+            unit:'kg',
+            input:true,
+            field:'Total Mass',
+            name:'totalMass',
+            parent:'mass'
+        },
+        batteryMass:{
+            value:3.85,
+            unit:'kg',
+            input:true,
+            field:'Battery Mass',
+            name:'batteryMass',
+            parent:'mass'
+
+        }
+    },
+    drag:{
+        wingZeroLiftDragCoefficient:{
+         value:0.09,
+         unit:'',
+         input:true,
+         name:'wingZeroLiftDragCoefficient',
+         field:'Wing Zero Lift Drag Coefficient',
+         parent:'drag'   
+        },
+        fuselageDragCoefficient:{
+            value:0.02,
+            unit:'',
+            input:true,
+            name:'fuselageDragCoefficient',
+            field:'Fuselage Drag Coefficient',
+            parent:'drag'
+        }
+    },
+    general:{
+        massFraction:{
+            value:44.58333333,
+            unit:'%',
+            input:false,
+            name:'massFraction',
+            field:"Mass Fraction",
+            parent:'general'   
+        },
+        ostwaldEfficiency:{
+            value:0.96153384615,
+            unit:'',
+            input:false,
+            name:'ostwaldEfficiency',
+            field:'Ostwald Efficiency',
+            parent:'general'
+        },
+        k:{
+            value:0.0413802852,
+            unit:'',
+            input:false,
+            name:'k',
+            field:'K',
+            parent:'general'
+        },
+            minDragAirspeed:{
+                value:13.779173019,
+                unit:'m/s',
+                name:'minDragAirspeed',
+                field:'Min Drag Airspeed',
+                parent:'general'
+            },
+            minPowerAirspeed:{
+                value:10.47033073,
+                unit:'m/s',
+                name:'minPowerAirspeed',
+                field:'Min Power Airspeed',
+                parent:'general'
+            },
+            maxLiftCoefficient:{
+                value:1.375936884,
+                unit:'',
+                input:false,
+                name:'maxLiftCoefficient',
+                field:'Max Lift Coefficient',
+                parent:'general'
+            },
+            designLiftCoefficient:{
+                value:0.77396497,
+                unit:'',
+                input:false,
+                name:'designLiftCoefficient',
+                field:'Design Lift Coefficient',
+                parent:'general'
+            },
+            inducedDragCoefficient:{
+                value:0.02478766159,
+                unit:'',
+                input:false,
+                name:'inducedDragCoefficient',
+                field:'Induced Drag Coefficient',
+                parent:'general'
+            },
+            totalDragCoefficient:{
+                value:0.134786616,
+                unit:'',
+                input:false,
+                name:'totalDragCoefficient',
+                field:'Total Drag Coefficient',
+                parent:'general'
+            },
+            drag:{
+                value:2.089827047,
+                unit:'',
+                input:false,
+                name:'drag',
+                field:'Drag',
+                parent:'general'
+            },
+            liftToDragRatio:{
+                value:31.2237802,
+                unit:'',
+                input:false,
+                name:'liftToDragRatio',
+                field:'Lift To Drag Ratio',
+                parent:'general'
+            }
+        
+
+    },
+   
+  
+   
+    
+
 }
 
 
