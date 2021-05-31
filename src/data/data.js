@@ -554,14 +554,113 @@ export const Sizing={
                 field:'Lift To Drag Ratio',
                 parent:'general'
             }
-        
-
     },
-   
-  
-   
-    
-
+    motorAndBattery:{
+        powerToWeightRatio:{
+            value:250,
+            uit:'W/kg',
+            input:true,
+            field:'Motor and Battery',
+            name:'powerToWeightRatio',
+            parent:'motorAndBattery',
+        },
+        nominalVolatage:{
+            value:37,
+            unit:'V',
+            input:true,
+            field:'Nominal Voltage',
+            name:'nominalVoltage',
+            parent:'motorAndBattery'
+        },
+        maximumDischarge:{
+            value:90,
+            unit:'%',
+            input:true,
+            field:'Maximum Discharge',
+            name:'maximumDischarge',
+            parent:'motorAndBattery'
+        },
+        maxContinousCurrent:{
+            value:100,
+            unit:'A',
+            input:true,
+            field:'Max Continous Current',
+            name:'maxContinousCurrent',
+            parent:'motorAndBattery'
+        },
+        propullisiveEfficiency:{
+            value:50,
+            unit:'%',
+            input:true,
+            field:'Propullisive Efficiency',
+            name:'propullisiveEfficiency',
+            parent:'motorAndBattery',
+        },
+        maxPower:{
+            value:3000,
+            unit:'W',
+            input:false,
+            field:'Max Power',
+            name:'maxPower',
+            parent:'motorAndBattery',
+        },
+        powerCruise:{
+            value:1179.611878,
+            unit:'W',
+            input:false,
+            field:'Power Cruise',
+            name:'powerCruise',
+            parent:'motorAndBattery',
+        },
+        currentCruise:{
+            value:57.96618564,
+            unit:'A',
+            input:false,
+            field:'Current Cruise',
+            name:'currentCruise',
+            parent:'motorAndBattery',
+        },
+        batteryCapacityy:{
+            value:79864.52243,
+            unit:'mAh',
+            input:false,
+            field:'Battery Capacity',
+            name:'batteryCapacityy',
+            parent:'motorAndBattery',
+        },
+        rangeCruiseSpeed:{
+            value:133.92,
+            unit:'km',
+            input:false,
+            name:'rangeCruiseSpeed',
+            field:'Range Cruise Speed',
+            parent:'motorAndBattery',
+        },
+        batteryCapacity:{
+            value:25700,
+            unit:'mAh',
+            input:true,
+            name:'battteryCapacity',
+            field:'Battery capacity',
+            parent:'motorAndBattery',
+        },
+        capacityOfEachCell:{
+            value:3671.428571,
+            unit:'mAh',
+            input:false,
+            name:'capacityOfEachCell',
+            field:'Capacity of each cell',
+            parent:'motorAndBattery',
+        },
+        cRating:{
+            value:27.23735409,
+            unit:'',
+            input:false,
+            name:'cRating',
+            field:'C Rating',
+            parent:'motorAndBattery',
+        }
+    }
 }
 
 
