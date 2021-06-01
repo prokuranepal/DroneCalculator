@@ -28,7 +28,7 @@ const SpecsInputContainer=()=> {
     const[pitch,setPitch]=useState(pitchData)
 
     const dispatch=useDispatch()
-
+    console.log("redux test", specs)
    const specsChangeHandler = (e, data) => {
         // console.log(e.target.value, data.id);
         dispatch({type:'specs',data:{...data,value:+e.target.value} })

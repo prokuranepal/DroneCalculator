@@ -60,9 +60,15 @@ const initialState = {
            case "specs":
                console.log(action,"aa")
             console.log({...state.input,[action.data.id]:{...state.input[action.data.id],value:action.data.value}},"action")
-
-
-           return{...state.input,[action.data.id]:{...state.input[action.data.id],value:action.data.value}};
+           return{...state, 
+                        input:  {
+                                ...state.input,
+                                [action.data.id]:{
+                                    ...state.input[action.data.id],
+                                    value:action.data.value
+                                     }
+                                }
+                    };
 
             //    return{
             //        ...state.input,[action.data.id]:{...state.input[action.data.id]}
