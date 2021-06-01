@@ -9,6 +9,8 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import '../App.css'
 import Input from '@material-ui/core/Input';
 import { makeStyles, withStyles } from '@material-ui/core'
+import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
+import { Output } from './Output';
 const useStyles = makeStyles((theme) => ({
   input: {
     display: 'flex',
@@ -49,14 +51,28 @@ const InputUnit = (props) => {
   // console.log(props, 'props')
   // console.log(props.onChange,"change")
   const { field, unit, name, value, defaultValue,input } = props.data;
-  // console.log(name, 'nameee')
+  const id=props.id;
+  let message=null;
+  switch(id){
+    case "flightTimeBatteryCapacity":
+message="For Flight Time"
+break;
+
+case "rangeBatteryCapacity":
+  message="For Range "
+  break;
+  default:
+    message=null
+  }
+  console.log(id, 'id')
+  console.log(message,"message")
   return (
     // <Container>
-      <div className="input"  >
+      <div className={`${message?'messege input':'input'}`}  >
+        {/* <h1>{message}</h1> */}
         <Typography style={{textAlign: 'left'}} variant="body1">{field}</Typography>
         {input?  <CssTextField
           id="standard-number"
-          // label="Enter number only"
           type="number"
           size='small'
           defaultValue={value}
@@ -66,9 +82,11 @@ const InputUnit = (props) => {
           onChange={props.onChange}
           variant='outlined'
           color='primary'
+          // helperText={message?message:''}
           value={value>0?value:0}
           autoFocus
-        />:<Box component="span" style={{background:"#3F51B5",width:"70px",textAlign:'center', color:'white',padding:"13px 0px",borderRadius:"4px",fontWeight:'500',overflow:'auto'}} display="block">{value?value:0}</Box>}
+        />:<Output value={value} message={message}/>
+        }
       
         <Typography style={{textAlign: 'left'}} variant="body1">{unit?unit:null}</Typography>
 
