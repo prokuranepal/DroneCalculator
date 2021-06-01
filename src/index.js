@@ -3,35 +3,52 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import    {Provider} from 'react-redux'
-import thunk from 'redux-thunk'
+// import thunk from 'redux-thunk'
 import {specsReducer} from './components/store/reducers/Specs'
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+
 import {pitchReducer} from './components/store/reducers/Pitch'
 import {environmentReducer} from './components/store/reducers/Environment';
 import {diameterReducer} from './components/store/reducers/Diameter'
 import {sizingReducer} from './components/store/reducers/SizingReducer'
-import {createStore,applyMiddleware,compose,combineReducers} from 'redux'
+import {createStore,compose,combineReducers} from 'redux'
 import {BrowserRouter} from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+import { PersistGate } from 'redux-persist/integration/react'
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer=combineReducers({
   specsReducer:specsReducer,
   pitchReducer:pitchReducer,
   environmentReducer:environmentReducer,
   diameterReducer:diameterReducer,
   sizingReducer:sizingReducer,
-  // burgerBuilder:burgerBuilder,
-  // order:orderReducer,
-  // authReducer:authReducer
 })
 
-const store=createStore(rootReducer,composeEnhancers(applyMiddleware(thunk)));
-console.log(store,"storee")
+// const store=createStore(rootReducer);
+
+const persistConfig = {
+  key:'root',
+  storage,
+  whitelist:['sizingReducer','specsReducer','pitchReducer','environmentReducer','diameterReducer'],
+}
+ const persistedReducer=  persistReducer(persistConfig,rootReducer)
+// console.log(persistReducer(persistConfig,rootReducer),"perss")
+const store=createStore(
+  persistedReducer
+)
+const persistor=persistStore(store)
+// console.log(persistor,"per")
+// console.log(store,"storee")
+
+
 ReactDOM.render(
+
   <Provider store={store}>
-  <BrowserRouter>
-    <React.StrictMode>
+    <BrowserRouter>
+    {/* <PersistGate persistor={persistor}> */}
     <App />
-  </React.StrictMode>
+  {/* </PersistGate> */}
   </BrowserRouter>
   </Provider>
 ,

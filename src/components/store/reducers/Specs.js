@@ -59,10 +59,11 @@ const initialState = {
        switch(action.type){
            case "specs":
                console.log(action,"aa")
-            console.log({...state.input,[action.data.id]:{...state.input[action.data.id],value:action.data.value}},"action")
+               console.log({...state.input,[action.data.id]:{...state.input[action.data.id],value:action.data.value}},"aaa")
 
 
-           return{...state.input,[action.data.id]:{...state.input[action.data.id],value:action.data.value}};
+
+        //    return{...state.input,[action.data.id]:{...state.input[action.data.id],value:action.data.value}};
 
             //    return{
             //        ...state.input,[action.data.id]:{...state.input[action.data.id]}
@@ -77,6 +78,7 @@ const initialState = {
             // updatedInput[action.data.id] = item;
             // return {state:updatedState};
     
+           break;
            
            default:
                return initialState;

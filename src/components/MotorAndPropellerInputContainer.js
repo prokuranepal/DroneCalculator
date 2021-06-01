@@ -31,7 +31,7 @@ const SpecsInputContainer=()=> {
 
    const specsChangeHandler = (e, data) => {
         // console.log(e.target.value, data.id);
-        dispatch({type:'specs',data:{...data,value:+e.target.value} })
+        dispatch({type:'specs',data:{...data,value:e.target.value} })
 
         //copy the input object from the state
         const updatedInput = { ...specs.input }
@@ -64,6 +64,7 @@ const SpecsInputContainer=()=> {
   
     const environmentChangeHandler = (e, data) => {
         // console.log(e.target.value, data.id);
+        dispatch({type:'environment',data:{...data,value:e.target.value} })
 
         //copy the input object from the state
         const updatedInput = { ...environment.input }
@@ -169,6 +170,7 @@ console.log(updatedInput.airspeed1.value,"pitch")
                 const updatedSpecsInput={...specs.input}
 
                 let diameter1Result=Math.pow((updatedSpecsInput.maxPower.value/(updatedDiameterInput.cp1.value*updatedEnvironmentInput.density.value* Math.pow((updatedSpecsInput.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
+                
 console.log(updatedEnvironmentInput.density.value,"densitycheckeffect")
 console.log(updatedSpecsInput.maxPower.value,"specscheckeffect")
 console.log(updatedDiameterInput.cp1.value,"diametercheckeffect")
