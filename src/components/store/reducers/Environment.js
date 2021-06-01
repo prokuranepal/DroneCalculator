@@ -21,8 +21,15 @@ const initialState={
 export const environmentReducer=(state=initialState,action)=>{
     switch(action.type){
         case "environment":
-            return{...state.input,[action.data.id]:{...state.input[action.data.id],value:action.data.value}};
-
+            return{...state, 
+                input:  {
+                        ...state.input,
+                        [action.data.id]:{
+                            ...state.input[action.data.id],
+                            value:action.data.value
+                             }
+                        }
+            };
         default:
             return initialState;
     }

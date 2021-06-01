@@ -28,7 +28,7 @@ const SpecsInputContainer=()=> {
     const[pitch,setPitch]=useState(pitchData)
 
     const dispatch=useDispatch()
-
+    console.log("redux test", specs)
    const specsChangeHandler = (e, data) => {
         // console.log(e.target.value, data.id);
         dispatch({type:'specs',data:{...data,value:e.target.value} })
@@ -88,6 +88,7 @@ const SpecsInputContainer=()=> {
 
     const diameterChangeHandler = (e, data) => {
         // console.log(e.target.value, data.id);
+        dispatch({type:'diameter',data:{...data,value:e.target.value} })
 
         //copy the input object from the state
         const updatedInput = { ...diameter.input }
@@ -123,6 +124,7 @@ const SpecsInputContainer=()=> {
     }
     const pitchChangeHandler=(e,data)=>{
          // console.log(e.target.value, data.id);
+         dispatch({type:'pitch',data:{...data,value:e.target.value} })
 
         //copy the input object from the state
         const updatedInput = { ...pitch.input }

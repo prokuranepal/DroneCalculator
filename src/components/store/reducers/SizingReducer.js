@@ -541,6 +541,7 @@ export const sizingReducer=(state=initialState,action)=>{
     switch(action.type){
         case 'sizing':
             console.log(state,'sizingStore')
+            return initialState
             break;
         default:
             return initialState;

@@ -24,7 +24,7 @@ const rootReducer=combineReducers({
   diameterReducer:diameterReducer,
   sizingReducer:sizingReducer,
 })
-
+// const store=createStore(rootReducer)
 // const store=createStore(rootReducer);
 
 const persistConfig = {
@@ -33,22 +33,22 @@ const persistConfig = {
   whitelist:['sizingReducer','specsReducer','pitchReducer','environmentReducer','diameterReducer'],
 }
  const persistedReducer=  persistReducer(persistConfig,rootReducer)
-// console.log(persistReducer(persistConfig,rootReducer),"perss")
-const store=createStore(
-  persistedReducer
-)
-const persistor=persistStore(store)
-// console.log(persistor,"per")
-// console.log(store,"storee")
+ const store=createStore(
+   persistedReducer
+   )
+   const persistor=persistStore(store)
+   // console.log(persistor,"per")
+   // console.log(store,"storee")
+   // console.log(persistReducer(persistConfig,rootReducer),"perss")
 
 
 ReactDOM.render(
 
   <Provider store={store}>
     <BrowserRouter>
-    {/* <PersistGate persistor={persistor}> */}
+    <PersistGate persistor={persistor}>
     <App />
-  {/* </PersistGate> */}
+  </PersistGate>
   </BrowserRouter>
   </Provider>
 ,
