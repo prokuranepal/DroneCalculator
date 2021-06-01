@@ -3,27 +3,35 @@ import React, { useState,useEffect } from 'react'
 import { Paper, Typography, TextField, Container, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core'
 import InputUnit from './InputUnit';
+import {useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import '../App.css'
 import { Specs,Environment,Diameter,Pitch } from '../data/data';
 import Header from './Header'
+import { environmentReducer } from './store/reducers/Environment';
 
 
 const SpecsInputContainer=()=> {
 
-    const[specs,setSpecs]=useState(Specs)
-    const[environment,setEnvironment]=useState(Environment)
-    const[diameter,setDiameter]=useState(Diameter)
-    const[pitch,setPitch]=useState(Pitch)
+    //Reducer Data's
 
-    // useEffect(()=>{
+    const specsData=useSelector(state=>state.specsReducer);
+    const environmentData=useSelector(state=>state.environmentReducer)
+    const diameterData=useSelector(state=>state.diameterReducer)
+    const pitchData=useSelector(state=>state.pitchReducer)
 
-    //     specsChangeHandler(specs,data)
-    //     environmentChangeHandler()
-    //     diameterChangeHandler()
-    // },[])
+    //States
+
+    const[specs,setSpecs]=useState(specsData)
+    const[environment,setEnvironment]=useState(environmentData)
+    const[diameter,setDiameter]=useState(diameterData)
+    const[pitch,setPitch]=useState(pitchData)
+
+    const dispatch=useDispatch()
 
    const specsChangeHandler = (e, data) => {
         // console.log(e.target.value, data.id);
+        dispatch({type:'specs',data:{...data,value:+e.target.value} })
 
         //copy the input object from the state
         const updatedInput = { ...specs.input }
@@ -193,14 +201,14 @@ useEffect(()=>{
          <div >
              <Grid container>
 
-                <Grid  items xs={6} style={{margin:'20px 0'}} >
-                     <Paper elevation={4} className="paper" style={{ padding: '20px 30px',marginLeft:' 20px',marginRight:'10px' }}>
-                         <div style={{marginTop: '20px'}}>
+                <Grid  items xs={12} md={6} style={{margin:'10px 0'}} >
+                     <Paper elevation={4} className="paper" style={{ padding: '20px 30px',marginLeft:' 20px',marginRight:'20px' }}>
+                         <div >
                             <Typography variant='h5' style={{ marginBottom: '12px', textAlign: 'center' }} >Motor Specs</Typography>
                                  <div style={{ flexGrow: 1 }}>
                                 {specsInputData.map(eachInputData => {
                                     return (
-                                        <Grid item xs={12}>
+                                        <Grid key={eachInputData.id} item xs={12}>
                                             <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => specsChangeHandler(e, eachInputData)} />
                                         </Grid>
                                     )
@@ -210,14 +218,14 @@ useEffect(()=>{
                               </Paper>
                             </Grid>
                                             
-                     <Grid items xs={6} spacing={0} style={{margin:'20px 0'}}>
-                         <Paper elevation={6} className="paper" style={{ padding: '20px 30px',marginLeft:' 10px',marginRight:'20px' }}>
-                            <div style={{marginTop: '20px'}}>
-                                <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >Propeller diameter selection</Typography>
+                     <Grid items xs={12} md={6} spacing={0} style={{margin:'10px 0'}}>
+                         <Paper elevation={4} className="paper" style={{ padding: '20px 30px',marginLeft:' 20px',marginRight:'20px' }}>
+                            <div >
+                                <Typography variant='h5' style={{ marginBottom: '12px', textAlign: 'center' }} >Propeller diameter selection</Typography>
                                   <div style={{ flexGrow: 1 }}>
                                     {diameterInputData.map(eachInputData => {
                                     return (
-                                        <Grid item xs={12}>
+                                        <Grid key={eachInputData.id} item xs={12}>
                                             <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => diameterChangeHandler(e, eachInputData)} />
                                         </Grid>
                                     )
@@ -227,14 +235,14 @@ useEffect(()=>{
                           </Paper>
                      </Grid>
 
-                     <Grid items xs={6}  >
-                          <Paper elevation={4} className="paper" style={{ padding: '20px 30px',marginLeft:'20px',marginRight:'10px' }}>
-                             <div style={{marginTop: '20px'}}>
-                               <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >Environment</Typography>
+                     <Grid items xs={12} md={6} spacing={0} style={{margin:'10px 0'}} >
+                          <Paper elevation={4} className="paper" style={{ padding: '20px 30px',marginLeft:'20px',marginRight:'20px' }}>
+                             <div >
+                               <Typography variant='h5' style={{ marginBottom: '12px', textAlign: 'center' }} >Environment</Typography>
                                   <div style={{ flexGrow: 1 }}>                                     
                                       {environmentInputData.map(eachInputData => {
                                     return (
-                                        <Grid item xs={12}>
+                                        <Grid key={eachInputData.id} item xs={12}>
                                             <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => environmentChangeHandler(e, eachInputData)} />
                                         </Grid>
                                     )
@@ -245,14 +253,14 @@ useEffect(()=>{
                    </Grid>
 
                             
-                     <Grid items xs={6} style={{marginTop:'-170px'}}>
-                       <Paper elevation={6} className="paper" style={{ padding: '20px 30px',marginLeft:'10px',marginRight:'20px' }} >
-                          <div style={{marginTop: '20px'}}>
-                             <Typography variant='h5' style={{ margin: '12px', textAlign: 'center' }} >Propeller Pitch selection</Typography>
+                     <Grid items xs={12} md={6} spacing={0}  className="propeller-pitch-selection" >
+                       <Paper elevation={6} className="paper" style={{ padding: '20px 30px',marginLeft:'20px',marginRight:'20px' }} >
+                          <div >
+                             <Typography variant='h5' style={{ marginBottom: '12px', textAlign: 'center' }} >Propeller Pitch selection</Typography>
                                 <div style={{ flexGrow: 1 }}>
                                    {pitchInputData.map(eachInputData => {
                                     return (
-                                        <Grid item xs={12}>
+                                        <Grid key={eachInputData.id} item xs={12}>
                                             <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data} onChange={(e) => pitchChangeHandler(e, eachInputData)} />
                                         </Grid>
                                     )
