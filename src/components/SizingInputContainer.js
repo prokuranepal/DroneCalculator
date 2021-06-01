@@ -2,14 +2,10 @@ import React,{useState,useEffect} from 'react';
 import Header from './Header'
 import { Paper, Typography, TextField, Container, Grid } from '@material-ui/core'
 import InputUnit from './InputUnit';
-<<<<<<< HEAD
-import {Sizing, title} from '../data/data'
-=======
 import {useSelector} from 'react-redux'
 import {useDispatch} from 'react-redux'
 
 import {Sizing,title} from '../data/data'
->>>>>>> f1d18b3d48014594e61dafd7ff8d376db2026add
 
 const SizingInputContainer=()=>{
 
@@ -89,13 +85,9 @@ dispatch({type:'sizing',data:{...data,value:e.target.value}})
 
 }
 
-<<<<<<< HEAD
-console.log(sizing,"updatedSizingOrgi")
-=======
     // localStorage.setItem('sizing',JSON.stringify(Sizing));
 
 
->>>>>>> f1d18b3d48014594e61dafd7ff8d376db2026add
 
 let sizingArray=[]
 for(let key in sizing){
@@ -120,11 +112,7 @@ console.log("mainarray", sizingArray)
         
         <Grid key={key} items xs={12} md={6} style={{margin:'20px 0'}} >
         <Paper elevation={4} className="paper" style={{ padding: '20px 30px',marginLeft:' 20px',marginRight:'10px' }}>
-<<<<<<< HEAD
-            <div style={{marginTop: '20px'}}>
-=======
             <div style={{marginTop: '0px'}}>
->>>>>>> f1d18b3d48014594e61dafd7ff8d376db2026add
                <Typography variant='h5' style={{ marginBottom: '12px', textAlign: 'center' }}>{parent.title}</Typography>
                     <div style={{ flexGrow: 1 }}>        
                            <Grid item xs={12}>
