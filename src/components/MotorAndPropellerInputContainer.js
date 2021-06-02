@@ -15,48 +15,31 @@ const SpecsInputContainer=()=> {
 
     //Reducer Data's
 
-    const specsData=useSelector(state=>state.specsReducer);
-    const environmentData=useSelector(state=>state.environmentReducer)
-    const diameterData=useSelector(state=>state.diameterReducer)
-    const pitchData=useSelector(state=>state.pitchReducer)
+    const specs=useSelector(state=>state.specsReducer);
+    const environment=useSelector(state=>state.environmentReducer)
+    const diameter=useSelector(state=>state.diameterReducer)
+    const pitch=useSelector(state=>state.pitchReducer)
 
     //States
 
-    const[specs,setSpecs]=useState(specsData)
-    const[environment,setEnvironment]=useState(environmentData)
-    const[diameter,setDiameter]=useState(diameterData)
-    const[pitch,setPitch]=useState(pitchData)
+    // const[specs,setSpecs]=useState(specsData)
+    
+    // const[environment,setEnvironment]=useState(environmentData)
+    // const[diameter,setDiameter]=useState(diameterData)
+    // const[pitch,setPitch]=useState(pitchData)
 
     const dispatch=useDispatch()
-    console.log("redux test", specs)
+    console.log("testspecs", specs)
+    console.log("testdiameter", diameter)
+
    const specsChangeHandler = (e, data) => {
         // console.log(e.target.value, data.id);
-        dispatch({type:'specs',data:{...data,value:e.target.value} })
+        dispatch({type:'specs',data:{...data,value:+e.target.value} })
 
-        //copy the input object from the state
-        const updatedInput = { ...specs.input }
+        specs.input.nominalVoltage.value=specs.input.cellsInSeries.value*3.7
 
-        //copy the specific field like density, maxPower using data.id from updatedInput
-        let item = updatedInput[data.id];
-
-        //update the value using the value from onChange to the related field
-        item = { ...item, value: e.target.value };
-
-        //update the field item with updated value to updatedInput
-        updatedInput[data.id] = item;
-
-         //The data is calculated for certain required fields 
-
-         updatedInput.nominalVoltage.value=updatedInput.cellsInSeries.value*3.7
-
-         updatedInput.maxRPM.value=(updatedInput.kvRating.value*updatedInput.nominalVoltage.value)
-         updatedInput.maxWorkingRPM.value=(updatedInput.estimatedMaxPercent.value)/100*updatedInput.maxRPM.value
-
- 
-         console.log(updatedInput.kvRating.value,"kvcheck")
-    
-        //set the new state
-        setSpecs({ input: updatedInput });
+        specs.input.maxRPM.value=(specs.input.kvRating.value*specs.input.nominalVoltage.value)
+        specs.input.maxWorkingRPM.value=(specs.input.estimatedMaxPercent.value)/100*specs.input.maxRPM.value
 
 
 
@@ -64,85 +47,46 @@ const SpecsInputContainer=()=> {
   
     const environmentChangeHandler = (e, data) => {
         // console.log(e.target.value, data.id);
-        dispatch({type:'environment',data:{...data,value:e.target.value} })
+        dispatch({type:'environment',data:{...data,value:+e.target.value} })
 
-        //copy the input object from the state
-        const updatedInput = { ...environment.input }
-
-        //copy the specific field like density, maxPower using data.id from updatedInput
-        let item = updatedInput[data.id];
-
-        //update the value using the value from onChange to the related field
-        item = { ...item, value: e.target.value };
-
-        //update the field item with updated value to updatedInput
-        updatedInput[data.id] = item;
-
-
-
-        //set the new state
-        setEnvironment({ input: updatedInput });
-
-        console.log(updatedInput.density.value,"envirocheck")
+       
     }
 
     const diameterChangeHandler = (e, data) => {
         // console.log(e.target.value, data.id);
-        dispatch({type:'diameter',data:{...data,value:e.target.value} })
+        dispatch({type:'diameter',data:{...data,value:+e.target.value} })
 
-        //copy the input object from the state
-        const updatedInput = { ...diameter.input }
-
-        //copy the specific field like density, maxPower using data.id from updatedInput
-        let item = updatedInput[data.id];
-
-        //update the value using the value from onChange to the related field
-        item = { ...item, value: e.target.value };
-
-        updatedInput[data.id] = item;
-
+        
            //Diameter1 value calculation start
-         // let powerData=(updatedInput.cp1.value*updatedInput.density.value*Math.pow(updatedInput.maxWorkingRPM.value/60,3))
-         let diameter1Result=Math.pow((specs.input.maxPower.value/(updatedInput.cp1.value*environment.input.density.value* Math.pow((specs.input.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
-         let diameter2Result=Math.pow((specs.input.maxPower.value/(updatedInput.cp2.value*environment.input.density.value* Math.pow((specs.input.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
+         // let powerData=(specs.input.cp1.value*specs.input.density.value*Math.pow(specs.input.maxWorkingRPM.value/60,3))
+         let diameter1Result=Math.pow((specs.input.maxPower.value/(diameter.input.cp1.value*environment.input.density.value* Math.pow((specs.input.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
+         let diameter2Result=Math.pow((specs.input.maxPower.value/(diameter.input.cp2.value*environment.input.density.value* Math.pow((specs.input.maxWorkingRPM.value/60),3))),1/5)*1000/25.4
       
 
         //Update is happening one step slow
 
-         updatedInput.diameter1.value=diameter1Result
-         updatedInput.diameter2.value=diameter2Result
+         diameter.input.diameter1.value=diameter1Result
+         diameter.input.diameter2.value=diameter2Result
  
 
-        //update the field item with updated value to updatedInput
+        //update the field item with updated value to specs.input
         
         //set the new state
 
-        setDiameter({ input: updatedInput });
-        console.log(updatedInput.cp1.value,"cp1check")
-        console.log(updatedInput.cp2.value,"cp2check")
+
 
     }
     const pitchChangeHandler=(e,data)=>{
          // console.log(e.target.value, data.id);
-         dispatch({type:'pitch',data:{...data,value:e.target.value} })
+         dispatch({type:'pitch',data:{...data,value:+e.target.value} })
 
         //copy the input object from the state
-        const updatedInput = { ...pitch.input }
+       
 
-        //copy the specific field like density, maxPower using data.id from updatedInput
-        let item = updatedInput[data.id];
+pitch.input.pitch1.value=(pitch.input.airspeed1.value*1.8)/(specs.input.maxWorkingRPM.value/60)*1000/25.4
+pitch.input.pitch2.value=(pitch.input.airspeed2.value*1.8)/(specs.input.maxWorkingRPM.value/60)*1000/25.4
 
-        //update the value using the value from onChange to the related field
-        item = { ...item, value: e.target.value };
 
-        //update the field item with updated value to updatedInput
-        updatedInput[data.id] = item;
-
-updatedInput.pitch1.value=(updatedInput.airspeed1.value*1.8)/(specs.input.maxWorkingRPM.value/60)*1000/25.4
-updatedInput.pitch2.value=(updatedInput.airspeed2.value*1.8)/(specs.input.maxWorkingRPM.value/60)*1000/25.4
-
-console.log(updatedInput.airspeed1.value,"pitch")
-        setPitch({input:updatedInput})
     }
 
 
@@ -180,12 +124,13 @@ console.log(updatedDiameterInput.cp1.value,"diametercheckeffect")
                     updatedDiameterInput.diameter1.value=diameter1Result
                     updatedDiameterInput.diameter2.value=diameter2Result
 
-                    setDiameter({ input: updatedDiameterInput });
+                    
                     console.log("updated diameter")
             
                     },[specs,environment])
 
 useEffect(()=>{
+    
     const updatedSpecsInput={...specs.input}
     const updatedPitchInput={...pitch.input}
     updatedPitchInput.pitch1.value=(updatedPitchInput.airspeed1.value*1.8)/(updatedSpecsInput.maxWorkingRPM.value/60)*1000/25.4

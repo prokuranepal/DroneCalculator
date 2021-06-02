@@ -7,16 +7,16 @@ import    {Provider} from 'react-redux'
 import {specsReducer} from './components/store/reducers/Specs'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
-
+import thunk from 'redux-thunk'
 import {pitchReducer} from './components/store/reducers/Pitch'
 import {environmentReducer} from './components/store/reducers/Environment';
 import {diameterReducer} from './components/store/reducers/Diameter'
 import {sizingReducer} from './components/store/reducers/SizingReducer'
-import {createStore,compose,combineReducers} from 'redux'
+import {createStore,compose,combineReducers,applyMiddleware} from 'redux'
 import {BrowserRouter} from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
 import { PersistGate } from 'redux-persist/integration/react'
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer=combineReducers({
   specsReducer:specsReducer,
   pitchReducer:pitchReducer,
@@ -24,7 +24,7 @@ const rootReducer=combineReducers({
   diameterReducer:diameterReducer,
   sizingReducer:sizingReducer,
 })
-// const store=createStore(rootReducer)
+const store=createStore(rootReducer,composeEnhancers(applyMiddleware(thunk)));
 // const store=createStore(rootReducer);
 
 const persistConfig = {
@@ -33,9 +33,10 @@ const persistConfig = {
   whitelist:['sizingReducer','specsReducer','pitchReducer','environmentReducer','diameterReducer'],
 }
  const persistedReducer=  persistReducer(persistConfig,rootReducer)
- const store=createStore(
-   persistedReducer
-   )
+//  const store=createStore(
+//    persistedReducer,
+//    composeEnhancers(applyMiddleware(thunk))
+//    )
    const persistor=persistStore(store)
    // console.log(persistor,"per")
    // console.log(store,"storee")
@@ -46,9 +47,9 @@ ReactDOM.render(
 
   <Provider store={store}>
     <BrowserRouter>
-    <PersistGate persistor={persistor}>
+    {/* <PersistGate persistor={persistor}> */}
     <App />
-  </PersistGate>
+  {/* </PersistGate> */}
   </BrowserRouter>
   </Provider>
 ,
