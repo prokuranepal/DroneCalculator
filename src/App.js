@@ -12,7 +12,7 @@ function App() {
 
         <Route path="/motorandpropeller" component={MotorAndPropellerInputContainer} />
         <Route path="/sizing" component={SizingInputContainer} />
-        <Route exact path="/" component={SizingInputContainer}/>
+        <Route exact path="/" component={MotorAndPropellerInputContainer}/>
       </Switch>
 
 
