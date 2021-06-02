@@ -6,12 +6,13 @@ import {useSelector} from 'react-redux'
 import {useDispatch} from 'react-redux'
 
 import {Sizing,title} from '../data/data'
+import Chart from './Chart';
 
 const SizingInputContainer=()=>{
 
     //Reducer data's
 
-    const sizingData=useSelector(state=>state.sizingReducer)
+    const sizing=useSelector(state=>state.sizingReducer)
 
     //Dispatch
 
@@ -19,71 +20,52 @@ const SizingInputContainer=()=>{
 
     // const sizingGetLocalStorage=()=>{
     //    return JSON.parse(localStorage.getItem('sizing'));
-
     // }
     // console.log(sizingGetLocalStorage,'retrive')
 
    
-const[sizing,setSizing]=useState(sizingData)
 
 
 const sizingChangeHandler=(e,data)=>{
 dispatch({type:'sizing',data:{...data,value:e.target.value}})
     const updatedSizing={...sizing,[data.parent]:{...sizing[data.parent],[data.name]:{...sizing[data.parent][data.name],value:+e.target.value}}}
-    updatedSizing.calculatedWing.wingArea.value=Math.pow(updatedSizing.wing.span.value,2)/updatedSizing.wing.aspectRatio.value;
-    updatedSizing.calculatedWing.rootChord.value=2*updatedSizing.calculatedWing.wingArea.value/(updatedSizing.wing.span.value*(1+updatedSizing.wing.tapperRatio.value));
-    updatedSizing.calculatedWing.tipChord.value=(updatedSizing.calculatedWing.rootChord.value*updatedSizing.wing.tapperRatio.value);
-     updatedSizing.calculatedWing.meanAerodynamicChord.value=(1+updatedSizing.wing.tapperRatio.value+Math.pow(updatedSizing.wing.tapperRatio.value,2))/(1+updatedSizing.wing.tapperRatio.value)*2/3*updatedSizing.calculatedWing.rootChord.value;
-     updatedSizing.calculatedHorizontalTail.sht.value=updatedSizing.horizontalTail.cht.value*updatedSizing.calculatedWing.wingArea.value*updatedSizing.calculatedWing.meanAerodynamicChord.value/updatedSizing.horizontalTail.lht.value;
-     updatedSizing.calculatedHorizontalTail.rootChord.value=(2*updatedSizing.calculatedHorizontalTail.sht.value/updatedSizing.horizontalTail.span.value)/(1+updatedSizing.horizontalTail.tapperRatio.value);
-     updatedSizing.calculatedHorizontalTail.tipChord.value=updatedSizing.calculatedHorizontalTail.rootChord.value*updatedSizing.horizontalTail.tapperRatio.value;
-     updatedSizing.calculatedVerticalTail.svt.value=updatedSizing.calculatedWing.wingArea.value*updatedSizing.wing.span.value*updatedSizing.verticalTail.cvt.value/updatedSizing.verticalTail.lvt.value;
-     updatedSizing.calculatedVerticalTail.rootChord.value=(updatedSizing.calculatedVerticalTail.svt.value*2/updatedSizing.verticalTail.span.value)/(1+updatedSizing.verticalTail.tapperRatio.value);
-     updatedSizing.calculatedVerticalTail.tipChord.value=updatedSizing.calculatedVerticalTail.rootChord.value*updatedSizing.verticalTail.tapperRatio.value;
-     updatedSizing.general.massFraction.value=(updatedSizing.missionRequirement.payload.value+updatedSizing.mass.batteryMass.value)/updatedSizing.mass.totalMass.value*100;
-     updatedSizing.general.ostwaldEfficiency.value=1/(1+updatedSizing.wing.inducedDragFactor.value)
-     updatedSizing.general.k.value=1/(3.14*updatedSizing.general.ostwaldEfficiency.value*updatedSizing.wing.aspectRatio.value)
-     updatedSizing.general.minDragAirspeed.value=Math.pow((2*updatedSizing.mass.totalMass.value*updatedSizing.operatingEnvironment.acceleration.value/(updatedSizing.operatingEnvironment.airDensity.value*updatedSizing.calculatedWing.wingArea.value)),0.5)*Math.pow((updatedSizing.general.k.value/(updatedSizing.drag.wingZeroLiftDragCoefficient.value+updatedSizing.drag.fuselageDragCoefficient.value)),0.25);
-     updatedSizing.general.minPowerAirspeed.value=Math.pow(1/(3),0.25)*updatedSizing.general.minDragAirspeed.value;
-     updatedSizing.general.maxLiftCoefficient.value=updatedSizing.mass.totalMass.value*updatedSizing.operatingEnvironment.acceleration.value/(0.5*updatedSizing.operatingEnvironment.airDensity.value*Math.pow(updatedSizing.operatingEnvironment.stallSpeed.value,2)*updatedSizing.calculatedWing.wingArea.value);
-     updatedSizing.general.designLiftCoefficient.value=updatedSizing.mass.totalMass.value*updatedSizing.operatingEnvironment.acceleration.value/(0.5*updatedSizing.operatingEnvironment.airDensity.value*Math.pow(updatedSizing.operatingEnvironment.cruiseSpeed.value,2)*updatedSizing.calculatedWing.wingArea.value);
-     updatedSizing.general.inducedDragCoefficient.value=updatedSizing.general.k.value*Math.pow(updatedSizing.general.designLiftCoefficient.value,2)
-     updatedSizing.general.totalDragCoefficient.value=updatedSizing.drag.wingZeroLiftDragCoefficient.value+updatedSizing.drag.fuselageDragCoefficient.value+updatedSizing.general.inducedDragCoefficient.value;
-     updatedSizing.general.drag.value=(0.5*updatedSizing.operatingEnvironment.airDensity.value*Math.pow(updatedSizing.operatingEnvironment.cruiseSpeed.value,2)*updatedSizing.calculatedWing.wingArea.value*(updatedSizing.general.totalDragCoefficient.value)/updatedSizing.operatingEnvironment.acceleration.value)
-     updatedSizing.general.liftToDragRatio.value=updatedSizing.general.designLiftCoefficient.value/updatedSizing.general.inducedDragCoefficient.value;
-     updatedSizing.motorAndBattery.maxPower.value=updatedSizing.mass.totalMass.value*updatedSizing.motorAndBattery.powerToWeightRatio.value;
-     updatedSizing.motorAndBattery.powerCruise.value=updatedSizing.general.drag.value*updatedSizing.operatingEnvironment.acceleration.value*updatedSizing.operatingEnvironment.cruiseSpeed.value;
-     updatedSizing.motorAndBattery.currentCruise.value=(updatedSizing.motorAndBattery.powerCruise.value/updatedSizing.motorAndBattery.nominalVoltage.value)/(updatedSizing.motorAndBattery.propullisiveEfficiency.value/100);
-     updatedSizing.motorAndBattery.FlightTime.value=(updatedSizing.missionRequirement.range.value*1000/updatedSizing.operatingEnvironment.cruiseSpeed.value)/(3600);
-     updatedSizing.motorAndBattery.rangeBatteryCapacity.value=(updatedSizing.motorAndBattery.FlightTime.value * updatedSizing.motorAndBattery.currentCruise.value/Math.pow(10,-3))/(updatedSizing.motorAndBattery.maximumDischarge.value/100);
-     updatedSizing.motorAndBattery.rangeCruiseSpeed.value=updatedSizing.missionRequirement.flightTime.value*60*60*updatedSizing.operatingEnvironment.cruiseSpeed.value/1000;
-     updatedSizing.motorAndBattery.flightTimeBatteryCapacity.value=(updatedSizing.missionRequirement.flightTime.value * updatedSizing.motorAndBattery.currentCruise.value/Math.pow(10,-3))/(updatedSizing.motorAndBattery.maximumDischarge.value/100);
-     updatedSizing.motorAndBattery.capacityOfEachCell.value=updatedSizing.motorAndBattery.batteryCapacityParallel.value/updatedSizing.motorAndBattery.parallelCells.value;
-     updatedSizing.motorAndBattery.cRating.value=updatedSizing.motorAndBattery.maxContinousCurrent.value/(updatedSizing.motorAndBattery.capacityOfEachCell.value/1000);
-    setSizing(updatedSizing)
+// console.log(updatedSizing,"updatedSizing")
+// sizing.calculatedWing.wingArea.value=parseFloat(Math.pow(sizing.wing.span.value,2)/sizing.wing.aspectRatio.value).toPrecision(4);
+// sizing.calculatedWing.rootChord.value=parseFloat(2*sizing.calculatedWing.wingArea.value/(sizing.wing.span.value*(1+sizing.wing.tapperRatio.value))).toPrecision(4);
 
-    
-    // let storageSizing=localStorage.setItem('sizing',JSON.stringify(Sizing));
-    // console.log(storageSizing,"store")
 
-    // let retrivedSizingg='';
-    // function retrivedSizing(){
-    //    return  retrivedSizingg=JSON.parse(localStorage.getItem('sizing'));
-    // }
+    sizing.calculatedWing.wingArea.value=Math.pow(sizing.wing.span.value,2)/sizing.wing.aspectRatio.value;
+    sizing.calculatedWing.rootChord.value=2*sizing.calculatedWing.wingArea.value/(sizing.wing.span.value*(1+sizing.wing.tapperRatio.value));
+    sizing.calculatedWing.tipChord.value=(sizing.calculatedWing.rootChord.value*sizing.wing.tapperRatio.value);
+     sizing.calculatedWing.meanAerodynamicChord.value=(1+sizing.wing.tapperRatio.value+Math.pow(sizing.wing.tapperRatio.value,2))/(1+sizing.wing.tapperRatio.value)*2/3*sizing.calculatedWing.rootChord.value;
+     sizing.calculatedHorizontalTail.sht.value=sizing.horizontalTail.cht.value*sizing.calculatedWing.wingArea.value*sizing.calculatedWing.meanAerodynamicChord.value/sizing.horizontalTail.lht.value;
+     sizing.calculatedHorizontalTail.rootChord.value=(2*sizing.calculatedHorizontalTail.sht.value/sizing.horizontalTail.span.value)/(1+sizing.horizontalTail.tapperRatio.value);
+     sizing.calculatedHorizontalTail.tipChord.value=sizing.calculatedHorizontalTail.rootChord.value*sizing.horizontalTail.tapperRatio.value;
+     console.log(sizing.calculatedVerticalTail.svt.value=sizing.calculatedWing.wingArea.value*sizing.wing.span.value*sizing.verticalTail.cvt.value/sizing.verticalTail.lvt.value);
+     sizing.calculatedVerticalTail.rootChord.value=(sizing.calculatedVerticalTail.svt.value*2/sizing.verticalTail.span.value)/(1+sizing.verticalTail.tapperRatio.value);
+     sizing.calculatedVerticalTail.tipChord.value=sizing.calculatedVerticalTail.rootChord.value*sizing.verticalTail.tapperRatio.value;
+     console.log(sizing.general.massFraction.value=(sizing.missionRequirement.payload.value+sizing.mass.batteryMass.value)/sizing.mass.totalMass.value*100,'massfra');
+     sizing.general.ostwaldEfficiency.value=1/(1+sizing.wing.inducedDragFactor.value)
+     sizing.general.k.value=1/(3.14*sizing.general.ostwaldEfficiency.value*sizing.wing.aspectRatio.value)
+     sizing.general.minDragAirspeed.value=Math.pow((2*sizing.mass.totalMass.value*sizing.operatingEnvironment.acceleration.value/(sizing.operatingEnvironment.airDensity.value*sizing.calculatedWing.wingArea.value)),0.5)*Math.pow((sizing.general.k.value/(sizing.drag.wingZeroLiftDragCoefficient.value+sizing.drag.fuselageDragCoefficient.value)),0.25);
+     sizing.general.minPowerAirspeed.value=Math.pow(1/(3),0.25)*sizing.general.minDragAirspeed.value;
+     sizing.general.maxLiftCoefficient.value=sizing.mass.totalMass.value*sizing.operatingEnvironment.acceleration.value/(0.5*sizing.operatingEnvironment.airDensity.value*Math.pow(sizing.operatingEnvironment.stallSpeed.value,2)*sizing.calculatedWing.wingArea.value);
+     sizing.general.designLiftCoefficient.value=sizing.mass.totalMass.value*sizing.operatingEnvironment.acceleration.value/(0.5*sizing.operatingEnvironment.airDensity.value*Math.pow(sizing.operatingEnvironment.cruiseSpeed.value,2)*sizing.calculatedWing.wingArea.value);
+     sizing.general.inducedDragCoefficient.value=sizing.general.k.value*Math.pow(sizing.general.designLiftCoefficient.value,2)
+     sizing.general.totalDragCoefficient.value=sizing.drag.wingZeroLiftDragCoefficient.value+sizing.drag.fuselageDragCoefficient.value+sizing.general.inducedDragCoefficient.value;
+     sizing.general.drag.value=(0.5*sizing.operatingEnvironment.airDensity.value*Math.pow(sizing.operatingEnvironment.cruiseSpeed.value,2)*sizing.calculatedWing.wingArea.value*(sizing.general.totalDragCoefficient.value)/sizing.operatingEnvironment.acceleration.value)
+     sizing.general.liftToDragRatio.value=sizing.general.designLiftCoefficient.value/sizing.general.inducedDragCoefficient.value;
+     sizing.motorAndBattery.maxPower.value=sizing.mass.totalMass.value*sizing.motorAndBattery.powerToWeightRatio.value;
+     sizing.motorAndBattery.powerCruise.value=sizing.general.drag.value*sizing.operatingEnvironment.acceleration.value*sizing.operatingEnvironment.cruiseSpeed.value;
+     sizing.motorAndBattery.currentCruise.value=(sizing.motorAndBattery.powerCruise.value/sizing.motorAndBattery.nominalVoltage.value)/(sizing.motorAndBattery.propullisiveEfficiency.value/100);
+     sizing.motorAndBattery.FlightTime.value=(sizing.missionRequirement.range.value*1000/sizing.operatingEnvironment.cruiseSpeed.value)/(3600);
+     sizing.motorAndBattery.rangeBatteryCapacity.value=(sizing.motorAndBattery.FlightTime.value * sizing.motorAndBattery.currentCruise.value/Math.pow(10,-3))/(sizing.motorAndBattery.maximumDischarge.value/100);
+     sizing.motorAndBattery.rangeCruiseSpeed.value=sizing.missionRequirement.flightTime.value*60*60*sizing.operatingEnvironment.cruiseSpeed.value/1000;
+     sizing.motorAndBattery.flightTimeBatteryCapacity.value=(sizing.missionRequirement.flightTime.value * sizing.motorAndBattery.currentCruise.value/Math.pow(10,-3))/(sizing.motorAndBattery.maximumDischarge.value/100);
+     sizing.motorAndBattery.capacityOfEachCell.value=sizing.motorAndBattery.batteryCapacityParallel.value/sizing.motorAndBattery.parallelCells.value;
+     sizing.motorAndBattery.cRating.value=sizing.motorAndBattery.maxContinousCurrent.value/(sizing.motorAndBattery.capacityOfEachCell.value/1000);
 
-    // const updatedSizing={...sizing}
-    // const parentObj={...updatedSizing[data.parent]}
-    // console.log(parentObj,"parentObj")
-    // const childObj={...parentObj[data.name],value:e.target.value}
-    // console.log(childObj,"childObj")
-    // // childObj={...childObj,value:e.target.value}
-    // parentObj[data.name]=childObj
-    // updatedSizing[data.parent]=parentObj
-    // console.log(updatedSizing,"updatedSizing")
-    // console.log(sizing,"originalSizing")
-    // setSizing(updatedSizing)
-
-}
+   }
 
     // localStorage.setItem('sizing',JSON.stringify(Sizing));
 
@@ -132,7 +114,8 @@ console.log("mainarray", sizingArray)
     )
 })
                  ):''}
-       </Grid>           
+       </Grid> 
+       <Chart/>          
     </div>
 </Grid>
         </>

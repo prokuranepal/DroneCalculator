@@ -1,17 +1,4 @@
- const title ={
-    missionRequirement:"Mission Requirement",
-    operatingEnvironment: "Operating Requirement",
-    mass: "Mass",
-    wing: "Wing",
-    calculatedWing:"Calculated Wing",
-    horizontalTail: "Horizontal Tail",
-    calculatedHorizontalTail: "Calculated Horizontal Tail",
-    verticalTail: "Vertical Tail",
-    calculatedVerticalTail: "Calculated Vertical Tail",
-    drag: "Drag",
-    general: "General",
-    motorAndBattery:'Motor and Battery'
-}
+
 
  const initialState={
     missionRequirement:{
@@ -540,9 +527,11 @@
 export const sizingReducer=(state=initialState,action)=>{
     switch(action.type){
         case 'sizing':
-            console.log(state,'sizingStore')
-            return initialState
-            break;
+        console.log(action.data.parent,action.data.name,action.data.value,"sizingaction")
+        // console.log({...state,[action.data.parent]:{...state[action.data.parent],[action.data.name]:{...state[action.data.parent][action.data.name]}}},"sizingredux") 
+        // return {...state,input:{...state.input,[action.data.parent]:{...state.input[action.data.parent],[action.data.name]:{...state.input[action.data.parent][action.data.name],value:action.data.value}}}}
+        return {...state,[action.data.parent]:{...state[action.data.parent],[action.data.name]:{...state[action.data.parent][action.data.name],value:action.data.value}}}
+            
         default:
             return initialState;
     }

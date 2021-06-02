@@ -25,7 +25,6 @@ const rootReducer=combineReducers({
   sizingReducer:sizingReducer,
 })
 const store=createStore(rootReducer,composeEnhancers(applyMiddleware(thunk)));
-// const store=createStore(rootReducer);
 
 const persistConfig = {
   key:'root',
