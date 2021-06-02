@@ -38,7 +38,6 @@ const SpecsInputContainer = () => {
     //States
 
     // const[specs,setSpecs]=useState(specsData)
-
     // const[environment,setEnvironment]=useState(environmentData)
     // const[diameter,setDiameter]=useState(diameterData)
     // const[pitch,setPitch]=useState(pitchData)
