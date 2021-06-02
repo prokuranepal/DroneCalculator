@@ -1,7 +1,9 @@
 
 
-export const Specs = {
-    input: {
+export const motorProp = {
+    specs: {
+        style: null,
+        input:{
             kvRating: {
                 value: 830,
                 field: 'KV Rating',
@@ -54,31 +56,10 @@ export const Specs = {
             },
            
         }
-    }
-
-    export const Environment={
-        input:{
-            altitude: {
-                value: 0,
-                field: 'Altitude',
-                unit: 'm',
-                defaultValue: 0,
-                name: 'altitude',
-                input:true,
-            },
-            density: {
-                value: 1.225,
-                field: 'Density',
-                unit: 'kg/m^3',
-                name: 'density',
-                input:true
-            },
-        }
-    }
-
-    export const Diameter={
-        input:{
-            
+    },
+        diameter:{
+            style:null,
+            input:{
             cp1:{
                 value:0.04,
                 field:'CP1',
@@ -109,42 +90,76 @@ export const Specs = {
 
             }
 
+        }},
+        environment:{
+            style:null,
+            input: {
+            altitude: {
+                value: 0,
+                field: 'Altitude',
+                unit: 'm',
+                defaultValue: 0,
+                name: 'altitude',
+                input:true,
+            },
+            density: {
+                value: 1.225,
+                field: 'Density',
+                unit: 'kg/m^3',
+                name: 'density',
+                input:true
+            },
+        }},
+        
+        pitch:{
+            style: {
+                marginTop: '-140px'
+            },
+            input:{
+            airspeed1:{
+                value:15,            
+                field:'airspeed1',
+                name:'airspeed1',
+                input:true,
+                unit:'m/s'
+            },
+            airspeed2:{
+                value:24,
+                field:'airspeed2',
+                name:'airspeed2',
+                input:true,
+                unit:'m/s'
+    
+            },
+            pitch1:{
+                value:4.88666482,
+                field:'pitch1',
+                name:'pitch1',
+                input:false,
+                unit:'inch'
+    
+            },
+            pitch2:{
+                value:7.818663711,
+                field:'pitch2',
+                name:'pitch2',
+                input:false,
+                unit:'inch'
+    
+            }
         }
+        }
+    }
+
+    export const Environment={
+        
+    }
+
+    export const Diameter={
+        
     }
 export const Pitch={
-    input:{
-        airspeed1:{
-            value:15,            
-            field:'airspeed1',
-            name:'airspeed1',
-            input:true,
-            unit:'m/s'
-        },
-        airspeed2:{
-            value:24,
-            field:'airspeed2',
-            name:'airspeed2',
-            input:true,
-            unit:'m/s'
-
-        },
-        pitch1:{
-            value:4.88666482,
-            field:'pitch1',
-            name:'pitch1',
-            input:false,
-            unit:'inch'
-
-        },
-        pitch2:{
-            value:7.818663711,
-            field:'pitch2',
-            name:'pitch2',
-            input:false,
-            unit:'inch'
-
-        }
-    }
+    
 }
 
 
