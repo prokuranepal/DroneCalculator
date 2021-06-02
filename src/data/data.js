@@ -725,13 +725,3 @@ export const Sizing={
 // }
 
 // console.log(nest,'arrnest')
-
-const obj={
-    firstName:'Manish',
-    lastName:'Kharel',
-    email:"kharelmanish2@gmail.com"
-}
-let arr=[]
-for(let key in obj){
-    arr.push({id:key,value:obj[key]})
-}

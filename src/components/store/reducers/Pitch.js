@@ -35,7 +35,18 @@
 }
 
 export const pitchReducer=(state=initialState,action)=>{
-    switch(action){
+    switch(action.type){
+        case 'pitch':
+            return{...state, 
+                input:  {
+                        ...state.input,
+                        [action.data.id]:{
+                            ...state.input[action.data.id],
+                            value:action.data.value
+                             }
+                        }
+            };
+            break;
         default:
             return initialState;
     }

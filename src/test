@@ -343,3 +343,31 @@ return arr
 
 
 console.log(data,"datta")
+
+
+
+ //copy the input object from the state
+        const updatedInput = { ...specs.input }
+
+        //copy the specific field like density, maxPower using data.id from updatedInput
+        let item = updatedInput[data.id];
+
+        //update the value using the value from onChange to the related field
+        item = { ...item, value: e.target.value };
+
+        //update the field item with updated value to updatedInput
+        updatedInput[data.id] = item;
+
+         //The data is calculated for certain required fields 
+
+         updatedInput.nominalVoltage.value=updatedInput.cellsInSeries.value*3.7
+
+         updatedInput.maxRPM.value=(updatedInput.kvRating.value*updatedInput.nominalVoltage.value)
+         updatedInput.maxWorkingRPM.value=(updatedInput.estimatedMaxPercent.value)/100*updatedInput.maxRPM.value
+
+ 
+         console.log(updatedInput.kvRating.value,"kvcheck")
+    
+        //set the new state
+        setSpecs({ input: updatedInput });
+

@@ -35,7 +35,17 @@
 }
 
 export const diameterReducer=(state=initialState,action)=>{
-    switch(action){
+    switch(action.type){
+        case 'diameter':
+            return{...state, 
+                input:  {
+                        ...state.input,
+                        [action.data.id]:{
+                            ...state.input[action.data.id],
+                            value:action.data.value
+                             }
+                        }
+            }; 
         default:
             return initialState;
     }
