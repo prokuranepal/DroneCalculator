@@ -1,17 +1,18 @@
 
 import React, { useState, useEffect } from 'react'
-import { Paper, Typography, TextField, Container, Grid } from '@material-ui/core'
+import { Paper, Typography, TextField, Container, Grid, BottomNavigation } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core'
 import InputUnit from './InputUnit';
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import '../App.css'
 import { motorProp } from '../data/data';
+import {Button} from '../Button'
 import Header from './Header'
 import { environmentReducer } from './store/reducers/Environment';
 
 
-const SpecsInputContainer = () => {
+const SpecsInputContainer = (props) => {
 
     //Reducer Data's
 
@@ -24,17 +25,25 @@ const SpecsInputContainer = () => {
     // const [environment, setEnvironment] = useState(motorProp.environment);
     // const [diameter, setDiameter] = useState(motorProp.diameter);
     // const [pitch, setPitch] = useState(motorProp.pitch);
+    const motorPropsR=useSelector(({motorReducer})=>motorReducer.motorPropsR)
 
     const [state, setState] = useState(motorProp);
 
-    // useEffect(() => {
-    //     if (specsR) setSpecs(specsR);
-    //     if (environmentR) setEnvironment(environmentR);
-    //     if (diameterR) setDiameter(diameterR);
-    //     if (pitchR) setPitch(pitchR);
-    // }, [])
+    const submitHandler=(e)=>{
+        e.preventDefault()
+        dispatch({type:'updateState',data:state})
+        props.history.push('/sizing')
+    }
+    useEffect(() => {
+        if (motorPropsR) setState(motorPropsR);
+        console.log(motorPropsR,"reducerState")
+        // if (environmentR) setEnvironment(environmentR);
+        // if (diameterR) setDiameter(diameterR);
+        // if (pitchR) setPitch(pitchR);
+    }, [])
+    console.log(state,'reducer')
 
-
+    
     //States
 
     // const[specs,setSpecs]=useState(specsData)
@@ -44,69 +53,91 @@ const SpecsInputContainer = () => {
 
     const dispatch = useDispatch()
 
-    const updateState = (e, data, stateValue) => {
-        const newState = {
-            ...stateValue,
-            input: {
-                ...stateValue.input,
-                [data.id]: {
-                    ...stateValue.input[data.id],
-                    value: e.target.value
-                }
-            }
-        }
+   
+
+    const updateState = (e, data, state,type) => {
+
+        console.log(state,type,"State")
+console.log(e.target.value,"value")
+        const newState={...state,[type]:{...state[type],input:{...state[type].input,[data.id]:{...state[type].input[data.id],value:+e.target.value}}}}
+        // console.log(newState,'newState')
+        // const newState = {
+        //     ...stateValue,
+        //     input: {
+        //         ...stateValue.input,
+        //         [data.id]: {
+        //             ...stateValue.input[data.id],
+        //             value: e.target.value
+        //         }
+        //     }3.09
+        // }
         return newState;
     }
 
     const onChangeHandler = (e, data, type) => {
-        let newState = state[type];
-        console.log(e.target.value, data, type)
-        newState = updateState(e, data, newState);
-        if (type === 'specs') {
-            const nominalVoltage = newState.input.cellsInSeries.value * 3.7;
-            const maxRPM = newState.input.kvRating.value * nominalVoltage
-            const maxWorkingRPM = (newState.input.estimatedMaxPercent.value / 100) * maxRPM
+        let newState = state;
+        // console.log(e.target.value, data, type)
+        newState = updateState(e, data, newState,type);
+       console.log(type,"TYPE")
+            const nominalVoltage = newState.specs.input.cellsInSeries.value * 3.7;
+            const maxRPM = newState.specs.input.kvRating.value * nominalVoltage
+            const maxWorkingRPM = (newState.specs.input.estimatedMaxPercent.value / 100) * maxRPM
 
-            newState = {
-                ...newState,
-                input: {
-                    ...newState.input,
-                    nominalVoltage: {...newState.input.nominalVoltage, value: nominalVoltage},
-                    maxRPM: {...newState.input.maxRPM, value: maxRPM},
-                    maxWorkingRPM: {...newState.input.maxWorkingRPM, value: maxWorkingRPM},
+            const diameter1 = Math.pow((newState.specs.input.maxPower.value / (newState.diameter.input.cp1.value * newState.environment.input.density.value * Math.pow((maxWorkingRPM / 60), 3))), 1 / 5) * 1000 / 25.4;
+            const diameter2 = Math.pow((state.specs.input.maxPower.value / (newState.diameter.input.cp2.value * newState.environment.input.density.value * Math.pow((maxWorkingRPM / 60), 3))), 1 / 5) * 1000 / 25.4;
+            const pitch1 = (newState.pitch.input.airspeed1.value * 1.8) / (maxWorkingRPM / 60) * 1000 / 25.4;
+            const pitch2 = (newState.pitch.input.airspeed2.value * 1.8) / (maxWorkingRPM / 60) * 1000 / 25.4;
+            
+            newState.specs.input.nominalVoltage.value=nominalVoltage
+            newState.diameter.input.diameter1.value=diameter1;
+            newState.diameter.input.diameter2.value=diameter2;
+            newState.pitch.input.pitch1.value=pitch1;
+            newState.pitch.input.pitch2.value=pitch2;
+            newState.specs.input.maxWorkingRPM.value=maxWorkingRPM;
+            newState.specs.input.maxRPM.value=maxRPM;
 
-                }
-            }
-        } else if (type === 'environment') {
+            // newState = {
+            //     ...newState,[type]:{...newState[type],...newState[type].input,
+            //         nominalVoltage: {...newState[type].input.nominalVoltage, value: nominalVoltage},
+            //         maxRPM: {...newState[type].input.maxRPM, value: maxRPM},
+            //         maxWorkingRPM: {...newState[type].input.maxWorkingRPM, value: maxWorkingRPM},
 
-        } else if (type === 'diameter') {
+            //     }}
+                console.log(newState,'newState')
+
+            //     input: {
+              
+            // }
+
             // let powerData=(specs.input.cp1.value*specs.input.density.value*Math.pow(specs.input.maxWorkingRPM.value/60,3))
-            let diameter1 = Math.pow((state.specs.input.maxPower.value / (newState.input.cp1.value * state.environment.input.density.value * Math.pow((state.specs.input.maxWorkingRPM.value / 60), 3))), 1 / 5) * 1000 / 25.4;
-            let diameter2 = Math.pow((state.specs.input.maxPower.value / (newState.input.cp2.value * state.environment.input.density.value * Math.pow((state.specs.input.maxWorkingRPM.value / 60), 3))), 1 / 5) * 1000 / 25.4;
-            newState = {
-                ...newState,
-                input: {
-                    ...newState.input,
-                    diameter1: {...newState.input.diameter1, value:  diameter1},
-                    diameter2: {...newState.input.diameter2, value:  diameter2},
+        //     console.log(state.specs.input.maxPower.value,"maxpower")
+            // let diameter1 = Math.pow((state.specs.input.maxPower.value / (newState.input.cp1.value * state.environment.input.density.value * Math.pow((state.specs.input.maxWorkingRPM.value / 60), 3))), 1 / 5) * 1000 / 25.4;
+            // let diameter2 = Math.pow((state.specs.input.maxPower.value / (newState.input.cp2.value * state.environment.input.density.value * Math.pow((state.specs.input.maxWorkingRPM.value / 60), 3))), 1 / 5) * 1000 / 25.4;
+        //     console.log(diameter1,"maxpowerdiameter")
+        //     newState = {
+        //         ...newState,
+        //         input: {
+        //             ...newState.input,
+        //             diameter1: {...newState.input.diameter1, value:  diameter1},
+        //             diameter2: {...newState.input.diameter2, value:  diameter2},
 
-                }
-            }
-        } else if (type === 'pitch') {
-            const pitch1 = (newState.input.airspeed1.value * 1.8) / (state.specs.input.maxWorkingRPM.value / 60) * 1000 / 25.4;
-            const pitch2 = (newState.input.airspeed2.value * 1.8) / (state.specs.input.maxWorkingRPM.value / 60) * 1000 / 25.4;
-            newState = {
-                ...newState,
-                input: {
-                    ...newState.input,
-                    pitch1: {...newState.input.pitch1, value: pitch1},
-                    pitch2: {...newState.input.pitch2, value: pitch2},
+        //         }
+        //     }
+        //  else if (type === 'pitch') {
+        //     const pitch1 = (newState.input.airspeed1.value * 1.8) / (state.specs.input.maxWorkingRPM.value / 60) * 1000 / 25.4;
+            // const pitch2 = (newState.input.airspeed2.value * 1.8) / (state.specs.input.maxWorkingRPM.value / 60) * 1000 / 25.4;
+        //     newState = {
+        //         ...newState,
+        //         input: {
+        //             ...newState.input,
+        //             pitch1: {...newState.input.pitch1, value: pitch1},
+        //             pitch2: {...newState.input.pitch2, value: pitch2},
 
-                }
-            }
-        }
+        //         }
+        //     }
+        // }
 
-        setState({...state, [type]: newState});
+        setState( newState);
     }
 
 // const specsChangeHandler = (e, data) => {
@@ -227,9 +258,9 @@ for(let key in state) {
 return (
     <>
         <Header header='Motor and Propeller Study' />
-        <Grid container>
+        <Grid container style={{padding:'50px 0'}}>
             <div >
-                <Grid container>
+                <Grid container style={{paddingBottom:'20px '}}>
 
                     {motorPropData.map(inputData => {
                         return <Grid items xs={12} md={6} style={{ margin: '10px 0', ...inputData.style }} >
@@ -322,7 +353,7 @@ return (
                         </Paper>
                     </Grid> */}
                 </Grid>
-
+<Button text='Next' submitHandler={(e)=>submitHandler(e)}/>
             </div>
         </Grid>
     </>

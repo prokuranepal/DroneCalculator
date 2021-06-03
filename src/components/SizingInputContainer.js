@@ -4,11 +4,12 @@ import { Paper, Typography, TextField, Container, Grid } from '@material-ui/core
 import InputUnit from './InputUnit';
 import {useSelector} from 'react-redux'
 import {useDispatch} from 'react-redux'
+import {Button} from '../Button'
 
 import {Sizing,title} from '../data/data'
 import Chart from './Chart';
 
-const SizingInputContainer=()=>{
+const SizingInputContainer=(props)=>{
 
     //Reducer data's
 
@@ -24,11 +25,14 @@ const SizingInputContainer=()=>{
     // console.log(sizingGetLocalStorage,'retrive')
 
    
-
+const submitHandler=(e)=>{
+    e.preventDefault()
+    props.history.push('/')
+}
 
 const sizingChangeHandler=(e,data)=>{
 dispatch({type:'sizing',data:{...data,value:e.target.value}})
-    const updatedSizing={...sizing,[data.parent]:{...sizing[data.parent],[data.name]:{...sizing[data.parent][data.name],value:+e.target.value}}}
+    // const updatedSizing={...sizing,[data.parent]:{...sizing[data.parent],[data.name]:{...sizing[data.parent][data.name],value:+e.target.value}}}
 // console.log(updatedSizing,"updatedSizing")
 // sizing.calculatedWing.wingArea.value=parseFloat(Math.pow(sizing.wing.span.value,2)/sizing.wing.aspectRatio.value).toPrecision(4);
 // sizing.calculatedWing.rootChord.value=parseFloat(2*sizing.calculatedWing.wingArea.value/(sizing.wing.span.value*(1+sizing.wing.tapperRatio.value))).toPrecision(4);
@@ -115,6 +119,7 @@ console.log("mainarray", sizingArray)
 })
                  ):''}
        </Grid> 
+      <Button text='Prev' submitHandler={(e)=>submitHandler(e)}/>
        <Chart/>          
     </div>
 </Grid>
