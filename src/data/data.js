@@ -112,9 +112,7 @@ export const motorProp = {
         }},
         
         pitch:{
-            style: {
-                marginTop: '-140px'
-            },
+            style: null,
             input:{
             airspeed1:{
                 value:15,            

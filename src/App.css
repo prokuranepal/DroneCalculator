@@ -3,6 +3,27 @@
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
   grid-gap: 20px;
 } */
+.button-container button {
+  display: block;
+  margin: 0 auto;
+  outline: none;
+  border: none;
+  width: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 14px 24px;
+  background: #f00c50;
+  border-radius: 4px;
+  cursor: pointer;
+  /* background-color: red; */
+  transform: scale(1);
+  transition: transform 200ms ease;
+}
+.button-container button:hover {
+  transform: scale(1.07);
+  background: #ff0f57;
+}
 
 .input {
   /* min-height: 400px; */

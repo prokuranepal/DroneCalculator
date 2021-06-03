@@ -79,7 +79,7 @@ const initialState = {
                                      }
                                 }
                     };
-           break;
+           
            
            default:
                return initialState;

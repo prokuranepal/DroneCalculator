@@ -12,6 +12,7 @@ import {pitchReducer} from './components/store/reducers/Pitch'
 import {environmentReducer} from './components/store/reducers/Environment';
 import {diameterReducer} from './components/store/reducers/Diameter'
 import {sizingReducer} from './components/store/reducers/SizingReducer'
+import {motorReducer} from './components/store/reducers/Motor'
 import {createStore,compose,combineReducers,applyMiddleware} from 'redux'
 import {BrowserRouter} from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
@@ -23,9 +24,9 @@ const rootReducer=combineReducers({
   environmentReducer:environmentReducer,
   diameterReducer:diameterReducer,
   sizingReducer:sizingReducer,
+  motorReducer:motorReducer
 })
 const store=createStore(rootReducer,composeEnhancers(applyMiddleware(thunk)));
-// const store=createStore(rootReducer);
 
 const persistConfig = {
   key:'root',
