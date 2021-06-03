@@ -189,7 +189,7 @@ export const title ={
     motorAndBattery:'Motor and Battery'
 }
 
-export const Sizing={
+export const SizingProp={
     missionRequirement:{
         range:{
             value:89.28,
@@ -455,7 +455,7 @@ export const Sizing={
     },
     mass:{
         totalMass:{
-            value:12,
+            value:8,
             unit:'kg',
             input:true,
             field:'Total Mass',
