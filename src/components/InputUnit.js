@@ -83,7 +83,7 @@ case "rangeBatteryCapacity":
           variant='outlined'
           color='primary'
           // helperText={message?message:''}
-          value={props.value}
+          value={value}
           autoFocus
         />:<Output value={value} message={message}/>
         }
