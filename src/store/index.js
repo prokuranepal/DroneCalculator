@@ -10,22 +10,25 @@ import { sizingReducer } from './reducers/sizing'
 import { motorReducer } from './reducers/motor'
 import { specsReducer } from './reducers/Specs'
 
+import {reducer} from './reducers';
+
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-    specsReducer: specsReducer,
-    pitchReducer: pitchReducer,
-    environmentReducer: environmentReducer,
-    diameterReducer: diameterReducer,
-    sizingReducer: sizingReducer,
-    motorReducer: motorReducer
+    // specsReducer: specsReducer,
+    // pitchReducer: pitchReducer,
+    // environmentReducer: environmentReducer,
+    // diameterReducer: diameterReducer,
+    // sizingReducer: sizingReducer,
+    // motorReducer: motorReducer
+    reducer: reducer
 })
 
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['sizingReducer', 'specsReducer', 'pitchReducer', 'environmentReducer', 'diameterReducer', 'motorReducer'],
+    whitelist: ['reducer'],
 }
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
