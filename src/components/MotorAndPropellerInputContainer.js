@@ -29,11 +29,7 @@ const SpecsInputContainer = (props) => {
 
     const [state, setState] = useState(motorProp);
 
-    const submitHandler = (e) => {
-        e.preventDefault()
-        dispatch(motorActions.updateMotorPropValues(state))
-        props.history.push('/sizing')
-    }
+    
     useEffect(() => {
         if (motorPropsR) setState(motorPropsR);
         console.log(motorPropsR, "reducerState")
@@ -42,6 +38,11 @@ const SpecsInputContainer = (props) => {
         // if (pitchR) setPitch(pitchR);
     }, [])
     console.log(state, 'reducer')
+    const submitHandler = (e) => {
+        e.preventDefault()
+        dispatch(motorActions.updateMotorPropValues(state))
+        props.history.push('/sizing')
+    }
 
 
     //States
@@ -96,7 +97,7 @@ const SpecsInputContainer = (props) => {
         const maxWorkingRPM = (newState.specs.input.estimatedMaxPercent.value / 100) * maxRPM
 
         const diameter1 = Math.pow((newState.specs.input.maxPower.value / (newState.diameter.input.cp1.value * newState.environment.input.density.value * Math.pow((maxWorkingRPM / 60), 3))), 1 / 5) * 1000 / 25.4;
-        const diameter2 = Math.pow((state.specs.input.maxPower.value / (newState.diameter.input.cp2.value * newState.environment.input.density.value * Math.pow((maxWorkingRPM / 60), 3))), 1 / 5) * 1000 / 25.4;
+        const diameter2 = Math.pow((newState.specs.input.maxPower.value / (newState.diameter.input.cp2.value * newState.environment.input.density.value * Math.pow((maxWorkingRPM / 60), 3))), 1 / 5) * 1000 / 25.4;
         const pitch1 = (newState.pitch.input.airspeed1.value * 1.8) / (maxWorkingRPM / 60) * 1000 / 25.4;
         const pitch2 = (newState.pitch.input.airspeed2.value * 1.8) / (maxWorkingRPM / 60) * 1000 / 25.4;
 

@@ -6,7 +6,7 @@ import thunk from 'redux-thunk'
 import { pitchReducer } from './reducers/Pitch'
 import { environmentReducer } from './reducers/Environment';
 import { diameterReducer } from './reducers/Diameter'
-import { sizingReducer } from './reducers/SizingReducer'
+import { sizingReducer } from './reducers/sizing'
 import { motorReducer } from './reducers/motor'
 import { specsReducer } from './reducers/Specs'
 
