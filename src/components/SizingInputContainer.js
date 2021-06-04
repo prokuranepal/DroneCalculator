@@ -56,6 +56,11 @@ console.log(e.target.value,"value")
         }
 return newState
 }
+let labels=['0','5','10','15','20','25','30','35','40']
+let velocity=[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35];
+// let velocity=[0,5,10,15,20,25,30,35]
+let cl=[];
+let drag=[];
 
 const onChangeHandler=(e,data,type)=>{
     console.log(data,"data")
@@ -128,6 +133,7 @@ const onChangeHandler=(e,data,type)=>{
       newState.motorAndBattery.powerCruise.value=motorPowerCruise
       newState.motorAndBattery.currentCruise.value=motorCurrentCruise
       newState.motorAndBattery.FlightTime.value=flightTime
+      newState.motorAndBattery.flightTimeBatteryCapacity.value=flightTimeBatteryCapacity
       newState.motorAndBattery.rangeBatteryCapacity.value=rangeBatteryCapacity
       newState.motorAndBattery.rangeCruiseSpeed.value=rangeCruiseSpeed
       newState.motorAndBattery.capacityOfEachCell.value=capacityOfEachCell
@@ -164,15 +170,20 @@ const onChangeHandler=(e,data,type)=>{
     //   newState.motorAndBattery.capacityOfEachCell.value=newState.motorAndBattery.batteryCapacityParallel.value/newState.motorAndBattery.parallelCells.value;
     //   newState.motorAndBattery.cRating.value=newState.motorAndBatty.maxContinousCurrent.value/(newState.motorAndBattery.capacityOfEachCell.value/1000);
  
+    
+    setState(newState)
+}
+let parasiticDrag=state.drag.wingZeroLiftDragCoefficient.value+state.drag.fuselageDragCoefficient.value;
 
-
-     setState(newState)
-   }
-
-    // localStorage.setItem('newState',JSON.stringify(Sizing));
+// localStorage.setItem('newState',JSON.stringify(Sizing));
+for(let i=0;i<velocity.length;i++){
+    cl.push((state.mass.totalMass.value*state.operatingEnvironment.acceleration.value)/(1/2*state.operatingEnvironment.airDensity.value*Math.pow(velocity[i],2)*state.calculatedWing.wingArea.value))
+    drag.push(1/2 *state.operatingEnvironment.airDensity.value*Math.pow(velocity[i],2)*state.calculatedWing.wingArea.value*(parasiticDrag+state.general.k.value*Math.pow(cl[i],2)))
+}
+console.log(cl,'arraycl')
+console.log(drag,'arraydrag')
 
 console.log(state,"state")
-
 let sizingArray=[]
 for(let key in state){
     let innerArray=[]
@@ -218,7 +229,7 @@ console.log("mainarray", sizingArray)
                  ):''}
        </Grid> 
       <Button text='Prev' submitHandler={(e)=>submitHandler(e)}/>
-       <Chart/>          
+       <Chart labels={labels} velocity={velocity} cl={cl} drag={drag}/>          
     </div>
 </Grid>
         </>

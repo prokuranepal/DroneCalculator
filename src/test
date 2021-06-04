@@ -404,3 +404,21 @@ updatedSizing.calculatedWing.wingArea.value=Math.pow(updatedSizing.wing.span.val
      updatedSizing.motorAndBattery.flightTimeBatteryCapacity.value=(updatedSizing.missionRequirement.flightTime.value * updatedSizing.motorAndBattery.currentCruise.value/Math.pow(10,-3))/(updatedSizing.motorAndBattery.maximumDischarge.value/100);
      updatedSizing.motorAndBattery.capacityOfEachCell.value=updatedSizing.motorAndBattery.batteryCapacityParallel.value/updatedSizing.motorAndBattery.parallelCells.value;
      updatedSizing.motorAndBattery.cRating.value=updatedSizing.motorAndBattery.maxContinousCurrent.value/(updatedSizing.motorAndBattery.capacityOfEachCell.value/1000);
+
+
+
+
+
+      let data={
+            labels:this.props.label,
+            datasets:[{
+                label:'Variation of drag force with velocity',
+                data:this.props.drag,
+                backgroundColor:['rgba(162, 211, 235, 0.4)','red','blue','green','orange'],
+                borderWidth:4,
+                fill:true,
+                radius:4,
+                lineTension:0.5
+            },
+        ]
+        }
