@@ -10,7 +10,7 @@ import { motorProp } from '../data/data';
 import { Button } from '../Button'
 import Header from './Header'
 // import { environmentReducer } from '../store/reducers/Environment';
-import * as motorActions from '../store/actions/motor';
+import * as actions from '../store/actions';
 
 const SpecsInputContainer = (props) => {
 
@@ -25,7 +25,7 @@ const SpecsInputContainer = (props) => {
     // const [environment, setEnvironment] = useState(motorProp.environment);
     // const [diameter, setDiameter] = useState(motorProp.diameter);
     // const [pitch, setPitch] = useState(motorProp.pitch);
-    const motorPropsR = useSelector(({ motorReducer }) => motorReducer.motorPropsR)
+    const motorPropsR = useSelector(({ reducer }) => reducer.motorPropsR)
 
     const [state, setState] = useState(motorProp);
 
@@ -37,10 +37,14 @@ const SpecsInputContainer = (props) => {
         // if (diameterR) setDiameter(diameterR);
         // if (pitchR) setPitch(pitchR);
     }, [])
-    console.log(state, 'reducer')
+
+    // useEffect(() => {
+    //     console.log('motor state',state);
+    // },[state])
+    // console.log(state, 'reducer')
     const submitHandler = (e) => {
         e.preventDefault()
-        dispatch(motorActions.updateMotorPropValues(state))
+        dispatch(actions.updateMotorPropValues(state))
         props.history.push('/sizing')
     }
 
@@ -58,8 +62,8 @@ const SpecsInputContainer = (props) => {
 
     const updateState = (e, data, s, type) => {
 
-        console.log(s, type, "State")
-        console.log(e.target.value, "value")
+        // console.log(s, type, "State")
+        // console.log(e.target.value, "value")
         const newState = {
             ...s,
             [type]: {
@@ -88,10 +92,10 @@ const SpecsInputContainer = (props) => {
     }
 
     const onChangeHandler = (e, data, type) => {
-        let newState = state;
+        let newState = {...state};
         // console.log(e.target.value, data, type)
         newState = updateState(e, data, newState, type);
-        console.log(type, "TYPE")
+        // console.log(type, "TYPE")
         const nominalVoltage = newState.specs.input.cellsInSeries.value * 3.7;
         const maxRPM = newState.specs.input.kvRating.value * nominalVoltage
         const maxWorkingRPM = (newState.specs.input.estimatedMaxPercent.value / 100) * maxRPM
@@ -116,7 +120,7 @@ const SpecsInputContainer = (props) => {
         //         maxWorkingRPM: {...newState[type].input.maxWorkingRPM, value: maxWorkingRPM},
 
         //     }}
-        console.log(newState, 'newState')
+        // console.log(newState, 'newState')
 
         //     input: {
 
@@ -149,7 +153,7 @@ const SpecsInputContainer = (props) => {
         //         }
         //     }
         // }
-
+        // console.log(newState);
         setState(newState);
     }
 
