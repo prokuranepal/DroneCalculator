@@ -1,7 +1,29 @@
-.paper {
+/* .paper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
   grid-gap: 20px;
+} */
+
+.button-container button {
+  display: block;
+  margin: 0 auto;
+  outline: none;
+  border: none;
+  width: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 14px 24px;
+  background: #f00c50;
+  border-radius: 4px;
+  cursor: pointer;
+  /* background-color: red; */
+  transform: scale(1);
+  transition: transform 200ms ease;
+}
+.button-container button:hover {
+  transform: scale(1.07);
+  background: #ff0f57;
 }
 
 .input {
@@ -9,10 +31,58 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  gap: 20px;
-  padding: 20px 0;
+  /* gap: 20px; */
+  padding: 0px 0;
+  height: 50px;
+  /* margin: 10px 0; */
 }
-.input > * {
-  flex: 1;
+.messege {
+  height: 100px;
+  /* background-color: red; */
+}
+.input > :nth-child(1) {
+  flex-basis: 30%;
   text-align: center;
+  margin: 0 20px 0 0;
+}
+.input > :nth-child(2) {
+  flex-basis: 40%;
+  padding: 0;
+  /* background-color: red; */
+}
+.input > :nth-child(3) {
+  flex-basis: 10%;
+  margin: 0 0 0 20px;
+}
+.propeller-pitch-selection {
+  margin-top: -140px;
+  /* background-color: red; */
+}
+.chart {
+  padding: 50px 0 0 0;
+  margin: 0 auto;
+  width: 60%;
+  height: 400px;
+}
+
+@media only screen and (max-width: 923px) {
+  .input > :nth-child(2) {
+    flex-basis: 60%;
+    padding: 0;
+    margin: 0;
+  }
+  .propeller-pitch-selection {
+    margin-top: 10px;
+  }
+  .input {
+    margin: 10px 0;
+  }
+  .chart {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .input > :nth-child(2) {
+    flex-basis: 60%;
+  }
 }
