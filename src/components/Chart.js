@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
+import '../App.css'
 import {Line,Bar} from 'react-chartjs-2'
 import { defaults } from 'react-chartjs-2';
 
 export default class Chart extends Component {
 
     render() {
-      console.log(this.props.labels,'label')
 
         let data={
             labels:this.props.velocity,
@@ -42,7 +42,7 @@ export default class Chart extends Component {
         
         return (
 
-         <div className="chart" style={{padding:' 0 0 100px 0',margin:'0 auto', width:'830px',height:'400px'}} >
+         <div className="chart"  >
          <Line data={data}  
          options={
             {    

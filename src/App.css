@@ -3,6 +3,7 @@
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
   grid-gap: 20px;
 } */
+
 .button-container button {
   display: block;
   margin: 0 auto;
@@ -57,6 +58,13 @@
   margin-top: -140px;
   /* background-color: red; */
 }
+.chart {
+  padding: 50px 0 0 0;
+  margin: 0 auto;
+  width: 60%;
+  height: 400px;
+}
+
 @media only screen and (max-width: 923px) {
   .input > :nth-child(2) {
     flex-basis: 60%;
@@ -68,5 +76,13 @@
   }
   .input {
     margin: 10px 0;
+  }
+  .chart {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .input > :nth-child(2) {
+    flex-basis: 60%;
   }
 }

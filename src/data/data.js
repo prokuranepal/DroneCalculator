@@ -463,7 +463,7 @@ export const SizingProp={
             parent:'mass'
         },
         batteryMass:{
-            value:3.85,
+            value:15.85,
             unit:'kg',
             input:true,
             field:'Battery Mass',
