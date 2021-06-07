@@ -1,0 +1,4340 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SizingInputContainer/> should render without issues 1`] = `
+Array [
+  <header
+    className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary makeStyles-appContainer-1 MuiPaper-elevation4"
+  >
+    <h5
+      className="MuiTypography-root makeStyles-header-2 MuiTypography-h5"
+      data-test="header"
+    >
+      Sizing Study
+    </h5>
+  </header>,
+  <div
+    className="MuiGrid-root MuiGrid-container"
+  >
+    <div>
+      <div
+        className="MuiGrid-root MuiGrid-container"
+      >
+        <div
+          className="MuiGrid-root eachItem MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+          items={true}
+          style={
+            Object {
+              "margin": "20px 0",
+            }
+          }
+        >
+          <div
+            className="MuiPaper-root paper MuiPaper-elevation4 MuiPaper-rounded"
+            style={
+              Object {
+                "marginLeft": " 20px",
+                "marginRight": "20px",
+                "padding": "20px 30px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "marginTop": "0px",
+                }
+              }
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5"
+                data-test="Mission RequirementTypoComp"
+                style={
+                  Object {
+                    "marginBottom": "12px",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Mission Requirement
+              </h5>
+              <div
+                style={
+                  Object {
+                    "flexGrow": 1,
+                  }
+                }
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                >
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Range
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={89.28}
+                          disabled={false}
+                          id="standard-number"
+                          name="range"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={89.28}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      km
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Flight Time
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={1.24}
+                          disabled={false}
+                          id="standard-number"
+                          name="flightTime"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={1.24}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      hr
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Payload
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={1.5}
+                          disabled={false}
+                          id="standard-number"
+                          name="payload"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={1.5}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      kg
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root eachItem MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+          items={true}
+          style={
+            Object {
+              "margin": "20px 0",
+            }
+          }
+        >
+          <div
+            className="MuiPaper-root paper MuiPaper-elevation4 MuiPaper-rounded"
+            style={
+              Object {
+                "marginLeft": " 20px",
+                "marginRight": "20px",
+                "padding": "20px 30px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "marginTop": "0px",
+                }
+              }
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5"
+                data-test="Operating RequirementTypoComp"
+                style={
+                  Object {
+                    "marginBottom": "12px",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Operating Requirement
+              </h5>
+              <div
+                style={
+                  Object {
+                    "flexGrow": 1,
+                  }
+                }
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                >
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Altitude
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={2500}
+                          disabled={false}
+                          id="standard-number"
+                          name="altitude"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={2500}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Air Density
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={0.9}
+                          disabled={false}
+                          id="standard-number"
+                          name="airDensity"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={0.9}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      kg/m^3
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Acceleration
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-9"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        9.81
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m/s^2
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Cruise Speed
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={20}
+                          disabled={false}
+                          id="standard-number"
+                          name="cruiseSpeed"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={20}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m/s
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Stall Speed
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={15}
+                          disabled={false}
+                          id="standard-number"
+                          name="stallSpeed"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={15}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m/s
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root eachItem MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+          items={true}
+          style={
+            Object {
+              "margin": "20px 0",
+            }
+          }
+        >
+          <div
+            className="MuiPaper-root paper MuiPaper-elevation4 MuiPaper-rounded"
+            style={
+              Object {
+                "marginLeft": " 20px",
+                "marginRight": "20px",
+                "padding": "20px 30px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "marginTop": "0px",
+                }
+              }
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5"
+                data-test="WingTypoComp"
+                style={
+                  Object {
+                    "marginBottom": "12px",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Wing
+              </h5>
+              <div
+                style={
+                  Object {
+                    "flexGrow": 1,
+                  }
+                }
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                >
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Span
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={2.6}
+                          disabled={false}
+                          id="standard-number"
+                          name="span"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={2.6}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Aspect ratio
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={8}
+                          disabled={false}
+                          id="standard-number"
+                          name="aspectRatio"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={8}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Induced Drag Factor
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={0.04}
+                          disabled={false}
+                          id="standard-number"
+                          name="inducedDragFactor"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={0.04}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Tapper Ratio
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={0.6}
+                          disabled={false}
+                          id="standard-number"
+                          name="tapperRatio"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={0.6}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root eachItem MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+          items={true}
+          style={
+            Object {
+              "margin": "20px 0",
+            }
+          }
+        >
+          <div
+            className="MuiPaper-root paper MuiPaper-elevation4 MuiPaper-rounded"
+            style={
+              Object {
+                "marginLeft": " 20px",
+                "marginRight": "20px",
+                "padding": "20px 30px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "marginTop": "0px",
+                }
+              }
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5"
+                data-test="Calculated WingTypoComp"
+                style={
+                  Object {
+                    "marginBottom": "12px",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Calculated Wing
+              </h5>
+              <div
+                style={
+                  Object {
+                    "flexGrow": 1,
+                  }
+                }
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                >
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Wing Area
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-10"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.8450000000000001
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m^2
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Root Chord
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-11"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.40625
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Tip Chord
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-12"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.24375
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Mean Aerodynamic Chord
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-13"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.3317708333
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root eachItem MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+          items={true}
+          style={
+            Object {
+              "margin": "20px 0",
+            }
+          }
+        >
+          <div
+            className="MuiPaper-root paper MuiPaper-elevation4 MuiPaper-rounded"
+            style={
+              Object {
+                "marginLeft": " 20px",
+                "marginRight": "20px",
+                "padding": "20px 30px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "marginTop": "0px",
+                }
+              }
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5"
+                data-test="Horizontal TailTypoComp"
+                style={
+                  Object {
+                    "marginBottom": "12px",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Horizontal Tail
+              </h5>
+              <div
+                style={
+                  Object {
+                    "flexGrow": 1,
+                  }
+                }
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                >
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      CHT
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={0.9}
+                          disabled={false}
+                          id="standard-number"
+                          name="cht"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={0.9}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      LHT
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={1.451}
+                          disabled={false}
+                          id="standard-number"
+                          name="lht"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={1.451}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Span
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={0.9}
+                          disabled={false}
+                          id="standard-number"
+                          name="span"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={0.9}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Taper Ratio
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={0.7}
+                          disabled={false}
+                          id="standard-number"
+                          name="tapperRatio"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={0.7}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root eachItem MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+          items={true}
+          style={
+            Object {
+              "margin": "20px 0",
+            }
+          }
+        >
+          <div
+            className="MuiPaper-root paper MuiPaper-elevation4 MuiPaper-rounded"
+            style={
+              Object {
+                "marginLeft": " 20px",
+                "marginRight": "20px",
+                "padding": "20px 30px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "marginTop": "0px",
+                }
+              }
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5"
+                data-test="Calculated Horizontal TailTypoComp"
+                style={
+                  Object {
+                    "marginBottom": "12px",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Calculated Horizontal Tail
+              </h5>
+              <div
+                style={
+                  Object {
+                    "flexGrow": 1,
+                  }
+                }
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                >
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      SHT
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-14"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.173888159
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m^2
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Root Chord
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-15"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.227304783
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Tip Chord
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-16"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.1591133481
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root eachItem MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+          items={true}
+          style={
+            Object {
+              "margin": "20px 0",
+            }
+          }
+        >
+          <div
+            className="MuiPaper-root paper MuiPaper-elevation4 MuiPaper-rounded"
+            style={
+              Object {
+                "marginLeft": " 20px",
+                "marginRight": "20px",
+                "padding": "20px 30px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "marginTop": "0px",
+                }
+              }
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5"
+                data-test="Vertical TailTypoComp"
+                style={
+                  Object {
+                    "marginBottom": "12px",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Vertical Tail
+              </h5>
+              <div
+                style={
+                  Object {
+                    "flexGrow": 1,
+                  }
+                }
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                >
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      CVT
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={0.07}
+                          disabled={false}
+                          id="standard-number"
+                          name="cvt"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={0.07}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      LVT
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={1.451}
+                          disabled={false}
+                          id="standard-number"
+                          name="lvt"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={1.451}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Span
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={0.5}
+                          disabled={false}
+                          id="standard-number"
+                          name="span"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={0.5}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Tapper Ratio
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={0.7}
+                          disabled={false}
+                          id="standard-number"
+                          name="tapperRatio"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={0.7}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root eachItem MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+          items={true}
+          style={
+            Object {
+              "margin": "20px 0",
+            }
+          }
+        >
+          <div
+            className="MuiPaper-root paper MuiPaper-elevation4 MuiPaper-rounded"
+            style={
+              Object {
+                "marginLeft": " 20px",
+                "marginRight": "20px",
+                "padding": "20px 30px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "marginTop": "0px",
+                }
+              }
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5"
+                data-test="Calculated Vertical TailTypoComp"
+                style={
+                  Object {
+                    "marginBottom": "12px",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Calculated Vertical Tail
+              </h5>
+              <div
+                style={
+                  Object {
+                    "flexGrow": 1,
+                  }
+                }
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                >
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      SVT
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-17"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.1059889731
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m^2
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Root Chord
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-18"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.24835858191
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Tip Chord
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-19"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.1745700734
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root eachItem MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+          items={true}
+          style={
+            Object {
+              "margin": "20px 0",
+            }
+          }
+        >
+          <div
+            className="MuiPaper-root paper MuiPaper-elevation4 MuiPaper-rounded"
+            style={
+              Object {
+                "marginLeft": " 20px",
+                "marginRight": "20px",
+                "padding": "20px 30px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "marginTop": "0px",
+                }
+              }
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5"
+                data-test="MassTypoComp"
+                style={
+                  Object {
+                    "marginBottom": "12px",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Mass
+              </h5>
+              <div
+                style={
+                  Object {
+                    "flexGrow": 1,
+                  }
+                }
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                >
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Total Mass
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={8}
+                          disabled={false}
+                          id="standard-number"
+                          name="totalMass"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={8}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      kg
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Battery Mass
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={15.85}
+                          disabled={false}
+                          id="standard-number"
+                          name="batteryMass"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={15.85}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      kg
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root eachItem MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+          items={true}
+          style={
+            Object {
+              "margin": "20px 0",
+            }
+          }
+        >
+          <div
+            className="MuiPaper-root paper MuiPaper-elevation4 MuiPaper-rounded"
+            style={
+              Object {
+                "marginLeft": " 20px",
+                "marginRight": "20px",
+                "padding": "20px 30px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "marginTop": "0px",
+                }
+              }
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5"
+                data-test="DragTypoComp"
+                style={
+                  Object {
+                    "marginBottom": "12px",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Drag
+              </h5>
+              <div
+                style={
+                  Object {
+                    "flexGrow": 1,
+                  }
+                }
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                >
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Wing Zero Lift Drag Coefficient
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={0.09}
+                          disabled={false}
+                          id="standard-number"
+                          name="wingZeroLiftDragCoefficient"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={0.09}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Fuselage Drag Coefficient
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={0.02}
+                          disabled={false}
+                          id="standard-number"
+                          name="fuselageDragCoefficient"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={0.02}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root eachItem MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+          items={true}
+          style={
+            Object {
+              "margin": "20px 0",
+            }
+          }
+        >
+          <div
+            className="MuiPaper-root paper MuiPaper-elevation4 MuiPaper-rounded"
+            style={
+              Object {
+                "marginLeft": " 20px",
+                "marginRight": "20px",
+                "padding": "20px 30px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "marginTop": "0px",
+                }
+              }
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5"
+                data-test="GeneralTypoComp"
+                style={
+                  Object {
+                    "marginBottom": "12px",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                General
+              </h5>
+              <div
+                style={
+                  Object {
+                    "flexGrow": 1,
+                  }
+                }
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                >
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Mass Fraction
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-20"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        44.58333333
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      %
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Ostwald Efficiency
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-21"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.96153384615
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      K
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-22"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.0413802852
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Min Drag Airspeed
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-23"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        13.779173019
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m/s
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Min Power Airspeed
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-24"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        10.47033073
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      m/s
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Max Lift Coefficient
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-25"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        1.375936884
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Design Lift Coefficient
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-26"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.77396497
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Induced Drag Coefficient
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-27"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.02478766159
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Total Drag Coefficient
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-28"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        0.134786616
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Drag
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-29"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        2.089827047
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Lift To Drag Ratio
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-30"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        31.2237802
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root eachItem MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+          items={true}
+          style={
+            Object {
+              "margin": "20px 0",
+            }
+          }
+        >
+          <div
+            className="MuiPaper-root paper MuiPaper-elevation4 MuiPaper-rounded"
+            style={
+              Object {
+                "marginLeft": " 20px",
+                "marginRight": "20px",
+                "padding": "20px 30px",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "marginTop": "0px",
+                }
+              }
+            >
+              <h5
+                className="MuiTypography-root MuiTypography-h5"
+                data-test="Motor and BatteryTypoComp"
+                style={
+                  Object {
+                    "marginBottom": "12px",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Motor and Battery
+              </h5>
+              <div
+                style={
+                  Object {
+                    "flexGrow": 1,
+                  }
+                }
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+                >
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Power To Weight Ratio
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={250}
+                          disabled={false}
+                          id="standard-number"
+                          name="powerToWeightRatio"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={250}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Nominal Voltage
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={37}
+                          disabled={false}
+                          id="standard-number"
+                          name="nominalVoltage"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={37}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      V
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Maximum Discharge
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={90}
+                          disabled={false}
+                          id="standard-number"
+                          name="maximumDischarge"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={90}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      %
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Max Continous Current
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={100}
+                          disabled={false}
+                          id="standard-number"
+                          name="maxContinousCurrent"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={100}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      A
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Propullisive Efficiency
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={55}
+                          disabled={false}
+                          id="standard-number"
+                          name="propullisiveEfficiency"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={55}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      %
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Max Power
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-31"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        3000
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      W
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Power Cruise
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-32"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        410.06231259186677
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      W
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Current Cruise
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-33"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        20.15048219124652
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      A
+                    </p>
+                  </div>
+                  <div
+                    className="messege input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Battery Capacity
+                    </p>
+                    <div>
+                      <p
+                        style={
+                          Object {
+                            "color": "red",
+                          }
+                        }
+                      >
+                        For Flight Time
+                      </p>
+                      <span
+                        className="MuiBox-root MuiBox-root-34"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        27762.886574606317
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      mAh
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Range Cruise Speed
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-35"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        89.28
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      km
+                    </p>
+                  </div>
+                  <div
+                    className="messege input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Battery capacity
+                    </p>
+                    <div>
+                      <p
+                        style={
+                          Object {
+                            "color": "red",
+                          }
+                        }
+                      >
+                        For Range 
+                      </p>
+                      <span
+                        className="MuiBox-root MuiBox-root-36"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        27762.886574606317
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      mAh
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Flight Time
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-37"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        1.24
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      hr
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Battery Capacity in Parallel
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={25700}
+                          disabled={false}
+                          id="standard-number"
+                          name="batteryCapacityParallel"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={25700}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      mAh
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Parallel Cells
+                    </p>
+                    <div
+                      className="MuiFormControl-root MuiTextField-root WithStyles(ForwardRef(TextField))-root-4 MuiFormControl-marginNormal"
+                      data-test="testinput"
+                    >
+                      <div
+                        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                        onClick={[Function]}
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoFocus={true}
+                          className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                          defaultValue={7}
+                          disabled={false}
+                          id="standard-number"
+                          name="parallelCells"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={true}
+                          type="number"
+                          value={7}
+                        />
+                        <fieldset
+                          aria-hidden={true}
+                          className="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="PrivateNotchedOutline-legend-6"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Capacity of each cell
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-38"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        3671.428571
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      mAh
+                    </p>
+                  </div>
+                  <div
+                    className="input"
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      C Rating
+                    </p>
+                    <div>
+                      <span
+                        className="MuiBox-root MuiBox-root-39"
+                        data-test="box"
+                        style={
+                          Object {
+                            "background": "#3F51B5",
+                            "borderRadius": "4px",
+                            "color": "white",
+                            "fontWeight": "500",
+                            "margin": "0px 0px",
+                            "overflow": "auto",
+                            "padding": "13px 0px",
+                            "textAlign": "center",
+                            "width": "100%",
+                          }
+                        }
+                      >
+                        27.23735409
+                      </span>
+                    </div>
+                    <p
+                      className="MuiTypography-root MuiTypography-body1"
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="button-container"
+      >
+        <form
+          action=""
+          onSubmit={[Function]}
+        >
+          <button
+            type="submit"
+          >
+            Prev
+          </button>
+        </form>
+      </div>
+      <div
+        className="chart"
+      >
+        <canvas
+          data-testid="canvas"
+          height={150}
+          onClick={[Function]}
+          role="img"
+          width={300}
+        />
+      </div>
+    </div>
+  </div>,
+]
+`;

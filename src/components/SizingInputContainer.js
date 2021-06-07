@@ -10,12 +10,42 @@ import '../App.css'
 import { SizingProp, title } from '../data/data'
 import Chart from './Chart';
 
+
+export const objToArray=(state)=>{
+    let sizingArray = []
+    for (let key in state) {
+        let innerArray = []
+        for (let key2 in state[key]) {
+            innerArray.push({ data: state[key][key2] })
+        }
+        sizingArray.push({ data: innerArray, title: title[key] })
+    }
+    return sizingArray
+
+}
+
+export const parasiticDragCalc=(state)=>{
+    return (state.drag.wingZeroLiftDragCoefficient.value+state.drag.fuselageDragCoefficient.value);
+}
+
+export const wingAreaCalc= (newState)=>Math.pow(newState.wing.span.value,2)/newState.wing.aspectRatio.value;
+
+export const dragClCalc=(state, velocity, parasiticDrag)=>{
+    let cl=[]
+    let drag =[]
+    for(let i=0;i<velocity.length;i++){
+        cl.push((state.mass.totalMass.value*state.operatingEnvironment.acceleration.value)/(1/2*state.operatingEnvironment.airDensity.value*Math.pow(velocity[i],2)*state.calculatedWing.wingArea.value))
+        drag.push(1/2 *state.operatingEnvironment.airDensity.value*Math.pow(velocity[i],2)*state.calculatedWing.wingArea.value*(parasiticDrag+state.general.k.value*Math.pow(cl[i],2)))
+    }
+    return {cl:cl, drag:drag}
+
+}
 const SizingInputContainer = (props) => {
 
-    //Reducer data's
+    //Reducer data
 
-    const sizingPropsR = useSelector(({ reducer }) => reducer.sizingPropsR)
-
+    const sizingPropsR = useSelector((state) => state.reducer.sizingPropsR)
+    console.log("sizingProps", sizingPropsR)
     const [state, setState] = useState(SizingProp)
 
     useEffect(() => {
@@ -61,7 +91,7 @@ const SizingInputContainer = (props) => {
   
 
     const onChangeHandler = (e, data, type) => {
-        // console.log(data, "data")
+        console.log("e data", e)
         console.log(type,'type')
         let newState = {...state};
         newState = updateState(e, data, newState, type)
@@ -137,8 +167,7 @@ const SizingInputContainer = (props) => {
 //         newState.motorAndBattery.rangeCruiseSpeed.value = rangeCruiseSpeed
 //         newState.motorAndBattery.capacityOfEachCell.value = capacityOfEachCell
 //         newState.motorAndBattery.cRating.value = cRating;
-
-          newState.calculatedWing.wingArea.value=Math.pow(newState.wing.span.value,2)/newState.wing.aspectRatio.value;
+        newState.calculatedWing.wingArea.value=wingAreaCalc(newState)
          newState.calculatedWing.rootChord.value=2*newState.calculatedWing.wingArea.value/(newState.wing.span.value*(1+newState.wing.tapperRatio.value));
          newState.calculatedWing.tipChord.value=(newState.calculatedWing.rootChord.value*newState.wing.tapperRatio.value);
           newState.calculatedWing.meanAerodynamicChord.value=(1+newState.wing.tapperRatio.value+Math.pow(newState.wing.tapperRatio.value,2))/(1+newState.wing.tapperRatio.value)*2/3*newState.calculatedWing.rootChord.value;
@@ -177,51 +206,39 @@ const SizingInputContainer = (props) => {
     let labels=['0','5','10','15','20','25','30','35','40']
     let velocity=[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36];
     // let velocity=[0,5,10,15,20,25,30,35]
-    let cl=[];
-    let drag=[];
-    let parasiticDrag=state.drag.wingZeroLiftDragCoefficient.value+state.drag.fuselageDragCoefficient.value;
+   
+    let parasiticDrag=parasiticDragCalc(state)
 
-    for(let i=0;i<velocity.length;i++){
-        cl.push((state.mass.totalMass.value*state.operatingEnvironment.acceleration.value)/(1/2*state.operatingEnvironment.airDensity.value*Math.pow(velocity[i],2)*state.calculatedWing.wingArea.value))
-        drag.push(1/2 *state.operatingEnvironment.airDensity.value*Math.pow(velocity[i],2)*state.calculatedWing.wingArea.value*(parasiticDrag+state.general.k.value*Math.pow(cl[i],2)))
-    }
-    console.log(cl,'arraycl')
-console.log(drag,'arraydrag')
+    let {cl, drag} = dragClCalc(state, velocity, parasiticDrag)
+   
 
     // localStorage.setItem('newState',JSON.stringify(Sizing));
-
+    let sizingArray=objToArray(state)
     // console.log(state, "state")
 
-    let sizingArray = []
-    for (let key in state) {
-        let innerArray = []
-        for (let key2 in state[key]) {
-            innerArray.push({ data: state[key][key2] })
-        }
-        sizingArray.push({ data: innerArray, title: title[key] })
-    }
-
-    // console.log("mainarray", sizingArray)
+ 
+    console.log("mainarray",JSON.stringify(sizingArray))
     return (
         <>
-            <Header header='Sizing Study' />
+            <Header header='Sizing Study' data-test="headerComp" />
             <Grid container>
                 <div >
                     <Grid container>
                         {sizingArray ? (
                             sizingArray.map((parent, key) => {
+                                console.log("container",JSON.stringify(parent), key,`${parent.title}TypoComp`);
                                 return (
 
                                     <Grid className='eachItem' key={key} items xs={12} md={6} style={{ margin: '20px 0' }} >
                                         <Paper elevation={4} className="paper" style={{ padding: '20px 30px', marginLeft: ' 20px', marginRight: '20px' }}>
                                             <div style={{ marginTop: '0px' }}>
-                                                <Typography variant='h5' style={{ marginBottom: '12px', textAlign: 'center' }}>{parent.title}</Typography>
+                                                <Typography variant='h5' style={{ marginBottom: '12px', textAlign: 'center' }} data-test={`${parent.title}TypoComp`}>{parent.title}</Typography>
                                                 <div style={{ flexGrow: 1 }}>
                                                     <Grid item xs={12}>
 
                                                         {parent.data.map((child, index) => {
                                                             return (
-                                                                <InputUnit   key={child.data.name} id={child.data.name} data={child.data} onChange={(e) => onChangeHandler(e, child.data, child.data.parent)} />
+                                                                <InputUnit  data-test={`${child.data.name}InputComp`} key={child.data.name} id={child.data.name} data={child.data} onChange={(e) => onChangeHandler(e, child.data, child.data.parent)} />
                                                             )
                                                         })}
                                                     </Grid>
@@ -235,8 +252,8 @@ console.log(drag,'arraydrag')
                             })
                         ) : ''}
                     </Grid>
-                    <Button text='Prev' submitHandler={(e) => submitHandler(e)} />
-                    <Chart cl={cl} drag={drag} velocity={velocity} labels={labels} />
+                    <Button text='Prev' submitHandler={(e) => submitHandler(e)} data-test="submitComp"/>
+                    <Chart cl={cl} drag={drag} velocity={velocity} labels={labels} data-test="chartComp" />
                 </div>
             </Grid>
         </>
