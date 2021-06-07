@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../App.css'
+import '../../../app/styles/App.css'
 import {Line,Bar} from 'react-chartjs-2'
 import { defaults } from 'react-chartjs-2';
 
@@ -43,7 +43,7 @@ export default class Chart extends Component {
         return (
 
          <div className="chart"  >
-         <Line data={data}  
+         <Line  data={data}  
          options={
             {    
                 responsive: true,    

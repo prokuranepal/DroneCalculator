@@ -1,7 +1,5 @@
-import './App.css';
-import Header from './components/Header';
-import MotorAndPropellerInputContainer from './components/MotorAndPropellerInputContainer';
-import SizingInputContainer from './components/SizingInputContainer'
+import MotorAndPropellerInputContainer from './app/global/MotorAndPropellerInputContainer';
+import SizingInputContainer from './app/global/SizingInputContainer'
 import { Switch, Route } from 'react-router-dom'
 function App() {
 

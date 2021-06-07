@@ -1,32 +1,13 @@
 import React from 'react';
 import {shallow,mount,configure} from 'enzyme'
 import {render,fireEvent} from '@testing-library/react'
-import InputUnit from './components/InputUnit'
+import InputUnit from './app/components/inputUnit/InputUnit'
 
 configure({adapter: new Adapter()});
 import Adapter from 'enzyme-adapter-react-16';
 
-import Header from './components/Header'
+import Header from './app/components/Header/Header'
 
-// // it('Headers name',()=>{
-// //     const wrapper=shallow(<Header/>);
-// //         const 
-// // })
-
-// // describe("Header",()=>{
-// //     const fieldProps={
-// //         header:'Motor and Propeller Study'
-// //     }
-// // })
-
-// // const Composition=props=>{
-// //     return <Header {...fieldProps}/>
-// // }
-
-// // it('render',()=>{
-// //     const wrapper=mount(<Composition/>);
-// //     expect(wrapper.childAt(0).props().placeHolder).toEqual('Motor and Propeller Study');
-// // })
 
 const dummyData={
     header:'header'

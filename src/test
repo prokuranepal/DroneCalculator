@@ -722,3 +722,17 @@ it('should render title name in Navbar',()=>{
     // const result=header.text();
     expect(header).toBe('header');
 })
+
+
+"jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov"
+    ],
+    "coverageDirectory": "./output/code-coverage/"
+  },
+
+      "coverage": "jest --collect-coverage"
+
+    "jest": "^27.0.4"
+

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import Header from './Header'
+import Header from '../components/Header/Header'
 import { Paper, Typography, TextField, Container, Grid } from '@material-ui/core'
-import InputUnit from './InputUnit';
+import InputUnit from '../components/inputUnit/InputUnit';
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { Button } from '../Button'
+import { Button } from '../components/Button/Button'
 import * as actions from '../store/actions';
-import '../App.css'
-import { SizingProp, title } from '../data/data'
-import Chart from './Chart';
+import '../../app/styles/App.css'
+import { SizingProp, title } from '../../data/data'
+import Chart from '../components/chart/Chart';
 
 const SizingInputContainer = (props) => {
 

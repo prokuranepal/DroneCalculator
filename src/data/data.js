@@ -116,14 +116,14 @@ export const motorProp = {
             input:{
             airspeed1:{
                 value:15,            
-                field:'airspeed1',
+                field:'Airspeed1',
                 name:'airspeed1',
                 input:true,
                 unit:'m/s'
             },
             airspeed2:{
                 value:24,
-                field:'airspeed2',
+                field:'Airspeed2',
                 name:'airspeed2',
                 input:true,
                 unit:'m/s'
@@ -131,7 +131,7 @@ export const motorProp = {
             },
             pitch1:{
                 value:4.88666482,
-                field:'pitch1',
+                field:'Pitch1',
                 name:'pitch1',
                 input:false,
                 unit:'inch'
@@ -139,7 +139,7 @@ export const motorProp = {
             },
             pitch2:{
                 value:7.818663711,
-                field:'pitch2',
+                field:'Pitch2',
                 name:'pitch2',
                 input:false,
                 unit:'inch'

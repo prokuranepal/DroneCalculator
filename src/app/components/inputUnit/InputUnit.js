@@ -1,16 +1,12 @@
 
-
-
-
-
 import React from 'react'
 import { Paper, Typography, TextField, Container, Box } from '@material-ui/core'
 import InputAdornment from '@material-ui/core/InputAdornment';
-import '../App.css'
+import '../../../app/styles/App.css'
 import Input from '@material-ui/core/Input';
 import { makeStyles, withStyles } from '@material-ui/core'
 import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
-import { Output } from './Output';
+import  Output  from '../output/Output';
 const useStyles = makeStyles((theme) => ({
   input: {
     display: 'flex',
@@ -72,11 +68,11 @@ const InputUnit = (props) => {
       {/* <h1>{message}</h1> */}
       <Typography style={{ textAlign: 'left' }} variant="body1">{field}</Typography>
       {input ? <CssTextField
-        id="standard-number"
+        id={id}
         type="number"
         size='small'
         defaultValue={value}
-        data-test="testinput"
+        data-test={`testinput${id}`}
         margin="normal"
         required
         name={name}

@@ -1,8 +1,8 @@
 import React from 'react';
 import {shallow,mount,configure} from 'enzyme'
 import {render,fireEvent} from '@testing-library/react'
-import InputUnit from './components/InputUnit'
-import MotorAndPropellerContainer from './components/MotorAndPropellerInputContainer'
+import InputUnit from './app/components/inputUnit/InputUnit'
+import Output from './app/components/output/Output'
 configure({adapter: new Adapter()});
 import Adapter from 'enzyme-adapter-react-16';
 
@@ -37,7 +37,7 @@ const calculatedData={
         input:false 
     },
 }
-const dummyData={
+const dummyDataKVRating={
     key:'kvRating',
     data:{
         value: 830,
@@ -49,26 +49,66 @@ const dummyData={
     id:'kvRating',
     onChange:function_click
 }
+const dummyDataCellsInSeries={
+    key:'cellsInSeries',
+    data:{
+        value: 5,
+        field: 'Cells in Series',
+        unit: '',
+        name: 'cellsInSeries',
+        input:true 
+    },
+    id:'cellsInSeries',
+    onChange:function_click
+}
 
+const output={
+    value:'100',
+    message:'Range'
+}
 
 it(' check if input is present',()=>{
-    const wrapper=setup(inputData);
-    const input=findByTestAttr(wrapper,"testinput")
-    // const input=wrapper.find('input');
+    const wrapper=setup(dummyDataKVRating);
+    let input=findByTestAttr(wrapper,"testinputkvRating")
+     input=findByTestAttr(wrapper,"testinputkvRating")
+    expect(input.props().value).toEqual(830)
+})
+it('check if kv rating change handler is fired',()=>{
+    const wrapper=setup(dummyDataKVRating);
+    let input=findByTestAttr(wrapper,"testinputkvRating")
     expect(input).toHaveLength(1)
+    expect(input.props().value).toEqual(830)
+    expect(input.props().id).toEqual('kvRating')
+    input.props().onChange('event')
+    expect(function_click).toHaveBeenCalledTimes(1);
+})
+
+it('check if cells in series change handler is fired',()=>{
+    const wrapper=setup(dummyDataCellsInSeries);
+    let input=findByTestAttr(wrapper,"testinputcellsInSeries")
+    expect(input).toHaveLength(1)
+    expect(input.props().value).toEqual(5)
+    expect(input.props().id).toEqual('cellsInSeries')
+    input.props().onChange('event')
+    expect(function_click).toHaveBeenCalledTimes(1);
 })
 
 
 
 
-if('check the calculated values in boxes',()=>{
-    const wrapper=setup( calculatedInput);
-    const calculatedInput=findByTestAttr(wrapper,"boxes");
-    const data=calculatedInput.find('[data-test="box"]');
-    console.debug(data)
-    const value=data.text()
-    expect(value).toEqual("dad");
+
+it('check the calculated values and message in boxes',()=>{
+    const wrapper=shallow( < Output {...output}/> )
+    let calculatedInput=findByTestAttr(wrapper,"box");
+    const div=wrapper.find('div')
+    const p=wrapper.find('p').text()
+    expect(p).toBe('Range')
+    expect(div).toHaveLength(1)
+    const value=calculatedInput.text()
+    expect(value).toEqual("100");
 })
+
+
 
 it('check if calculated value boxes is present',()=>{
     const wrapper=setup(calculatedData);
@@ -76,7 +116,11 @@ it('check if calculated value boxes is present',()=>{
     expect(calculatedInput).toHaveLength(1)
 
 })
-
+it('check if values are present in calculated value boxes ',()=>{
+    const wrapper=setup(calculatedData);
+    const calculatedInput=findByTestAttr(wrapper,"boxes")
+    expect(calculatedInput.props().value).toBeTruthy()
+})
 
 // it('check the value if it is correct or not when onChange is fired',()=>{
 //     const wrapper=setup(inputData);
@@ -88,20 +132,4 @@ it('check if calculated value boxes is present',()=>{
 //     expect(inputData.data.value).toEqual(100)
 // })
 
-it('check change handler',()=>{
-    const wrapper=setup(dummyData);
-    // const wrapper=shallow(<MotorAndPropellerContainer/>)
-    const input=findByTestAttr(wrapper,"inputUnit")
-    expect(input.at(0).props().key).toEqual('kvRating')
-    expect(input.at(0).props().data).toEqual({ 
-        value: 830,
-        field: 'KV Rating',
-        unit: 'kv',
-        name: 'kvRating',
-        input:true })
 
-    // expect(input.at(0).props().onChange("e",dummyData.data,dummyData.id))
-    expect(input.at(0).props().onChange('event'));
-    expect(function_click).toHaveBeenCalledTimes(1)
-
-})

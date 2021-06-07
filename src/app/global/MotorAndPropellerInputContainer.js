@@ -2,13 +2,13 @@
 import React, { useState, useEffect } from 'react'
 import { Paper, Typography, TextField, Container, Grid, BottomNavigation } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core'
-import InputUnit from './InputUnit';
+import InputUnit from '../components/inputUnit/InputUnit';
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import '../App.css'
-import { motorProp } from '../data/data';
-import { Button } from '../Button'
-import Header from './Header'
+import '../../app/styles/App.css'
+import { motorProp } from '../../data/data';
+import { Button } from '../components/Button/Button'
+import Header from '../components/Header/Header'
 // import { environmentReducer } from '../store/reducers/Environment';
 import * as actions from '../store/actions';
 
@@ -289,7 +289,7 @@ const SpecsInputContainer = (props) => {
                                                 // console.log(eachInputData)
                                                 return (
                                                     <Grid key={eachInputData.id} item xs={12}>
-                                                        <InputUnit data-test="inputUnit" key={eachInputData.id} id={eachInputData.id} data={eachInputData.data}
+                                                        <InputUnit data-test={`testinputunit`} key={eachInputData.id} id={eachInputData.id} data={eachInputData.data}
                                                             onChange={(e) => onChangeHandler(e, eachInputData, inputData.id)}
                                                         // value={state[inputData.id].input[eachInputData.id].value} 
                                                         />
