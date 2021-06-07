@@ -45,5 +45,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "enzyme-adapter-react-16": "^1.15.6"
+  }
 }

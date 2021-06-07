@@ -76,6 +76,7 @@ const InputUnit = (props) => {
         type="number"
         size='small'
         defaultValue={value}
+        data-test="testinput"
         margin="normal"
         required
         name={name}
@@ -85,7 +86,7 @@ const InputUnit = (props) => {
         // helperText={message?message:''}
         value={value}
         autoFocus
-      /> : <Output value={value} message={message} />
+      /> : <Output data-test="boxes" value={value} message={message} />
       }
 
       <Typography style={{ textAlign: 'left' }} variant="body1">{unit ? unit : null}</Typography>
