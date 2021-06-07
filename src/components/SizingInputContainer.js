@@ -221,7 +221,7 @@ console.log(drag,'arraydrag')
 
                                                         {parent.data.map((child, index) => {
                                                             return (
-                                                                <InputUnit key={child.data.name} id={child.data.name} data={child.data} onChange={(e) => onChangeHandler(e, child.data, child.data.parent)} />
+                                                                <InputUnit   key={child.data.name} id={child.data.name} data={child.data} onChange={(e) => onChangeHandler(e, child.data, child.data.parent)} />
                                                             )
                                                         })}
                                                     </Grid>

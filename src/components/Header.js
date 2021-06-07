@@ -15,9 +15,9 @@ const useStyles=makeStyles({
 const Header=(props)=>{
     const classes=useStyles();
     return(<>
-        <h1>Hi</h1>
         <AppBar position='static' className={classes.appContainer}>
-<Typography className={classes.header} variant='h5'>{props.header}</Typography>
+<Typography data-test="header" className={classes.header} variant='h5'>{props.header}</Typography>
+{/* <h2>{props.header}</h2> */}
         </AppBar>
         </>
     )

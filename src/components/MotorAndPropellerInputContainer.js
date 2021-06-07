@@ -289,7 +289,7 @@ const SpecsInputContainer = (props) => {
                                                 // console.log(eachInputData)
                                                 return (
                                                     <Grid key={eachInputData.id} item xs={12}>
-                                                        <InputUnit key={eachInputData.id} id={eachInputData.id} data={eachInputData.data}
+                                                        <InputUnit data-test="inputUnit" key={eachInputData.id} id={eachInputData.id} data={eachInputData.data}
                                                             onChange={(e) => onChangeHandler(e, eachInputData, inputData.id)}
                                                         // value={state[inputData.id].input[eachInputData.id].value} 
                                                         />
