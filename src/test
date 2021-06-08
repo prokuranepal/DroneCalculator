@@ -736,3 +736,8 @@ it('should render title name in Navbar',()=>{
 
     "jest": "^27.0.4"
 
+
+ <Route path="/motorandpropeller" render={()=>(<MotorAndPropellerInputContainer/>)} />
+        {/* <Route path="/sizing" render={()=>(<SizingInputContainer/>)} /> */}
+        <Route path="/sizing" component="./app/global/SizingInputContainer.js" />
+        <Route exact path="/" render={()=>(<MotorAndPropellerInputContainer/>)}/>

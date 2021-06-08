@@ -7,9 +7,9 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path="/motorandpropeller" component={MotorAndPropellerInputContainer} />
-        <Route path="/sizing" component={SizingInputContainer} />
-        <Route exact path="/" component={MotorAndPropellerInputContainer}/>
+        <Route path="/motorandpropeller" id='motor' component={MotorAndPropellerInputContainer} />
+        <Route path="/sizing" id="sizing" component={SizingInputContainer} />
+        <Route exact path="/" id="motor" component={MotorAndPropellerInputContainer}/>
       </Switch>
 
 
