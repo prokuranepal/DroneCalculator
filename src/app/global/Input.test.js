@@ -1,10 +1,12 @@
 import React from 'react';
 import {shallow,mount,configure} from 'enzyme'
 import {render,fireEvent} from '@testing-library/react'
-import InputUnit from './app/components/inputUnit/InputUnit'
-import Output from './app/components/output/Output'
+import InputUnit from '../components/inputUnit/InputUnit'
+import MotorAndPropellerContainer from './MotorAndPropellerInputContainer'
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import Output from '../components/output/Output'
 configure({adapter: new Adapter()});
-import Adapter from 'enzyme-adapter-react-16';
+// import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 
 
@@ -67,6 +69,7 @@ const output={
     message:'Range'
 }
 
+describe('<Input/>', () => {
 it(' check if input is present',()=>{
     const wrapper=setup(dummyDataKVRating);
     let input=findByTestAttr(wrapper,"testinputkvRating")
@@ -122,14 +125,4 @@ it('check if values are present in calculated value boxes ',()=>{
     expect(calculatedInput.props().value).toBeTruthy()
 })
 
-// it('check the value if it is correct or not when onChange is fired',()=>{
-//     const wrapper=setup(inputData);
-//     const input=findByTestAttr(wrapper,"testinput");
-//     // fireEvent.change(input,{target:{value:100}})
-//     input.simulate('change',{target:{value:100}})
-//     // expect(data.data.value).toEqual(10)
-//     // input.value=target.value
-//     expect(inputData.data.value).toEqual(100)
-// })
-
-
+})

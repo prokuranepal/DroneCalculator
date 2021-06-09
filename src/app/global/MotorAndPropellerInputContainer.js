@@ -12,6 +12,28 @@ import Header from '../components/Header/Header'
 // import { environmentReducer } from '../store/reducers/Environment';
 import * as actions from '../store/actions';
 
+export const objToArray=(state)=>{
+    let motorPropData = [];
+    for (let key in state) {
+        let data = []
+        for (let i in state[key].input) {
+            data.push({ id: i, data: state[key].input[i] })
+        }
+        motorPropData.push({ id: key, style: state[key].style, data: data })
+    }
+    return motorPropData
+}
+export const nominalVoltage=(newState)=>newState.specs.input.cellsInSeries.value * 3.7
+    export const diameter1=(newState)=>Math.pow((newState.specs.input.maxPower.value / (newState.diameter.input.cp1.value * newState.environment.input.density.value * Math.pow(((newState.specs.input.estimatedMaxPercent.value / 100) * newState.specs.input.kvRating.value * newState.specs.input.cellsInSeries.value * 3.7 / 60), 3))), 1 / 5) * 1000 / 25.4;
+    export const diameter2=(newState)=>Math.pow((newState.specs.input.maxPower.value / (newState.diameter.input.cp2.value * newState.environment.input.density.value * Math.pow(((newState.specs.input.estimatedMaxPercent.value / 100) * newState.specs.input.kvRating.value * newState.specs.input.cellsInSeries.value * 3.7 / 60), 3))), 1 / 5) * 1000 / 25.4;
+    export const pitch1=(newState)=>(newState.pitch.input.airspeed1.value * 1.8) / ((newState.specs.input.estimatedMaxPercent.value / 100) * newState.specs.input.kvRating.value * newState.specs.input.cellsInSeries.value * 3.7 / 60) * 1000 / 25.4;
+    export const pitch2=(newState)=>(newState.pitch.input.airspeed2.value * 1.8) / ((newState.specs.input.estimatedMaxPercent.value / 100) * newState.specs.input.kvRating.value * newState.specs.input.cellsInSeries.value * 3.7 / 60) * 1000 / 25.4;
+    export const maxRPM=(newState)=>newState.specs.input.kvRating.value * newState.specs.input.cellsInSeries.value * 3.7;
+    export const maxWorkingRPM=(newState)=>(newState.specs.input.estimatedMaxPercent.value / 100) * newState.specs.input.kvRating.value * newState.specs.input.cellsInSeries.value * 3.7;
+
+
+
+
 const SpecsInputContainer = (props) => {
 
     //Reducer Data's
@@ -91,27 +113,30 @@ const SpecsInputContainer = (props) => {
         return newState;
     }
 
+    
     const onChangeHandler = (e, data, type) => {
         let newState = {...state};
         // console.log(e.target.value, data, type)
         newState = updateState(e, data, newState, type);
         // console.log(type, "TYPE")
-        const nominalVoltage = newState.specs.input.cellsInSeries.value * 3.7;
-        const maxRPM = newState.specs.input.kvRating.value * nominalVoltage
-        const maxWorkingRPM = (newState.specs.input.estimatedMaxPercent.value / 100) * maxRPM
+        // const nominalVoltage = newState.specs.input.cellsInSeries.value * 3.7;
+        // const maxRPM = newState.specs.input.kvRating.value * newState.specs.input.cellsInSeries.value * 3.7;
+        // const maxWorkingRPM = (newState.specs.input.estimatedMaxPercent.value / 100) * newState.specs.input.kvRating.value * newState.specs.input.cellsInSeries.value * 3.7;
 
-        const diameter1 = Math.pow((newState.specs.input.maxPower.value / (newState.diameter.input.cp1.value * newState.environment.input.density.value * Math.pow((maxWorkingRPM / 60), 3))), 1 / 5) * 1000 / 25.4;
-        const diameter2 = Math.pow((newState.specs.input.maxPower.value / (newState.diameter.input.cp2.value * newState.environment.input.density.value * Math.pow((maxWorkingRPM / 60), 3))), 1 / 5) * 1000 / 25.4;
-        const pitch1 = (newState.pitch.input.airspeed1.value * 1.8) / (maxWorkingRPM / 60) * 1000 / 25.4;
-        const pitch2 = (newState.pitch.input.airspeed2.value * 1.8) / (maxWorkingRPM / 60) * 1000 / 25.4;
+        // const diameter1 = Math.pow((newState.specs.input.maxPower.value / (newState.diameter.input.cp1.value * newState.environment.input.density.value * Math.pow(((newState.specs.input.estimatedMaxPercent.value / 100) * newState.specs.input.kvRating.value * newState.specs.input.cellsInSeries.value * 3.7 / 60), 3))), 1 / 5) * 1000 / 25.4;
+        // const diameter2 = Math.pow((newState.specs.input.maxPower.value / (newState.diameter.input.cp2.value * newState.environment.input.density.value * Math.pow(((newState.specs.input.estimatedMaxPercent.value / 100) * newState.specs.input.kvRating.value * newState.specs.input.cellsInSeries.value * 3.7 / 60), 3))), 1 / 5) * 1000 / 25.4;
+        // const pitch1 = (newState.pitch.input.airspeed1.value * 1.8) / ((newState.specs.input.estimatedMaxPercent.value / 100) * newState.specs.input.kvRating.value * newState.specs.input.cellsInSeries.value * 3.7 / 60) * 1000 / 25.4;
+        // const pitch2 = (newState.pitch.input.airspeed2.value * 1.8) / ((newState.specs.input.estimatedMaxPercent.value / 100) * newState.specs.input.kvRating.value * newState.specs.input.cellsInSeries.value * 3.7 / 60) * 1000 / 25.4;
 
-        newState.specs.input.nominalVoltage.value = nominalVoltage
-        newState.diameter.input.diameter1.value = diameter1;
-        newState.diameter.input.diameter2.value = diameter2;
-        newState.pitch.input.pitch1.value = pitch1;
-        newState.pitch.input.pitch2.value = pitch2;
-        newState.specs.input.maxWorkingRPM.value = maxWorkingRPM;
-        newState.specs.input.maxRPM.value = maxRPM;
+        newState.specs.input.nominalVoltage.value = nominalVoltage(newState)
+        newState.diameter.input.diameter1.value = diameter1(newState)
+        newState.diameter.input.diameter2.value = diameter2(newState)
+        newState.pitch.input.pitch1.value = pitch1(newState)
+        newState.pitch.input.pitch2.value = pitch2(newState)
+        ;
+        newState.specs.input.maxWorkingRPM.value = maxWorkingRPM(newState)
+        ;
+        newState.specs.input.maxRPM.value =maxRPM(newState)
 
         // newState = {
         //     ...newState,[type]:{...newState[type],...newState[type].input,
@@ -211,14 +236,8 @@ const SpecsInputContainer = (props) => {
 
     // }
 
-    let motorPropData = [];
-    for (let key in state) {
-        let data = []
-        for (let i in state[key].input) {
-            data.push({ id: i, data: state[key].input[i] })
-        }
-        motorPropData.push({ id: key, style: state[key].style, data: data })
-    }
+   let motorPropData=objToArray(state)
+   console.log(motorPropData,'motorPropsData')
     // console.log(motorPropData)
 
     // let specsInputData = []
@@ -274,22 +293,22 @@ const SpecsInputContainer = (props) => {
     // console.log(specs, "state")
     return (
         <>
-            <Header header='Motor and Propeller Study' />
+            <Header header='Motor and Propeller Study' data-test="motorHeaderComp" />
             <Grid container style={{ padding: '50px 0' }}>
                 <div >
                     <Grid container style={{ paddingBottom: '20px ' }}>
 
                         {motorPropData.map(inputData => {
-                            return <Grid items xs={12} md={6} style={{ margin: '10px 0', ...inputData.style }} >
+                            return <Grid key={inputData.id} items item sm={12} md={6} style={{ margin: '10px 0', ...inputData.style }} >
                                 <Paper elevation={4} className="paper" style={{ padding: '20px 30px', marginLeft: ' 20px', marginRight: '20px' }}>
                                     <div >
-                                        <Typography variant='h5' style={{ marginBottom: '12px', textAlign: 'center' }} >{inputData.id}</Typography>
+                                        <Typography variant='h5' style={{ marginBottom: '12px', textAlign: 'center' }} data-test={`${inputData.id}TypoComp`} >{inputData.id}</Typography>
                                         <div style={{ flexGrow: 1 }}>
                                             {inputData.data.map(eachInputData => {
                                                 // console.log(eachInputData)
                                                 return (
-                                                    <Grid key={eachInputData.id} item xs={12}>
-                                                        <InputUnit data-test={`testinputunit`} key={eachInputData.id} id={eachInputData.id} data={eachInputData.data}
+                                                    <Grid key={eachInputData.id} item sm={12}  >
+                                                        <InputUnit data-test={`${eachInputData.id}InputComp`} key={eachInputData.id} id={eachInputData.id} data={eachInputData.data}
                                                             onChange={(e) => onChangeHandler(e, eachInputData, inputData.id)}
                                                         // value={state[inputData.id].input[eachInputData.id].value} 
                                                         />
@@ -370,7 +389,7 @@ const SpecsInputContainer = (props) => {
                         </Paper>
                     </Grid> */}
                     </Grid>
-                    <Button text='Next' submitHandler={(e) => submitHandler(e)} />
+                    <Button text='Next'data-test="submitComp" submitHandler={(e) => submitHandler(e)} />
                 </div>
             </Grid>
         </>

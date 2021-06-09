@@ -1,12 +1,13 @@
 import React from 'react';
 import {shallow,mount,configure} from 'enzyme'
 import {render,fireEvent} from '@testing-library/react'
-import InputUnit from './app/components/inputUnit/InputUnit'
+import InputUnit from '../components/inputUnit/InputUnit'
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 configure({adapter: new Adapter()});
-import Adapter from 'enzyme-adapter-react-16';
+// import EnzymeAdapter from 'enzyme-adapter-react-15';
 
-import Header from './app/components/Header/Header'
+import Header from '../components/Header/Header'
 
 
 const dummyData={

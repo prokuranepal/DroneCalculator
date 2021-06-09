@@ -6,7 +6,7 @@ import {shallow,mount,configure} from 'enzyme'
 configure({adapter: new Adapter()});
 import Adapter from 'enzyme-adapter-react-16';
 
-import App from './App'
+import App from '../../App'
 
 
 
