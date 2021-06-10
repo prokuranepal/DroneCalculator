@@ -82,7 +82,7 @@ export const motorProp = {
 
             },
             diameter2:{
-                value:5.855220684752028,
+                value:9.642287268468687,
                 field:'Diameter 2',
                 name:'diameter2',
                 input:false,
@@ -116,30 +116,30 @@ export const motorProp = {
             input:{
             airspeed1:{
                 value:15,            
-                field:'airspeed1',
+                field:'Airspeed1',
                 name:'airspeed1',
                 input:true,
                 unit:'m/s'
             },
             airspeed2:{
                 value:24,
-                field:'airspeed2',
+                field:'Airspeed2',
                 name:'airspeed2',
                 input:true,
                 unit:'m/s'
     
             },
             pitch1:{
-                value:4.88666482,
-                field:'pitch1',
+                value:4.886664819587804,
+                field:'Pitch1',
                 name:'pitch1',
                 input:false,
                 unit:'inch'
     
             },
             pitch2:{
-                value:7.818663711,
-                field:'pitch2',
+                value:7.818663711340486,
+                field:'Pitch2',
                 name:'pitch2',
                 input:false,
                 unit:'inch'
@@ -328,7 +328,7 @@ export const SizingProp={
             parent:'calculatedWing'
         },
         meanAerodynamicChord:{
-            value:0.3317708333,
+            value:0.3317708333333333,
             unit:'m',
             input:false,
             name:'meanAerodynamicChord',
@@ -373,7 +373,7 @@ export const SizingProp={
     },
     calculatedHorizontalTail:{
         sht:{
-            value:0.173888159,
+            value:0.17388815902825636,
             unit:'m^2',
             input:false,
             name:'sht',
@@ -381,7 +381,7 @@ export const SizingProp={
             
         },
         rootChord:{
-            value:0.227304783,
+            value:0.22730478304347235,
             unit:'m',
             input:false,
             name:'rootChord',
@@ -432,21 +432,21 @@ export const SizingProp={
     },
     calculatedVerticalTail:{
         svt:{
-            value:0.1059889731,
+            value:0.10598897312198485,
             unit:'m^2',
             input:false,
             name:'svt',
             field:'SVT'
         },
         rootChord:{
-            value:0.24835858191,
+            value:0.2493858191105526,
             unit:'m',
             input:false,
             name:'rootChord',
             field:'Root Chord'
         },
         tipChord:{
-            value:0.1745700734,
+            value:0.1745700733773868,
             unit:'m',
             input:false,
             name:'tipChord',
@@ -492,7 +492,7 @@ export const SizingProp={
     },
     general:{
         massFraction:{
-            value:44.58333333,
+            value:216.87500000000003,
             unit:'%',
             input:false,
             name:'massFraction',
@@ -500,7 +500,7 @@ export const SizingProp={
             parent:'general'   
         },
         ostwaldEfficiency:{
-            value:0.96153384615,
+            value:0.9615384615384615,
             unit:'',
             input:false,
             name:'ostwaldEfficiency',
@@ -508,7 +508,7 @@ export const SizingProp={
             parent:'general'
         },
         k:{
-            value:0.0413802852,
+            value:0.041401273885350316,
             unit:'',
             input:false,
             name:'k',
@@ -516,21 +516,21 @@ export const SizingProp={
             parent:'general'
         },
             minDragAirspeed:{
-                value:13.779173019,
+                value:11.252528992674344,
                 unit:'m/s',
                 name:'minDragAirspeed',
                 field:'Min Drag Airspeed',
                 parent:'general'
             },
             minPowerAirspeed:{
-                value:10.47033073,
+                value:8.550073082463134,
                 unit:'m/s',
                 name:'minPowerAirspeed',
                 field:'Min Power Airspeed',
                 parent:'general'
             },
             maxLiftCoefficient:{
-                value:1.375936884,
+                value:0.9172912557527942,
                 unit:'',
                 input:false,
                 name:'maxLiftCoefficient',
@@ -538,7 +538,7 @@ export const SizingProp={
                 parent:'general'
             },
             designLiftCoefficient:{
-                value:0.77396497,
+                value:0.5159763313609467,
                 unit:'',
                 input:false,
                 name:'designLiftCoefficient',
@@ -546,7 +546,7 @@ export const SizingProp={
                 parent:'general'
             },
             inducedDragCoefficient:{
-                value:0.02478766159,
+                value:0.011022326333825218,
                 unit:'',
                 input:false,
                 name:'inducedDragCoefficient',
@@ -554,7 +554,7 @@ export const SizingProp={
                 parent:'general'
             },
             totalDragCoefficient:{
-                value:0.134786616,
+                value:0.12102232633382522,
                 unit:'',
                 input:false,
                 name:'totalDragCoefficient',
@@ -562,7 +562,7 @@ export const SizingProp={
                 parent:'general'
             },
             drag:{
-                value:2.089827047,
+                value:1.876401206460226,
                 unit:'',
                 input:false,
                 name:'drag',
@@ -570,7 +570,7 @@ export const SizingProp={
                 parent:'general'
             },
             liftToDragRatio:{
-                value:31.2237802,
+                value:46.811926605504595,
                 unit:'',
                 input:false,
                 name:'liftToDragRatio',
@@ -620,7 +620,7 @@ export const SizingProp={
             parent:'motorAndBattery',
         },
         maxPower:{
-            value:3000,
+            value:2000,
             unit:'W',
             input:false,
             field:'Max Power',
@@ -628,7 +628,7 @@ export const SizingProp={
             parent:'motorAndBattery',
         },
         powerCruise:{
-            value:410.06231259186677,
+            value:368.14991670749635,
             unit:'W',
             input:false,
             field:'Power Cruise',
@@ -636,8 +636,7 @@ export const SizingProp={
             parent:'motorAndBattery',
         },
         currentCruise:{
-            value:20.15048219124652
-            ,
+            value:18.090904997911366,
             unit:'A',
             input:false,
             field:'Current Cruise',
@@ -645,7 +644,7 @@ export const SizingProp={
             parent:'motorAndBattery',
         },
         flightTimeBatteryCapacity:{
-            value:27762.886574606317,
+            value:24925.246886011213,
             unit:'mAh',
             input:false,
             field:'Battery Capacity',
@@ -661,7 +660,7 @@ export const SizingProp={
             parent:'motorAndBattery',
         },
         rangeBatteryCapacity:{
-            value:27762.886574606317,
+            value:24925.246886011213,
             unit:'mAh',
             input:false,
             name:'rangeBatteryCapacity',

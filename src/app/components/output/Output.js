@@ -1,8 +1,7 @@
 import React from 'react'
 import { Box} from '@material-ui/core'
 
-
-export const Output = ({value,message}) => {
+ const Output = ({value,message}) => {
     return (
         <div >
             {message?<p style={{color:'red'}} >{message}</p>:null}
@@ -11,3 +10,5 @@ export const Output = ({value,message}) => {
         
     )
 }
+
+export default Output

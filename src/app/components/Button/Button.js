@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import '../../../app/styles/App.css'
 
 export const Button = ({text,submitHandler}) => {
     return (

@@ -1,16 +1,13 @@
 
-
-
-
-
 import React from 'react'
 import { Paper, Typography, TextField, Container, Box } from '@material-ui/core'
 import InputAdornment from '@material-ui/core/InputAdornment';
-import '../App.css'
+import '../../../app/styles/App.css'
 import Input from '@material-ui/core/Input';
 import { makeStyles, withStyles } from '@material-ui/core'
 import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
-import { Output } from './Output';
+import PropTypes, { string } from 'prop-types'
+import  Output  from '../output/Output';
 const useStyles = makeStyles((theme) => ({
   input: {
     display: 'flex',
@@ -50,7 +47,7 @@ const InputUnit = (props) => {
   const classes = useStyles()
   // console.log(props, 'props')
   // console.log(props.onChange,"change")
-  const { field, unit, name, value, defaultValue, input } = props.data;
+  const { field, unit, name, value, input } = props.data;
   const id = props.id;
   let message = null;
   switch (id) {
@@ -72,11 +69,11 @@ const InputUnit = (props) => {
       {/* <h1>{message}</h1> */}
       <Typography style={{ textAlign: 'left' }} variant="body1">{field}</Typography>
       {input ? <CssTextField
-        id="standard-number"
+        id={id}
         type="number"
         size='small'
         defaultValue={value}
-        data-test="testinput"
+        data-test={`testinput${id}`}
         margin="normal"
         required
         name={name}
@@ -97,3 +94,14 @@ const InputUnit = (props) => {
 }
 
 export default InputUnit
+
+Input.propTypes={
+  data:PropTypes.shape({
+    value:PropTypes.string,
+    field:PropTypes.string,
+    unit:PropTypes.string,
+    name:PropTypes.string,
+    input:PropTypes.bool
+  }),
+  id:PropTypes.string
+}
